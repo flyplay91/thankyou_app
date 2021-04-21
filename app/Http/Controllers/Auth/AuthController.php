@@ -31,7 +31,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('home');
+        return redirect('store');
     }
 
     public function login()
@@ -50,20 +50,20 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+            return redirect()->intended('store');
         }
 
         return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
     public function logout() {
-      Auth::logout();
+      	Auth::logout();
 
-      return redirect('login');
+      	return redirect('login');
     }
 
-    public function home()
+    public function store()
     {
-      return view('home');
+    	return view('store');
     }
 }
