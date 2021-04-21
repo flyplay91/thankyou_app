@@ -62,3 +62,7 @@
   position: absolute;
 }
 
+.alert p {
+  margin: 0;
+}
+

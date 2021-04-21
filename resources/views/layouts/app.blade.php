@@ -71,10 +71,12 @@
             @auth
                 <div class="container">
                     <ul id="progressbar">
-                        
-                        <li class="@if (Route::currentRouteName() == 'store')active @endif"><a href="/store"><strong>Store</strong></a></li>
-                        <li class="@if (Route::currentRouteName() == 'brand')active @endif"><strong><a href="/brand">Brand</a></strong></li>
-                        <li class="@if (Route::currentRouteName() == 'product')active @endif"><strong><a href="/product">Product</a></strong></li>
+                        @php
+                            $currentRouteName = Route::currentRouteName();
+                        @endphp
+                        <li class="@if (strpos($currentRouteName, 'stores') !== false)active @endif"><a href="/stores"><strong>Stores</strong></a></li>
+                        <li class="@if (strpos($currentRouteName, 'brand') !== false)active @endif"><strong><a href="/brand">Brands</a></strong></li>
+                        <li class="@if (strpos($currentRouteName, 'product') !== false)active @endif"><strong><a href="/product">Products</a></strong></li>
                     </ul>
                 </div>    
             @endauth
