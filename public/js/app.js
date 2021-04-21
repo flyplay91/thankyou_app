@@ -19380,6 +19380,25 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$(document).ready(function () {
+  $('input[type="file"]').on("change", function () {
+    var filenames = [];
+    var files = this.files;
+
+    if (files.length > 1) {
+      filenames.push("Total Files (" + files.length + ")");
+    } else {
+      for (var i in files) {
+        if (files.hasOwnProperty(i)) {
+          filenames.push(files[i].name);
+        }
+      }
+    }
+
+    $(this).next(".custom-file-label").html(filenames.join(","));
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

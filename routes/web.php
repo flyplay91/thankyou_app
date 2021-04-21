@@ -25,3 +25,5 @@ Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('/store', 'Auth\AuthController@store')->name('store');
+Route::get('/brand', 'Auth\AuthController@brand')->name('brand');
+Route::get('/product', 'Auth\AuthController@product')->name('product');

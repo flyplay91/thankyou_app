@@ -66,4 +66,15 @@ class AuthController extends Controller
     {
     	return view('store');
     }
+
+    public function brand()
+    {
+    	return view('brand');
+    }
+
+    public function product()
+    {
+    	return view('product');
+    }
+    
 }

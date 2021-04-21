@@ -68,6 +68,17 @@
         </nav>
 
         <main class="py-4">
+            @auth
+                <div class="container">
+                    <ul id="progressbar">
+                        
+                        <li class="@if (Route::currentRouteName() == 'store')active @endif"><a href="/store"><strong>Store</strong></a></li>
+                        <li class="@if (Route::currentRouteName() == 'brand')active @endif"><strong><a href="/brand">Brand</a></strong></li>
+                        <li class="@if (Route::currentRouteName() == 'product')active @endif"><strong><a href="/product">Product</a></strong></li>
+                    </ul>
+                </div>    
+            @endauth
+            
             @yield('content')
         </main>
     </div>
