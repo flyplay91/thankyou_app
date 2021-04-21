@@ -34,10 +34,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="store_url">Store Url</span>
                     </div>
-                    <input type="text" name="url" class="form-control" required>
+                    <input type="text" name="url" value="{{ $store->url }}" class="form-control">
                 </div>
-
             </div>
+
             <div class="col-md-8">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
