@@ -63,11 +63,6 @@ class AuthController extends Controller
     }
 
 
-    public function brand()
-    {
-    	return view('brand');
-    }
-
     public function product()
     {
     	return view('product');
