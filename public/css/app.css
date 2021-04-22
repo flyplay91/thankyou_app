@@ -66,3 +66,9 @@
   margin: 0;
 }
 
+.td-img img {
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+

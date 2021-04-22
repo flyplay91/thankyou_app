@@ -26,6 +26,5 @@ Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::resource('stores','StoreController');
 Route::resource('brands','BrandController');
+Route::resource('products','ProductController');
 
-
-Route::get('/product', 'Auth\AuthController@product')->name('product');

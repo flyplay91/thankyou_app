@@ -8,7 +8,12 @@ class Brand extends Model
 {
 	public function store()
     {
-        return $this->belongsTo('App\Store', 'store_id');
+        return $this->belongsTo('App\Store');
+    }
+
+    public function products()
+    {
+        return $this->hasMany('App\Product');
     }
 
     protected $fillable = [
