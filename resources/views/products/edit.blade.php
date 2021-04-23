@@ -65,6 +65,12 @@
                     <input type="text" value="{{ $product->product_price }}" name="product_price" class="form-control" required>
                 </div>
 
+                <div class="input-group mb-3 td-img">
+                    <img src="/images/{{ $product->product_image }}">
+                </div>
+
+                
+
                 <div class="input-group mb-3">
                     <div class="custom-file">
                         <input type="file" name="product_image" multiple class="custom-file-input form-control" id="customFile">
