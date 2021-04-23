@@ -24,13 +24,13 @@
         </div>
     @endif
   
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+    <form action="{{ route('products.update',$product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <select class="browser-default custom-select mb-3" name="store_id" required>
+                <select class="browser-default custom-select mb-3" name="brand_id" required>
                     <option selected>Select Store</option>
                     @foreach($brands as $brand)
                     <option value="{{ $brand->id }}" @if($brand->id == $product->brand_id) selected @endif>{{ $brand->brand_title }}</option>

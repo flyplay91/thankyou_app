@@ -57,14 +57,8 @@ class ProductController extends Controller
             $fileName = $file->getClientOriginalName();
             $destinationPath = public_path().'/images/';
             $file->move($destinationPath,$fileName);
-
             
             $product->product_image = $fileName ;
-            // $request->product_image->move(public_path('images'), $imageName);
-
-            // $product = new Product([
-            //     "product_image" => $request->product_image->hashName()
-            // ]);
         }
 
         $product->save();
@@ -72,8 +66,7 @@ class ProductController extends Controller
         // Product::create($request->all());
    
         return redirect()->route('products.index')
-                        ->with('success','Product created successfully.')
-                        ->with('success','Image Upload Successfully');
+                        ->with('success','Product created successfully.');
     }
    
    
@@ -85,6 +78,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+
         $brands = Brand::all();
         return view('products.edit',compact('product', 'brands'));
     }
@@ -98,6 +92,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
         $request->validate([
             'brand_id' => 'required',
             'product_title' => 'required',
@@ -106,8 +101,20 @@ class ProductController extends Controller
             'product_price' => 'required',
             'product_image' => 'required',
         ]);
-  
-        $product->update($request->all());
+
+        $data = $request->all();
+
+        if($file = $request->hasFile('product_image')) {
+            
+            $file = $request->file('product_image');
+            $fileName = $file->getClientOriginalName();
+            $destinationPath = public_path().'/images/';
+            $file->move($destinationPath,$fileName);
+
+            $data['product_image'] = $fileName ;
+        }
+
+        $product->update($data);
   
         return redirect()->route('products.index')
                         ->with('success','Product updated successfully');

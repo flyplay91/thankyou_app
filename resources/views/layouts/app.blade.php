@@ -76,7 +76,7 @@
                         @endphp
                         <li class="@if (strpos($currentRouteName, 'stores') !== false)active @endif"><a href="/stores"><strong>Stores</strong></a></li>
                         <li class="@if (strpos($currentRouteName, 'brands') !== false)active @endif"><strong><a href="/brands">Brands</a></strong></li>
-                        <li class="@if (strpos($currentRouteName, 'product') !== false)active @endif"><strong><a href="/product">Products</a></strong></li>
+                        <li class="@if (strpos($currentRouteName, 'product') !== false)active @endif"><strong><a href="/products">Products</a></strong></li>
                     </ul>
                 </div>    
             @endauth
