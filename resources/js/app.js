@@ -17,4 +17,6 @@ $(document).ready(function() {
 	  .next(".custom-file-label")
 	  .html(filenames.join(","));
   });
+
+  console.log('aaa');
 });

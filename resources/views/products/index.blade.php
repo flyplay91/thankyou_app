@@ -19,6 +19,8 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
+            <th>Store Url</th>
+            <th>Brand Title</th>
             <th>Product Title</th>
             <th>Product Link</th>
             <th>Product Description</th>
@@ -29,6 +31,12 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
+            <td>
+                {{ $product->brand->store->url }}
+            </td>
+            <td>
+                {{ $product->brand->brand_title }}
+            </td>
             <td>{{ $product->product_title }}</td>
             <td>{{ $product->product_link }}</td>
             <td>{{ $product->product_description }}</td>

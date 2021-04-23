@@ -24,7 +24,8 @@ Route::get('/login', 'Auth\AuthController@login')->name('login');
 Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
-Route::resource('stores','StoreController');
-Route::resource('brands','BrandController');
-Route::resource('products','ProductController');
+Route::resource('dashboard','DashboardController')->middleware('auth');
+Route::resource('stores','StoreController')->middleware('auth');
+Route::resource('brands','BrandController')->middleware('auth');
+Route::resource('products','ProductController')->middleware('auth');
 
