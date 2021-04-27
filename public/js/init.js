@@ -4,12 +4,13 @@
 $(document).ready(function() {
 	$.ajax(
 		{
-			type: "GET",
+			
 			url: "https://b8d064528f87.ngrok.io/widget",
-			// dataType:  "json",
 			success: function(result) {
-				console.log(result);
-  		}
-  	}
+				if ($('.widget-block').length < 1) {
+					Shopify.Checkout.OrderStatus.addContentBox(result);	
+				}
+			}
+		}
 	);
 });

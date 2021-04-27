@@ -1,6 +1,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/widget.css">
+<link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
 
 <script type="text/javascript" src="https://b8d064528f87.ngrok.io/js/init.js"></script>
 
@@ -33,7 +33,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -42,7 +42,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -50,7 +50,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -59,7 +59,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -67,7 +67,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -76,14 +76,14 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
 					</div>
 				</div>
 				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="/images/down-arrow.svg"></a>
+					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
 				</div>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -118,7 +118,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -126,7 +126,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -135,7 +135,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -143,7 +143,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -152,14 +152,14 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
 					</div>
 				</div>
 				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="/images/down-arrow.svg"></a>
+					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
 				</div>
 			</div>
 		</div>
@@ -185,7 +185,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -194,7 +194,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -202,7 +202,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -211,7 +211,7 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
@@ -219,7 +219,7 @@
 					<div class="product-item">
 						<a href="" target="_blank">
 							<div class="product-img">
-								<img src="/images/test-product.svg">
+								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
 							</div>
 							<div class="product-text">
 								<div class="product-title-desc">
@@ -228,14 +228,14 @@
 								</div>
 								<div class="product-price-arrow">
 									<span>$30</span>
-									<img src="/images/right-arrow.svg">
+									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
 								</div>
 							</div>
 						</a>
 					</div>
 				</div>
 				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="/images/down-arrow.svg"></a>
+					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
 				</div>
 			</div>
 		</div>
@@ -243,7 +243,7 @@
 	
 	<div class="widget-footer">
 		<div class="email-list">
-			<a href = "mailto: abc@example.com"><img src="/images/email-icon.svg">Email me this list</a>
+			<a href = "mailto: abc@example.com"><img src="https://b8d064528f87.ngrok.io/images/email-icon.svg">Email me this list</a>
 		</div>
 		<div class="community-copyright">
 			<div class="community">
