@@ -22,6 +22,7 @@
 
 <body>
     <div id="wrapper">
+        @auth
         <ul class="nav-sidebar">
             <img class="logo-img" src="/images/ff_logo_white.svg">
             <hr class="sidebar-divider">
@@ -54,6 +55,7 @@
                 </a>
             </li>
         </ul>
+        @endauth
         <div id="content-wrapper">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
@@ -91,10 +93,6 @@
             </nav>
 
             <main class="py-4">
-                @auth
-                     
-                @endauth
-                
                 @yield('content')
             </main>
         </div>

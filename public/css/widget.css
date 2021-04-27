@@ -1,0 +1,259 @@
+h1,h2,h3,h4,h5,h6,p,label,span,ul,li {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #000000;
+}
+
+.widget-block {
+	max-width: 512px;
+	padding: 24px 16px;
+	border-radius: 4px;
+	border: 1px solid #DDDDDD;
+}
+
+.widget-header {
+	border-bottom: 1px solid #666666;
+	padding-bottom: 16px;
+}
+
+.widget-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding-left: 16px;
+}
+
+.widget-text {
+	font-size: 14px;
+	padding-left: 16px;
+}
+
+.brand-product {
+  padding: 30px 0;
+  border-bottom: 1px solid #666666;
+}
+
+.brand-infos {
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #F0F0F2;
+}
+
+.brand-logo-title-tag {
+	display: flex;
+	align-items: center;
+}
+
+.brand-logo {
+	margin-right: 10px;
+	width: 65px;
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	letter-spacing: 1;
+	font-weight: bold;
+}
+
+.brand-title-tag h3 {
+	font-size: 26px;
+  font-weight: 700;
+}
+
+.brand-title-tag ul {
+	display: flex;
+	margin-top: 5px;
+}
+
+.brand-title-tag ul li {
+	margin-right: 5px;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 4px 8px;
+	border-radius: 16px;
+	font-weight: bold;
+}
+
+.brand-product:first-child .brand-logo {
+	background-color: rgba(245, 147, 123, 0.8);
+	border-radius: 50%;
+	color: #FFFFFF;
+}
+
+.brand-product:first-child .brand-title-tag ul li {
+	background: #F5937B;
+	color: #FFFFFF;
+	letter-spacing: 1;	
+}
+
+.brand-product:first-child .product-item {
+	background-color: rgba(246, 145, 122, 0.15);
+}
+
+.brand-product:nth-child(2) .brand-logo {
+	background-color: #FFEDBE;
+	color: #F03732;
+}
+
+.brand-product:nth-child(2) .brand-title-tag ul li {
+	background: #FFE455;
+	color: #000000;
+	letter-spacing: 1;	
+}
+
+.brand-product:nth-child(2) .product-item {
+	background-color: #FFF7E4;
+}
+
+.brand-product:last-child .brand-logo {
+	background-color: #033A41;
+	color: #CDD9CF;
+}
+
+.brand-product:last-child .brand-title-tag ul li {
+	background: #005D68;
+	color: #FFFFFF;
+	letter-spacing: 1;	
+}
+
+.brand-product:last-child .product-item {
+	background-color: rgba(0, 77, 91, 0.15);;
+}
+
+.brand-text {
+	margin-top: 12px;
+	font-size: 16px;
+}
+
+.product-items .product-item:nth-child(2),
+.product-items .product-item:last-child {
+	display: none;
+}
+
+.product-item {
+  margin: 16px 12px;
+}
+
+.product-item > a {
+	display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  grid-gap: 12px;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.product-img {
+	padding: 8px;
+}
+
+.product-img img {
+	width: 100%;
+}
+
+.product-text {
+	padding: 8px 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title-desc h3 {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.product-title-desc p {
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+.product-price-arrow {
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price-arrow span {
+	font-size: 18px;
+  font-weight: bold;
+}
+
+.product-price-arrow img {
+	width: 10px;
+}
+
+.more-products {
+	text-align: center;
+	padding-top: 16px;
+	border-top: 1px solid #F0F0F2;
+}
+
+.more-products a {
+	color: black;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.more-products a img {
+	width: 14px;
+  margin-left: 8px;
+}
+
+.email-list {
+	padding: 25px 16px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.email-list a {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.email-list a img {
+	margin-right: 8px;
+}
+
+.community-copyright {
+	padding: 20px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.community label {
+	display: block;
+	font-size: 16px;
+	color: #666666;
+}
+
+.community span {
+	display: block;
+	font-size: 14px;
+	color: #666666;
+}
+
+.copyright label {
+	display: block;
+	color: #666666;
+	font-size: 12px;
+}
+
+.copyright span {
+	display: block;
+	color: #666666;
+	font-size: 32px;
+}
