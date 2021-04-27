@@ -19397,7 +19397,6 @@ $(document).ready(function () {
 
     $(this).next(".custom-file-label").html(filenames.join(","));
   });
-  console.log('aaa');
 });
 
 /***/ }),

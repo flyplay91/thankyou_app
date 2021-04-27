@@ -18,5 +18,4 @@ $(document).ready(function() {
 	  .html(filenames.join(","));
   });
 
-  console.log('aaa');
 });
