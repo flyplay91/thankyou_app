@@ -28,5 +28,7 @@ Route::resource('dashboard','DashboardController')->middleware('auth');
 Route::resource('stores','StoreController')->middleware('auth');
 Route::resource('brands','BrandController')->middleware('auth');
 Route::resource('products','ProductController')->middleware('auth');
+Route::post('product-sortable','ProductController@drogupdate');
+
 Route::resource('widget','WidgetController');
 

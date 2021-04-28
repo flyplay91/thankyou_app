@@ -119,6 +119,21 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product updated successfully');
     }
+
+    public function drogupdate(Request $request)
+    {
+        $products = Product::all();
+        var_dump($products);exit;
+        foreach ($products as $product) {
+            foreach ($request->order as $order) {
+                if ($order['id'] == $product->id) {
+                    $product->update(['order' => $order['position']]);
+                }
+            }
+        }
+        
+        return response('Update Successfully.', 200);
+    }
   
     /**
      * Remove the specified resource from storage.

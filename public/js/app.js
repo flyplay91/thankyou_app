@@ -19397,14 +19397,43 @@ $(document).ready(function () {
 
     $(this).next(".custom-file-label").html(filenames.join(","));
   }); // Tabel drog & drop
-
-  $('tbody').sortable({
-    cursor: 'row-resize',
-    placeholder: 'ui-state-highlight',
-    opacity: '0.55',
-    items: 'tr'
-  }).disableSelection();
-});
+  // $('table').DataTable();
+  // $( "tbody" ).sortable({
+  //   items: "tr",
+  //   cursor: 'move',
+  //   opacity: 0.6,
+  //   update: function() {
+  //       sendOrderToServer();
+  //   }
+  // });
+}); // function sendOrderToServer() {
+//   var order = [];
+//   var token = $('meta[name="csrf-token"]').attr('content');
+//   console.log(token);
+//   $('tr').each(function(index,element) {
+//     order.push({
+//       id: $(this).attr('data-id'),
+//       position: index+1
+//     });
+//   });
+//   $.ajax({
+//     type: "POST", 
+//     dataType: "json", 
+//     url: "https://b8d064528f87.ngrok.io/product-sortable",
+//       data: {
+// 	      order: order,
+// 	      _token: token
+// 	    },
+//     	success: function(response) {
+//         if (response.status == "success") {
+//           console.log(response);
+//         } else {
+//           console.log(response);
+//         }
+//     	}
+//   	}
+// 	);
+// }
 
 /***/ }),
 
