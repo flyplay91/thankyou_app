@@ -20,6 +20,7 @@
         <tr>
             <th>No</th>
             <th>Store Url</th>
+            <th>Brand Logo</th>
             <th>Brand Title</th>
             <th>Brand Tag</th>
             <th>Brand Description</th>
@@ -31,6 +32,7 @@
             <td>
                 {{ $brand->store->url }}
             </td>
+            <td class="td-img"><img src="/images/{{ $brand->brand_image }}"></td>
             <td>{{ $brand->brand_title }}</td>
             <td>{{ $brand->brand_tag }}</td>
             <td>{{ $brand->brand_description }}</td>

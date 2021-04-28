@@ -1,7 +1,3 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
-
 <script type="text/javascript" src="https://b8d064528f87.ngrok.io/js/init.js"></script>
 
 

@@ -24,7 +24,7 @@
         </div>
     @endif
        
-    <form action="{{ route('brands.store') }}" method="POST">
+    <form action="{{ route('brands.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
       
         <div class="row justify-content-center">
@@ -35,6 +35,13 @@
                     <option value="{{ $store->id }}">{{ $store->url }}</option>
                     @endforeach
                 </select>
+
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" name="brand_image" multiple class="custom-file-input form-control" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

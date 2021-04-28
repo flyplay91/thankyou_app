@@ -24,7 +24,7 @@
         </div>
     @endif
   
-    <form action="{{ route('brands.update',$brand->id) }}" method="POST">
+    <form action="{{ route('brands.update',$brand->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -36,6 +36,17 @@
                     <option value="{{ $store->id }}" @if($store->id == $brand->store_id) selected @endif>{{ $store->url }}</option>
                     @endforeach
                 </select>
+
+                <div class="input-group mb-3 td-img">
+                    <img src="/images/{{ $brand->brand_image }}">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" name="brand_image" multiple class="custom-file-input form-control" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

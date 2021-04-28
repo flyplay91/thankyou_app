@@ -69,8 +69,6 @@
                     <img src="/images/{{ $product->product_image }}">
                 </div>
 
-                
-
                 <div class="input-group mb-3">
                     <div class="custom-file">
                         <input type="file" name="product_image" multiple class="custom-file-input form-control" id="customFile">
