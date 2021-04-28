@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Widget;
 use Illuminate\Http\Request;
+use App\Product;
+use App\Brand;
+
 
 class WidgetController extends Controller
 {
@@ -14,7 +17,9 @@ class WidgetController extends Controller
      */
     public function index()
     {
-        return view('widget.index');
+        $brands = Brand::all();
+        $products = Product::all();
+        return view('widget.index',compact('brands', 'products'));
     }
 
     /**

@@ -14,7 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $stores = Store::latest()->paginate(5);
+        $stores = Store::latest()->paginate(25);
   
         return view('stores.index',compact('stores'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

@@ -1,4 +1,7 @@
-<script type="text/javascript" src="https://b8d064528f87.ngrok.io/js/init.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
+<script src="https://b8d064528f87.ngrok.io/js/widget.js"></script>
 
 
 <div class="widget-block">
@@ -8,233 +11,74 @@
 	</div>
 
 	<div class="widget-body">
+		@foreach ($brands as $brand)
 		<div class="brand-product">
 			<div class="brand-infos">
 				<div class="brand-logo-title-tag">
-					<div class="brand-logo">yuicy</div>
+					<div class="brand-logo">
+						<img src="https://b8d064528f87.ngrok.io/images/{{ $brand->brand_image }}">
+					</div>
 					<div class="brand-title-tag">
-						<h3>Yuicy</h3>
+						<h3>{{ $brand->brand_title }}</h3>
 						<ul>
-							<li>Cruelty free</li>
-							<li>Vegan</li>
-						</ul>
-					</div>
-				</div>
-				<div class="brand-text">
-					Honest, tasty and high quality vitamin gummies that combat hairloss, sleep problems and acne.
-				</div>
-			</div>
-			<div class="product-infos">
-				<div class="product-items">
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
-				</div>
-			</div>
-		</div>
+							<?php if ( strpos($brand->brand_tag, ", ") !== false ) :
+								$brand_items = explode(", ", $brand->brand_tag);
 
-		<div class="brand-product">
-			<div class="brand-infos">
-				<div class="brand-logo-title-tag">
-					<div class="brand-logo">yuicy</div>
-					<div class="brand-title-tag">
-						<h3>Yuicy</h3>
-						<ul>
-							<li>Cruelty free</li>
-							<li>Vegan</li>
+						     	foreach ($brand_items as $brand_item) : ?>
+						     		<li>{{ $brand_item }}</li>
+						     	<?php
+						     	endforeach;
+							else : ?>
+								<li>{{ $brand->brand_tag }}</li>
+				     		<?php
+							endif;
+							?>
 						</ul>
 					</div>
 				</div>
 				<div class="brand-text">
-					Honest, tasty and high quality vitamin gummies that combat hairloss, sleep problems and acne.
+					{{ $brand->brand_description }}
 				</div>
 			</div>
 			<div class="product-infos">
 				<div class="product-items">
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
+					<?php  $i = 0; 
+				 	foreach ($products as $product) :
+				 		if ($product->brand_id == $brand->id) :
+				 			$i++;
+				 			?>
+							<div class="product-item">
+								<a href="{{ $product->product_link }}" target="_blank">
+									<div class="product-img">
+										<img src="https://b8d064528f87.ngrok.io/images/{{ $product->product_image }}">
+									</div>
+									<div class="product-text">
+										<div class="product-title-desc">
+											<h3>{{ $product->product_title }}</h3>
+											<p>{{ $product->product_description }}</p>
+										</div>
+										<div class="product-price-arrow">
+											<span>£{{ $product->product_price }}</span>
+											<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
+										</div>
+									</div>
+								</a>
 							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
+						<?php
+						endif;
+						if (($product->brand->id == $brand->id) && $i > 1) : ?>
+							<div class="more-products">
+								<a href="javascript: void(0)">{{ $i }} more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
 							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
+						<?php
+						endif;
+					endforeach;
+					?>
 				</div>
-				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
-				</div>
+				
 			</div>
 		</div>
-
-		<div class="brand-product">
-			<div class="brand-infos">
-				<div class="brand-logo-title-tag">
-					<div class="brand-logo">yuicy</div>
-					<div class="brand-title-tag">
-						<h3>Yuicy</h3>
-						<ul>
-							<li>Cruelty free</li>
-							<li>Vegan</li>
-						</ul>
-					</div>
-				</div>
-				<div class="brand-text">
-					Honest, tasty and high quality vitamin gummies that combat hairloss, sleep problems and acne.
-				</div>
-			</div>
-			<div class="product-infos">
-				<div class="product-items">
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="product-item">
-						<a href="" target="_blank">
-							<div class="product-img">
-								<img src="https://b8d064528f87.ngrok.io/images/test-product.svg">
-							</div>
-							<div class="product-text">
-								<div class="product-title-desc">
-									<h3>Skin Vitamin Gummies</h3>
-									<p>Delicious vitamin gummies for glowing and healthy skin.</p>
-								</div>
-								<div class="product-price-arrow">
-									<span>$30</span>
-									<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="more-products">
-					<a href="javascript: void(0)">2 more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
-				</div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 	
 	<div class="widget-footer">

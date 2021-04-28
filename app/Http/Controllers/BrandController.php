@@ -15,7 +15,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::latest()->paginate(5);
+        $brands = Brand::latest()->paginate(25);
         return view('brands.index',compact('brands'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -87,7 +87,7 @@ class BrandController extends Controller
     {
         $request->validate([
             'store_id' => 'required',
-            'brand_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'brand_image' => 'required',
             'brand_title' => 'required',
             'brand_tag' => 'required',
             'brand_description' => 'required',
