@@ -18,4 +18,12 @@ $(document).ready(function() {
 	  .html(filenames.join(","));
   });
 
+  // Tabel drog & drop
+  $('tbody').sortable({
+	  cursor: 'row-resize',
+	  placeholder: 'ui-state-highlight',
+	  opacity: '0.55',
+	  items: 'tr'
+	}).disableSelection();
+
 });
