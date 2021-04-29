@@ -65,6 +65,23 @@ table .btn {
   line-height: 1;
 }
 
+table.dashboard-table {
+  width: 100%;
+}
+
+table.dashboard-table tr th {
+  border: solid 1px #212529;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+}
+
+table.dashboard-table tr td {
+  border: solid 1px #212529;
+  color: black;
+  text-align: center;
+}
+
 .file {
   visibility: hidden;
   position: absolute;

@@ -5,7 +5,6 @@
 <script src="https://b8d064528f87.ngrok.io/js/widget.js"></script>
 
 
-
 <div class="widget-block">
 	<div class="widget-header">
 		<h2 class="widget-title">Brands we love</h2>

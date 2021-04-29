@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dashboard;
 use Illuminate\Http\Request;
+use App\Store;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $stores = Store::all();
+        return view('dashboard.index', compact('stores'));
     }
 
     /**

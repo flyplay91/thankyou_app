@@ -59,6 +59,23 @@ table {
 	.btn {
 		line-height: 1;
 	}
+
+	&.dashboard-table {
+		width: 100%;
+		tr {
+			th {
+				border: solid 1px #212529;
+				background-color: transparent;
+				color: black;
+				text-align: center;
+			}
+			td {
+				border: solid 1px #212529;
+				color: black;
+				text-align: center;
+			}
+		}
+	}
 }
 
 .file {

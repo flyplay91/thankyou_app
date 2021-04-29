@@ -6,7 +6,8 @@ use App\Widget;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
-
+use App\Store;
+use DB;
 
 class WidgetController extends Controller
 {
@@ -15,11 +16,23 @@ class WidgetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+     
+        $domain_url = $request->domain_url;
+        if (!$domain_url) {
+            // exception handler
+            return;
+        }
+
+        Store::where('url', $domain_url)
+            ->update([
+                'visitor_count' => DB::raw('visitor_count + 1')
+            ]);
+
         $brands = Brand::all();
         $products = Product::all();
-        return view('widget.index',compact('brands', 'products'));
+        return view('widget.index', compact('brands', 'products'));
     }
 
     /**
