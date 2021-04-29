@@ -1,13 +1,35 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="https://b8d064528f87.ngrok.io/js/widget.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://b8d064528f87.ngrok.io/js/widget.js"></script> -->
 
 
 <div class="widget-block">
 	<div class="widget-header">
-		<h2 class="widget-title">Brands we love</h2>
+		<h2 class="widget-title">
+			Brands we love
+			<!-- Button trigger modal -->
+			<a href="javascript:void(0)" class="btn-send-email">
+				<img src="https://b8d064528f87.ngrok.io/images/email-icon.svg">
+				Send To Email
+			</a>
+
+			<!-- Modal -->
+			<div class="send-email-modal">
+			  	<div class="send-email-modal__inner">
+			  		<h3>Please enter your email.<span class="btn-close">X</span></h3>
+			  		<input type="text" placeholder="example@email.com" class="email-value">
+			  		<label class="email-validation-error">Invalid email address.</label>
+			  		<label class="email-empty-error">Please type your email.</label>
+		  			<a href="javascript:void(0)" class="btn-submit-email">Submit</a>
+			  	</div>
+			</div>
+		</h2>
+
+		
 		<p class="widget-text">We’ve hand picked these purpose driven brands just for you</p>	
 	</div>
 

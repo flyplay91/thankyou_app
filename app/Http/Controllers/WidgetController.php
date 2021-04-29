@@ -30,6 +30,12 @@ class WidgetController extends Controller
                 'visitor_count' => DB::raw('visitor_count + 1')
             ]);
 
+        $user_email = $request->user_email;
+        Store::where('url', $domain_url)
+            ->update([
+                'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
+            ]);
+
         $brands = Brand::all();
         $products = Product::all();
         return view('widget.index', compact('brands', 'products'));

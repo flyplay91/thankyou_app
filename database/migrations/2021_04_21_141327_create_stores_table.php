@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->id();
             $table->string('url');
             $table->intiger('visitor_count');
+            $table->string('user_email');
             $table->timestamps();
         });
     }

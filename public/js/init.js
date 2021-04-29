@@ -18,19 +18,55 @@ $(document).ready(function() {
     
     if (countries.includes(country)) {
     	$.ajax({
-			url: "https://b8d064528f87.ngrok.io/api/widget",
-			method: "POST",
-			data: {
-				domain_url: location.protocol + '//' + location.host
-			},
-			success: function(result) {
-				if ($('.widget-block').length < 1) {
-					Shopify.Checkout.OrderStatus.addContentBox(result);	
+				url: "https://b8d064528f87.ngrok.io/api/widget",
+				method: "POST",
+				data: {
+					domain_url: location.protocol + '//' + location.host
+				},
+				success: function(result) {
+					if ($('.widget-block').length < 1) {
+						Shopify.Checkout.OrderStatus.addContentBox(result);	
+					}
 				}
-			}
-		});	
+			});	
     }
     
   }, "jsonp");
+
+
+  $('body').on('click', '.btn-submit-email', function() {
+  	var emailVal = $('.send-email-modal__inner .email-value').val();
+
+  	if (emailVal == "") {
+  		$('.email-empty-error').addClass('active');
+  	} else {
+  		$('.email-empty-error').removeClass('active');
+
+  		if( !validateEmail(emailVal)) {
+	  		$('.email-validation-error').addClass('active');
+	  	} else {
+	  		$('.email-validation-error').removeClass('active');
+
+	  		$.ajax({
+	  			url: "https://b8d064528f87.ngrok.io/api/widget",
+	  			method: "post",
+	  			data: {
+	  				user_email: emailVal,
+	  				domain_url: location.protocol + '//' + location.host
+	  			},
+	  			success: function(result) {
+	  				console.log('success');
+	  			}
+	  		});
+	  	}
+  	}
+  	
+  });	
 	
 });
+
+// Email Validation
+function validateEmail($email) {
+  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  return emailReg.test( $email );
+}

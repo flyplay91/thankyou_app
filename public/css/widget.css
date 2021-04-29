@@ -29,6 +29,107 @@ body {
 	font-weight: bold;
 	margin-bottom: 5px;
 	padding-left: 16px;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.send-email-modal {
+	position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 111;
+}
+
+.send-email-modal.open {
+	display: flex;
+}
+
+.send-email-modal__inner {
+	background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+.send-email-modal__inner h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.send-email-modal__inner h3 span {
+	position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+}
+
+.send-email-modal__inner input {
+	border: solid 2px black;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.send-email-modal__inner .email-validation-error,
+.send-email-modal__inner .email-empty-error {
+	display: none;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.send-email-modal__inner .email-validation-error.active,
+.send-email-modal__inner .email-empty-error.active {
+	display: block;
+}
+
+.btn-submit-email {
+	display: block;
+  text-align: center;
+  padding: 2px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 10px auto 0;
+  background-color: #F5937B;
+  border-radius: 5px;
+  color: black;
+}
+
+.btn-submit-email:hover {
+	color: black;
+}
+
+.btn-send-email {
+	color: black;
+  font-size: 12px;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 228, 175, 0.8);
+  padding: 3px 7px;
+  border-radius: 4px;
+	border: none;
+	font-weight: 600;
+}
+
+.btn-send-email:hover {
+	color: black;
+}
+
+.btn-send-email img {
+	width: 16px;
+  margin-right: 5px;
 }
 
 .widget-text {
