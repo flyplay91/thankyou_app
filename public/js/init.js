@@ -48,14 +48,15 @@ $(document).ready(function() {
 	  		$('.email-validation-error').removeClass('active');
 
 	  		$.ajax({
-	  			url: "https://08abc8207af7.ngrok.io/api/widget",
+	  			url: "https://08abc8207af7.ngrok.io/api/email",
 	  			method: "post",
 	  			data: {
 	  				user_email: emailVal,
 	  				domain_url: location.protocol + '//' + location.host
 	  			},
 	  			success: function(result) {
-	  				console.log('success');
+	  				$('.send-email-modal__inner').empty()
+	  				$('.send-email-modal__inner').append('<h3>Email sent successflly.<span class="btn-close">X</span></h3>');
 	  			}
 	  		});
 	  	}
