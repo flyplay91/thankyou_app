@@ -1,10 +1,10 @@
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
+<link rel="stylesheet" href="https://08abc8207af7.ngrok.io/css/widget.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://b8d064528f87.ngrok.io/js/widget.js"></script> -->
+<script src="https://08abc8207af7.ngrok.io/js/widget.js"></script> -->
 
 
 <div class="widget-block">
@@ -13,7 +13,7 @@
 			Brands we love
 			<!-- Button trigger modal -->
 			<a href="javascript:void(0)" class="btn-send-email">
-				<img src="https://b8d064528f87.ngrok.io/images/email-icon.svg">
+				<img src="https://08abc8207af7.ngrok.io/images/email-icon.svg">
 				Send To Email
 			</a>
 
@@ -39,7 +39,7 @@
 			<div class="brand-infos">
 				<div class="brand-logo-title-tag">
 					<div class="brand-logo">
-						<img src="https://b8d064528f87.ngrok.io/images/{{ $brand->brand_image }}">
+						<img src="https://08abc8207af7.ngrok.io/images/{{ $brand->brand_image }}">
 					</div>
 					<div class="brand-title-tag">
 						<h3>{{ $brand->brand_title }}</h3>
@@ -73,7 +73,7 @@
 							<div class="product-item">
 								<a href="{{ $product->product_link }}" target="_blank">
 									<div class="product-img">
-										<img src="https://b8d064528f87.ngrok.io/images/{{ $product->product_image }}">
+										<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
 									</div>
 									<div class="product-text">
 										<div class="product-title-desc">
@@ -82,7 +82,7 @@
 										</div>
 										<div class="product-price-arrow">
 											<span>£{{ $product->product_price }}</span>
-											<img src="https://b8d064528f87.ngrok.io/images/right-arrow.svg">
+											<img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
 										</div>
 									</div>
 								</a>
@@ -91,7 +91,7 @@
 						endif;
 						if (($product->brand->id == $brand->id) && $i > 1) : ?>
 							<div class="more-products">
-								<a href="javascript: void(0)">{{ $i }} more products from Yuicy<img src="https://b8d064528f87.ngrok.io/images/down-arrow.svg"></a>
+								<a href="javascript: void(0)">{{ $i }} more products from Yuicy<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
 							</div>
 						<?php
 						endif;
@@ -106,7 +106,7 @@
 	
 	<div class="widget-footer">
 		<div class="email-list">
-			<a href = "mailto: abc@example.com"><img src="https://b8d064528f87.ngrok.io/images/email-icon.svg">Email me this list</a>
+			<a href = "mailto: abc@example.com"><img src="https://08abc8207af7.ngrok.io/images/email-icon.svg">Email me this list</a>
 		</div>
 		<div class="community-copyright">
 			<div class="community">

@@ -7,9 +7,9 @@ $(document).ready(function() {
 	$('head').append(`
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://b8d064528f87.ngrok.io/css/widget.css">
+		<link rel="stylesheet" href="https://08abc8207af7.ngrok.io/css/widget.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="https://b8d064528f87.ngrok.io/js/widget.js"></script>
+		<script src="https://08abc8207af7.ngrok.io/js/widget.js"></script>
 		`);
 	$.get("http://ipinfo.io", function(response) {
 
@@ -18,7 +18,7 @@ $(document).ready(function() {
     
     if (countries.includes(country)) {
     	$.ajax({
-				url: "https://b8d064528f87.ngrok.io/api/widget",
+				url: "https://08abc8207af7.ngrok.io/api/widget",
 				method: "POST",
 				data: {
 					domain_url: location.protocol + '//' + location.host
@@ -48,7 +48,7 @@ $(document).ready(function() {
 	  		$('.email-validation-error').removeClass('active');
 
 	  		$.ajax({
-	  			url: "https://b8d064528f87.ngrok.io/api/widget",
+	  			url: "https://08abc8207af7.ngrok.io/api/widget",
 	  			method: "post",
 	  			data: {
 	  				user_email: emailVal,
