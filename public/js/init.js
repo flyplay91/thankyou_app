@@ -50,13 +50,20 @@ $(document).ready(function() {
 	  		$.ajax({
 	  			url: "https://08abc8207af7.ngrok.io/api/email",
 	  			method: "post",
+  			 	beforeSend: function(){
+			     	$(".ajax-loading").show();
+			   	},
 	  			data: {
 	  				user_email: emailVal,
 	  				domain_url: location.protocol + '//' + location.host
 	  			},
 	  			success: function(result) {
-	  				$('.send-email-modal__inner').empty()
-	  				$('.send-email-modal__inner').append('<h3>Email sent successflly.<span class="btn-close">X</span></h3>');
+	  				$(".ajax-loading").hide();
+	  				$('.send-email-modal__inner').addClass('success');
+	  				setTimeout(function(){
+	  					$('.send-email-modal__inner').removeClass('success');
+	  					$('.send-email-modal').removeClass('open');
+	  				}, 3000);
 	  			}
 	  		});
 	  	}

@@ -20,11 +20,17 @@
 			<!-- Modal -->
 			<div class="send-email-modal">
 			  	<div class="send-email-modal__inner">
-			  		<h3>Please enter your email.<span class="btn-close">X</span></h3>
-			  		<input type="text" placeholder="example@email.com" class="email-value">
-			  		<label class="email-validation-error">Invalid email address.</label>
-			  		<label class="email-empty-error">Please type your email.</label>
-		  			<a href="javascript:void(0)" class="btn-submit-email">Submit</a>
+			  		<div class="send-email-before-success">
+				  		<h3>Please enter your email.<span class="btn-close">X</span></h3>
+				  		<input type="text" placeholder="example@email.com" class="email-value">
+				  		<label class="email-validation-error">Invalid email address.</label>
+				  		<label class="email-empty-error">Please type your email.</label>
+			  			<a href="javascript:void(0)" class="btn-submit-email">Submit</a>
+			  		</div>
+			  		<img class="ajax-loading" src="https://08abc8207af7.ngrok.io/images/loading.gif">
+			  		<div class="send-email-after-success">
+			  			<h3>Email sent successfully.<span class="btn-close">X</span></h3>
+			  		</div>
 			  	</div>
 			</div>
 		</h2>

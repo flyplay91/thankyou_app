@@ -58,6 +58,27 @@ body {
   position: relative;
 }
 
+.ajax-loading {
+	width: 180px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+
+.send-email-modal__inner .send-email-after-success {
+	display: none;
+}
+
+.send-email-modal__inner.success .send-email-before-success {
+	display: none;
+}
+
+.send-email-modal__inner.success .send-email-after-success {
+	display: block;
+}
+
 .send-email-modal__inner h3 {
   font-size: 16px;
   text-transform: uppercase;

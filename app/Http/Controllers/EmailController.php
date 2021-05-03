@@ -35,7 +35,7 @@ class EmailController extends Controller
 
         try {
 	        $data = ['message' => 'This is a test!'];
-			Mail::to('aarmillr12@gmail.com')->send(new Email($data));
+			Mail::to($user_email)->send(new Email($data));
 
 			return response()->json([
 			    'failed' => '0'
