@@ -48,6 +48,7 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => 'required',
             'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_color' => 'required',
         ]);
 
         $product = new Product($request->input()) ;
@@ -100,6 +101,7 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => 'required',
             'product_image' => 'required',
+            'product_color' => 'required',
         ]);
 
         $data = $request->all();

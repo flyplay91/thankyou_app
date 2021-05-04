@@ -23,12 +23,14 @@ class WidgetController extends Controller
         if (!$domain_url) {
             // exception handler
             return;
-        }
-
-        Store::where('url', $domain_url)
+        } else {
+            Store::where('url', $domain_url)
             ->update([
                 'visitor_count' => DB::raw('visitor_count + 1')
-            ]);
+            ]);    
+        }
+
+        
 
         $user_email = $request->user_email;
         Store::where('url', $domain_url)

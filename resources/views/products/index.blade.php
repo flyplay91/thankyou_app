@@ -27,6 +27,7 @@
                 <th>Product Description</th>
                 <th>Product Price</th>
                 <th>Product Image</th>
+                <th>Product Color</th>
                 <th width="280px">Action</th>
             </tr>
         </thead>
@@ -45,6 +46,7 @@
                 <td>{{ $product->product_description }}</td>
                 <td>{{ $product->product_price }}</td>
                 <td class="td-img"><img src="/images/{{ $product->product_image }}"></td>
+                <td>{{ $product->product_color }}</td>
                 <td>
                     <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                         <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>

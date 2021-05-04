@@ -63,6 +63,13 @@
                     </div>
                     <textarea class="form-control" aria-label="With textarea" name="brand_description" required></textarea>
                 </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Brand Tag Color</span>
+                    </div>
+                    <input type="text" name="brand_tag_color" class="form-control" required>
+                </div>
             </div>
             <div class="col-md-8">
                 <button type="submit" class="btn btn-primary">Submit</button>

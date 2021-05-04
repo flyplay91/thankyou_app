@@ -45,6 +45,7 @@ class BrandController extends Controller
             'brand_title' => 'required',
             'brand_tag' => 'required',
             'brand_description' => 'required',
+            'brand_tag_color' => 'required',
         ]);
   
         $brand = new Brand($request->input()) ;
@@ -91,6 +92,7 @@ class BrandController extends Controller
             'brand_title' => 'required',
             'brand_tag' => 'required',
             'brand_description' => 'required',
+            'brand_tag_color' => 'required',
         ]);
 
         $data = $request->all();

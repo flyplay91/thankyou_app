@@ -24,6 +24,7 @@
             <th>Brand Title</th>
             <th>Brand Tag</th>
             <th>Brand Description</th>
+            <th>Brand Tag Color</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($brands as $brand)
@@ -36,6 +37,7 @@
             <td>{{ $brand->brand_title }}</td>
             <td>{{ $brand->brand_tag }}</td>
             <td>{{ $brand->brand_description }}</td>
+            <td>{{ $brand->brand_tag_color }}</td>
             <td>
                 <form action="{{ route('brands.destroy',$brand->id) }}" method="POST">
     

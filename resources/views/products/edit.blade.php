@@ -75,6 +75,13 @@
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Product Color</span>
+                    </div>
+                    <input type="text" value="{{ $product->product_color }}" name="product_color" class="form-control" required>
+                </div>
             </div>
             <div class="col-md-8">
                 <button type="submit" class="btn btn-primary">Submit</button>

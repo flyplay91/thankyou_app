@@ -13,11 +13,11 @@ $(document).ready(function() {
 		`);
 	$.get("http://ipinfo.io", function(response) {
 
-	let countries = "US,GB,DE,ES,SE".split(",");
-    const country = response.country;
-    
-    if (countries.includes(country)) {
-    	$.ajax({
+		let countries = "US,GB,DE,ES,SE".split(",");
+	    const country = response.country;
+	    
+	    if (countries.includes(country)) {
+	    	$.ajax({
 				url: "https://08abc8207af7.ngrok.io/api/widget",
 				method: "POST",
 				data: {
@@ -29,9 +29,9 @@ $(document).ready(function() {
 					}
 				}
 			});	
-    }
+	    }
     
-  }, "jsonp");
+  	}, "jsonp");
 
 
   $('body').on('click', '.btn-submit-email', function() {
