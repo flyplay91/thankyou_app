@@ -84,7 +84,7 @@
 				 		if ($product->brand_id == $brand->id) :
 				 			$i++;
 				 			?>
-							<div class="product-item" style="background-color: <?php echo $product->product_color ?>">
+							<div class="product-item" style="background-color: {{ $product->product_color }}">
 								<a href="{{ $product->product_link }}" target="_blank">
 									<div class="product-img">
 										<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
@@ -97,7 +97,7 @@
 										<div class="product-price-arrow">
 											<span>£{{ $product->product_price }}</span>
 											<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="<?php echo $product->brand->brand_tag_color ?>"/>
+												<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="{{ $product->brand->brand_tag_color }}"/>
 											</svg>
 										</div>
 									</div>
@@ -108,7 +108,7 @@
 
 						if (($product->brand->id == $brand->id) && $i == 1) : ?>
 							<div class="more-products">
-								<a href="javascript: void(0)">{{ $j }} more products from Yuicy<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
+								<a href="javascript: void(0)">{{ $j }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
 							</div>
 						<?php
 						endif;
