@@ -38,7 +38,8 @@ class WidgetController extends Controller
                 'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
             ]);
 
-        $brands = Brand::all();
+        // $brands = Brand::all();
+        $brands = Brand::orderBy('id', 'desc')->get();
         $products = Product::all();
         return view('widget.index', compact('brands', 'products'));
     }
