@@ -41,7 +41,7 @@ class WidgetController extends Controller
         // $brands = Brand::all();
         $brands = Brand::orderBy('id', 'desc')->get();
         $products = Product::all();
-        return view('widget.index', compact('brands', 'products'));
+        return view('widget.index', compact('brands', 'products', 'domain_url'));
     }
 
     /**

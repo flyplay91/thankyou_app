@@ -41,83 +41,85 @@
 
 	<div class="widget-body">
 		@foreach ($brands as $brand)
-		<div class="brand-product">
-			<div class="brand-infos">
-				<div class="brand-logo-title-tag">
-					<div class="brand-logo">
-						<img src="https://08abc8207af7.ngrok.io/images/{{ $brand->brand_image }}">
-					</div>
-					<div class="brand-title-tag">
-						<h3>{{ $brand->brand_title }}</h3>
-						<ul>
-							<?php if ( strpos($brand->brand_tag, ", ") !== false ) :
-								$brand_items = explode(", ", $brand->brand_tag);
+			@if ($domain_url == $brand->store->url)
+				<div class="brand-product">
+					<div class="brand-infos">
+						<div class="brand-logo-title-tag">
+							<div class="brand-logo">
+								<img src="https://08abc8207af7.ngrok.io/images/{{ $brand->brand_image }}">
+							</div>
+							<div class="brand-title-tag">
+								<h3>{{ $brand->brand_title }}</h3>
+								<ul>
+									<?php if ( strpos($brand->brand_tag, ", ") !== false ) :
+										$brand_items = explode(", ", $brand->brand_tag);
 
-						     	foreach ($brand_items as $brand_item) : ?>
-						     		<li style="background-color: <?php echo $brand->brand_tag_color ?>">{{ $brand_item }}</li>
-						     	<?php
-						     	endforeach;
-							else : ?>
-								<li>{{ $brand->brand_tag }}</li>
-				     		<?php
-							endif;
+								     	foreach ($brand_items as $brand_item) : ?>
+								     		<li style="background-color: <?php echo $brand->brand_tag_color ?>">{{ $brand_item }}</li>
+								     	<?php
+								     	endforeach;
+									else : ?>
+										<li>{{ $brand->brand_tag }}</li>
+						     		<?php
+									endif;
+									?>
+								</ul>
+							</div>
+						</div>
+						<div class="brand-text">
+							{{ $brand->brand_description }}
+						</div>
+					</div>
+					<div class="product-infos">
+						<div class="product-items">
+							<?php 
+							$j = 0;
+							foreach($products as $product) {
+								if ($product->brand_id == $brand->id) {
+									$j++;
+								}
+							}
+
+							$i = 0; 
+						 	foreach ($products as $product) :
+						 		if ($product->brand_id == $brand->id) :
+						 			$i++;
+						 			?>
+									<div class="product-item" style="background-color: {{ $product->product_color }}">
+										<a href="{{ $product->product_link }}" target="_blank">
+											<div class="product-img">
+												<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
+											</div>
+											<div class="product-text">
+												<div class="product-title-desc">
+													<h3>{{ $product->product_title }}</h3>
+													<p>{{ $product->product_description }}</p>
+												</div>
+												<div class="product-price-arrow">
+													<span>£{{ $product->product_price }}</span>
+													<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="{{ $product->brand->brand_tag_color }}"/>
+													</svg>
+												</div>
+											</div>
+										</a>
+									</div>
+								<?php
+								endif;
+
+								if (($product->brand->id == $brand->id) && $i == 1) : ?>
+									<div class="more-products">
+										<a href="javascript: void(0)">{{ $j }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
+									</div>
+								<?php
+								endif;
+							endforeach;
 							?>
-						</ul>
+						</div>
+						
 					</div>
 				</div>
-				<div class="brand-text">
-					{{ $brand->brand_description }}
-				</div>
-			</div>
-			<div class="product-infos">
-				<div class="product-items">
-					<?php 
-					$j = 0;
-					foreach($products as $product) {
-						if ($product->brand_id == $brand->id) {
-							$j++;
-						}
-					}
-
-					$i = 0; 
-				 	foreach ($products as $product) :
-				 		if ($product->brand_id == $brand->id) :
-				 			$i++;
-				 			?>
-							<div class="product-item" style="background-color: {{ $product->product_color }}">
-								<a href="{{ $product->product_link }}" target="_blank">
-									<div class="product-img">
-										<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
-									</div>
-									<div class="product-text">
-										<div class="product-title-desc">
-											<h3>{{ $product->product_title }}</h3>
-											<p>{{ $product->product_description }}</p>
-										</div>
-										<div class="product-price-arrow">
-											<span>£{{ $product->product_price }}</span>
-											<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="{{ $product->brand->brand_tag_color }}"/>
-											</svg>
-										</div>
-									</div>
-								</a>
-							</div>
-						<?php
-						endif;
-
-						if (($product->brand->id == $brand->id) && $i == 1) : ?>
-							<div class="more-products">
-								<a href="javascript: void(0)">{{ $j }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
-							</div>
-						<?php
-						endif;
-					endforeach;
-					?>
-				</div>
-				
-			</div>
-		</div>
+			@endif
 		@endforeach
 	</div>
 	
