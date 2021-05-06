@@ -36,7 +36,7 @@
             <tr data-id="{{ $product->id }}">
                 <td>{{ ++$i }}</td>
                 <td>
-                    {{ $product->brand->store->url }}
+                    {{ $product->store->url }}
                 </td>
                 <td>
                     {{ $product->brand->brand_title }}

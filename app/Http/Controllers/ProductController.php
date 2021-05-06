@@ -28,9 +28,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $stores = Store::all();
         $brands = Brand::all();
-        return view('products.create', compact('brands'));
+        return view('products.create', compact('stores', 'brands'));
     }
   
     /**
@@ -42,6 +43,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'store_id' => 'required',
             'brand_id' => 'required',
             'product_title' => 'required',
             'product_link' => 'required',
@@ -79,9 +81,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-
+        $stores = Store::all();
         $brands = Brand::all();
-        return view('products.edit',compact('product', 'brands'));
+        return view('products.edit',compact('product', 'stores', 'brands'));
     }
   
     /**
@@ -95,6 +97,7 @@ class ProductController extends Controller
     {
 
         $request->validate([
+            'store_id' => 'required',
             'brand_id' => 'required',
             'product_title' => 'required',
             'product_link' => 'required',

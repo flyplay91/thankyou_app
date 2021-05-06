@@ -40,8 +40,8 @@
 	</div>
 
 	<div class="widget-body">
-		@foreach ($brands as $brand)
-			@if ($domain_url == $brand->store->url)
+		@foreach ($store->brands as $brand)
+			
 				<div class="brand-product">
 					<div class="brand-infos">
 						<div class="brand-logo-title-tag">
@@ -73,15 +73,15 @@
 					<div class="product-infos">
 						<div class="product-items">
 							<?php 
-							$j = 0;
-							foreach($products as $product) {
+							$count = 0;
+							foreach($store->products as $product) {
 								if ($product->brand_id == $brand->id) {
-									$j++;
+									$count++;
 								}
 							}
 
-							$i = 0; 
-						 	foreach ($products as $product) :
+							$i = 0;
+						 	foreach ($store->products as $product) :
 						 		if ($product->brand_id == $brand->id) :
 						 			$i++;
 						 			?>
@@ -105,13 +105,13 @@
 										</a>
 									</div>
 								<?php
-								endif;
-
-								if (($product->brand->id == $brand->id) && $i == 1) : ?>
+									if ($count > 1 && $i == 1) :
+								?>
 									<div class="more-products">
-										<a href="javascript: void(0)">{{ $j }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
+										<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
 									</div>
 								<?php
+									endif;
 								endif;
 							endforeach;
 							?>
@@ -119,7 +119,7 @@
 						
 					</div>
 				</div>
-			@endif
+			
 		@endforeach
 	</div>
 	

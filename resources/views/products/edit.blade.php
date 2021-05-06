@@ -30,8 +30,15 @@
    
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <select class="browser-default custom-select mb-3" name="brand_id" required>
+                <select class="browser-default custom-select mb-3" name="store_id" required>
                     <option selected>Select Store</option>
+                    @foreach($stores as $store)
+                    <option value="{{ $store->id }}" @if($store->id == $product->store_id) selected @endif>{{ $store->url }}</option>
+                    @endforeach
+                </select>
+
+                <select class="browser-default custom-select mb-3" name="brand_id" required>
+                    <option selected>Select Brand</option>
                     @foreach($brands as $brand)
                     <option value="{{ $brand->id }}" @if($brand->id == $product->brand_id) selected @endif>{{ $brand->brand_title }}</option>
                     @endforeach

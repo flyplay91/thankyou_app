@@ -29,13 +29,13 @@
       
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <select class="browser-default custom-select mb-3" name="brand_id" required>
-                    <option selected>Select Brand</option>
-                    @foreach($brands as $brand)
-                    <option value="{{ $brand->id }}">{{ $brand->brand_title }}</option>
+                <select class="browser-default custom-select mb-3 select-product-store" name="store_id" required>
+                    <option selected>Select Store</option>
+                    @foreach($stores as $store)
+                    <option value="{{ $store->id }}">{{ $store->url }}</option>
                     @endforeach
                 </select>
-
+                
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Product Title</span>

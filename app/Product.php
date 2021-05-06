@@ -11,7 +11,12 @@ class Product extends Model
         return $this->belongsTo('App\Brand');
     }
 
+    public function store()
+    {
+        return $this->belongsTo('App\Store');
+    }
+
     protected $fillable = [
-        'brand_id', 'product_title', 'product_link', 'product_description', 'product_price', 'product_image', 'product_color'
+        'store_id', 'brand_id', 'product_title', 'product_link', 'product_description', 'product_price', 'product_image', 'product_color'
     ];
 }

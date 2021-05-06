@@ -18,30 +18,28 @@ class WidgetController extends Controller
      */
     public function index(Request $request)
     {
-     
         $domain_url = $request->domain_url;
         if (!$domain_url) {
             // exception handler
             return;
-        } else {
-            Store::where('url', $domain_url)
-            ->update([
-                'visitor_count' => DB::raw('visitor_count + 1')
-            ]);    
         }
 
-        
-
-        $user_email = $request->user_email;
         Store::where('url', $domain_url)
             ->update([
-                'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
+                'visitor_count' => DB::raw('visitor_count + 1')
             ]);
 
-        // $brands = Brand::all();
-        $brands = Brand::orderBy('id', 'desc')->get();
-        $products = Product::all();
-        return view('widget.index', compact('brands', 'products', 'domain_url'));
+        $user_email = $request->user_email;
+        if ($user_email) {
+            Store::where('url', $domain_url)
+                ->update([
+                    'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
+                ]);
+        }
+
+        $store = Store::firstWhere('url', $domain_url);
+
+        return view('widget.index', compact('store', 'domain_url'));
     }
 
     /**

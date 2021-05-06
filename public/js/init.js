@@ -10,28 +10,45 @@ $(document).ready(function() {
 		<link rel="stylesheet" href="https://08abc8207af7.ngrok.io/css/widget.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 		<script src="https://08abc8207af7.ngrok.io/js/widget.js"></script>
-		`);
-	$.get("http://ipinfo.io", function(response) {
+	`);
 
-		let countries = "US,GB,DE,ES,SE".split(",");
-	    const country = response.country;
-	    
-	    if (countries.includes(country)) {
-	    	$.ajax({
-				url: "https://08abc8207af7.ngrok.io/api/widget",
-				method: "POST",
-				data: {
-					domain_url: location.protocol + '//' + location.host
-				},
-				success: function(result) {
-					if ($('.widget-block').length < 1) {
-						Shopify.Checkout.OrderStatus.addContentBox(result);	
-					}
+	var store_url = location.protocol + '//' + location.host;
+	if (store_url == 'https://squeeze-skincare.myshopify.com') {
+		$.ajax({
+			url: "https://08abc8207af7.ngrok.io/api/widget",
+			method: "POST",
+			data: {
+				domain_url: location.protocol + '//' + location.host
+			},
+			success: function(result) {
+				if ($('.widget-block').length < 1) {
+					Shopify.Checkout.OrderStatus.addContentBox(result);	
 				}
-			});	
-	    }
-    
-  	}, "jsonp");
+			}
+		});	
+	} else {
+		$.get("http://ipinfo.io", function(response) {
+
+			let countries = "US,GB,DE,ES,SE".split(",");
+		    const country = response.country;
+		    
+		    if (countries.includes(country)) {
+		    	$.ajax({
+					url: "https://08abc8207af7.ngrok.io/api/widget",
+					method: "POST",
+					data: {
+						domain_url: location.protocol + '//' + location.host
+					},
+					success: function(result) {
+						if ($('.widget-block').length < 1) {
+							Shopify.Checkout.OrderStatus.addContentBox(result);	
+						}
+					}
+				});	
+		    }
+	    
+	  	}, "jsonp");
+	}
 
 
   $('body').on('click', '.btn-submit-email', function() {

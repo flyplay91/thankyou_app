@@ -19396,6 +19396,27 @@ $(document).ready(function () {
     }
 
     $(this).next(".custom-file-label").html(filenames.join(","));
+  });
+  $('.select-product-store').on('change', function () {
+    var selected_store_id = $(this).val();
+    $.ajax({
+      url: "/get-brands",
+      method: "GET",
+      data: {
+        store_id: selected_store_id,
+        __token: $('meta[name=csrf-token]').attr("content")
+      },
+      success: function success(results) {
+        var html = '';
+        html += '<select class="browser-default custom-select mb-3" name="brand_id" required>';
+        html += '<option selected>Select Brand</option>';
+        $.each(results, function (index, value) {
+          html += '<option value="' + value.brand_id + '">' + value.brand_title + '</option>';
+        });
+        html += '</select>';
+        $('.select-product-store').after(html);
+      }
+    });
   }); // Tabel drog & drop
   // $('table').DataTable();
   // $( "tbody" ).sortable({
