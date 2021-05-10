@@ -46,7 +46,7 @@
                 <td>{{ $product->product_description }}</td>
                 <td>{{ $product->product_price }}</td>
                 <td class="td-img"><img src="/images/{{ $product->product_image }}"></td>
-                <td>{{ $product->product_color }}</td>
+                <td>{{ hex2rgba($product->brand->brand_tag_color, 0.15) }}</td>
                 <td>
                     <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                         <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>

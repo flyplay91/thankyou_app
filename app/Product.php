@@ -17,6 +17,6 @@ class Product extends Model
     }
 
     protected $fillable = [
-        'store_id', 'brand_id', 'product_title', 'product_link', 'product_description', 'product_price', 'product_image', 'product_color'
+        'store_id', 'brand_id', 'product_title', 'product_link', 'product_description', 'product_price', 'product_image'
     ];
 }

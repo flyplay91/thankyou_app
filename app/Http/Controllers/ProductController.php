@@ -21,7 +21,7 @@ class ProductController extends Controller
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-   
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,7 +50,6 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => 'required',
             'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'product_color' => 'required',
         ]);
 
         $product = new Product($request->input()) ;
@@ -104,7 +103,6 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => 'required',
             'product_image' => 'required',
-            'product_color' => 'required',
         ]);
 
         $data = $request->all();

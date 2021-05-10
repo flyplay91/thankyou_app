@@ -85,7 +85,7 @@
 						 		if ($product->brand_id == $brand->id) :
 						 			$i++;
 						 			?>
-									<div class="product-item" style="background-color: {{ $product->product_color }}">
+									<div class="product-item" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
 										<a href="{{ $product->product_link }}" target="_blank">
 											<div class="product-img">
 												<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
