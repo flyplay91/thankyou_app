@@ -73,7 +73,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Brand Tag Color</span>
                     </div>
-                    <input type="text" name="brand_tag_color" value="{{ $brand->brand_tag_color }}" class="form-control" required>
+                    <!-- <input type="text" name="brand_tag_color" value="{{ $brand->brand_tag_color }}" class="form-control" required> -->
+
+                    <input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="{{ $brand->brand_tag_color }}"> 
+                    <input type="hidden" name="brand_tag_color" class="form-control" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="{{ $brand->brand_tag_color }}" id="hexcolor" required></input>
+                    
                 </div>
             </div>
             <div class="col-md-8">

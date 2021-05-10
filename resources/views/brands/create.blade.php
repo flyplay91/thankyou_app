@@ -68,7 +68,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Brand Tag Color</span>
                     </div>
-                    <input type="text" name="brand_tag_color" class="form-control" required>
+                    <input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55"> 
+                    <input type="hidden" name="brand_tag_color" class="form-control" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55" id="hexcolor" required></input>
+                    <!-- <input type="text" name="brand_tag_color" class="form-control" required> -->
                 </div>
             </div>
             <div class="col-md-8">
