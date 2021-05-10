@@ -21,7 +21,7 @@ class Email extends Mailable
     public function build()
     {
         $address = 'hello@joinohana.io';
-        $subject = 'This is a demo!';
+        $subject = 'Founder Factory Widget';
         $name = 'Founder Factory';
 
         return $this->view('emails.index')
@@ -30,6 +30,6 @@ class Email extends Mailable
                     ->bcc($address, $name)
                     ->replyTo($address, $name)
                     ->subject($subject)
-                    ->with([ 'test_message' => $this->data['message'] ]);
+                    ->with([ 'store' => $this->data['store'], 'domain_url' => $this->data['domain_url'] ]);
     }
 }

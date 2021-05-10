@@ -11,10 +11,6 @@ use App\Mail\Email;
 use Mail;
 use DB;
 
-
-
-    
-
 class EmailController extends Controller
 {
     public function index(Request $request)
@@ -26,15 +22,18 @@ class EmailController extends Controller
             return;
         }
 
-        
         $user_email = $request->user_email;
         Store::where('url', $domain_url)
             ->update([
                 'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
             ]);
 
+        $store = Store::firstWhere('url', $domain_url);
+
+
         try {
-	        $data = ['message' => 'This is a test!'];
+	        $data = ['store' => $store, 'domain_url' => $domain_url];
+            // var_dump($data);exit;
 			Mail::to($user_email)->send(new Email($data));
 
 			return response()->json([

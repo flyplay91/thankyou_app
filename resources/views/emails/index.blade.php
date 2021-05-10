@@ -432,404 +432,107 @@
 		        </h2>
 		        <p class="widget-text">We’ve hand picked these purpose driven brands just for you</p>
 		    </div>
+		   
 		    <div class="widget-body">
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/Yuicy-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Yuicy</h3>
-		                        <ul>
-		                            <li>Cruelty free</li>
-		                            <li>Vegan</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    Honest, tasty and high quality vitamin gummies that combat hairloss, sleep problems and acne.
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://react-cart-test.myshopify.com/" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/Yuicy-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Skin Vitamin Gummies</h3>
-		                                    <p>Delicious vitamin gummies for glowing and healthy skin.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£30</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                    <div class="product-item">
-		                        <a href="https://react-cart-test.myshopify.com/" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/Yuicy-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Skin Vitamin Gummies</h3>
-		                                    <p>Delicious vitamin gummies for glowing and healthy skin.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£30</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                    <div class="more-products">
-		                        <a href="javascript: void(0)">2 more products from Yuicy<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/delight-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>De Light</h3>
-		                        <ul>
-		                            <li>Female Founded</li>
-		                            <li>Gives Back</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    A menstrual wellness brand providing natural, research-backed relief. On a mission to support happy, healthy periods.
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/de-light-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Steady Mood</h3>
-		                                    <p>Targeted herbal and nutritional relief for PMS symptoms.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£26</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/stem-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Stem</h3>
-		                        <ul>
-		                            <li>Sustainably Sourced</li>
-		                            <li>Vegan</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    New type of vitamin, with real food. Sustainably sourced, delicious to eat, easy to digest.
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/stem-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Immunity Essentials</h3>
-		                                    <p>One chewable bite to help keep sick days at bay and digestion moving smoothly.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£45</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/im-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Immunitee</h3>
-		                        <ul>
-		                            <li>Gluten free</li>
-		                            <li>Vegan</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    Vitamins with science-backed ingredients to supplement your diet. Natural flavour, gluten-free and vegan.
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/immunitee-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Vitamin B Dose</h3>
-		                                    <p>A high-strength liquid that supports your immune system and helps maintain healthy bones.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£15</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/luxur-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Luxur</h3>
-		                        <ul>
-		                            <li>Cruelty free</li>
-		                            <li>Vegan</li>
-		                            <li>Zero Plastic</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    Luxur is on an mission to make personal care sustainable, fighting for a more clean and ethical beauty industry
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/luxur-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Hand wash kit</h3>
-		                                    <p>Hand wash developed using natural  ingredients: it’s non-GMO, gluten free, vegan and cruelty-free.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£17</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/squeeze-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Squeeze</h3>
-		                        <ul>
-		                            <li>Sustainably Sourced</li>
-		                            <li>Gives Back</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    A skincare brand using essential oils in their nutrient-rich formulas that help relieve mental and physical tension
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/squeeze-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Day cream</h3>
-		                                    <p>Thirst-quenching day cream with hyaluronic acid and citrics to help repare skin damage.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£30</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/sense-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Sense</h3>
-		                        <ul>
-		                            <li>Sustainably Sourced</li>
-		                            <li>Locally Made</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    Small batch candles designed and made by hand in the UK using high quality, sustainably sourced soy wax
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/sense-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Autumn feels candle</h3>
-		                                    <p>Aromas combining sweet orange, cedarwood and a hint of spice, will make you daydream of sun-kissed, smouldering scenery.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£22</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/natur-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Natur</h3>
-		                        <ul>
-		                            <li>1% for the planet</li>
-		                            <li>Cruelty Free</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    SPF that is comfortable to wear, feels like skincare and takes care of the planet.
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/natur-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Sunshine pack</h3>
-		                                    <p>this sunshine pack is all you need for a great time in the sun</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£50</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="brand-product">
-		            <div class="brand-infos">
-		                <div class="brand-logo-title-tag">
-		                    <div class="brand-logo">
-		                        <img src="https://08abc8207af7.ngrok.io/images/cheryl-logo.png">
-		                    </div>
-		                    <div class="brand-title-tag">
-		                        <h3>Cheryl</h3>
-		                        <ul>
-		                            <li>Cruelty free</li>
-		                            <li>Vegan</li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <div class="brand-text">
-		                    Beauty brand on a mission to strive to select effective and 100% vegan formulas
-		                </div>
-		            </div>
-		            <div class="product-infos">
-		                <div class="product-items">
-		                    <div class="product-item">
-		                        <a href="https://example.com" target="_blank">
-		                            <div class="product-img">
-		                                <img src="https://08abc8207af7.ngrok.io/images/cheryl-product-1.png">
-		                            </div>
-		                            <div class="product-text">
-		                                <div class="product-title-desc">
-		                                    <h3>Perfect Blush</h3>
-		                                    <p>A two-in-one creme for lips and cheeks that blends in seamlessly for an instant flushed effect, with zero effort.</p>
-		                                </div>
-		                                <div class="product-price-arrow">
-		                                    <span>£29.99</span>
-		                                    <img src="https://08abc8207af7.ngrok.io/images/right-arrow.svg">
-		                                </div>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		    <div class="widget-footer">
-		        <div class="email-list">
-		            <a href="mailto: abc@example.com"><img src="https://08abc8207af7.ngrok.io/images/email-icon.svg">Email me this list</a>
-		        </div>
-		        <div class="community-copyright">
-		            <div class="community">
-		                <label>Community Commerce</label>
-		                <span>Find out more</span>
-		            </div>
-		            <div class="copyright">
-		                <label>Powered by</label>
-		                <span>Ohana</span>
-		            </div>
-		        </div>
-		    </div>
+				@foreach ($store->brands as $brand)
+					
+						<div class="brand-product">
+							<div class="brand-infos">
+								<div class="brand-logo-title-tag">
+									<div class="brand-logo">
+										<img src="https://08abc8207af7.ngrok.io/images/{{ $brand->brand_image }}">
+									</div>
+									<div class="brand-title-tag">
+										<h3>{{ $brand->brand_title }}</h3>
+										<ul>
+											<?php if ( strpos($brand->brand_tag, ", ") !== false ) :
+												$brand_items = explode(", ", $brand->brand_tag);
+
+										     	foreach ($brand_items as $brand_item) : ?>
+										     		<li style="background-color: <?php echo $brand->brand_tag_color ?>">{{ $brand_item }}</li>
+										     	<?php
+										     	endforeach;
+											else : ?>
+												<li>{{ $brand->brand_tag }}</li>
+								     		<?php
+											endif;
+											?>
+										</ul>
+									</div>
+								</div>
+								<div class="brand-text">
+									{{ $brand->brand_description }}
+								</div>
+							</div>
+							<div class="product-infos">
+								<div class="product-items">
+									<?php 
+									$count = 0;
+									foreach($store->products as $product) {
+										if ($product->brand_id == $brand->id) {
+											$count++;
+										}
+									}
+
+									$i = 0;
+								 	foreach ($store->products as $product) :
+								 		if ($product->brand_id == $brand->id) :
+								 			$i++;
+								 			?>
+											<div class="product-item" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
+												<a href="{{ $product->product_link }}" target="_blank">
+													<div class="product-img">
+														<img src="https://08abc8207af7.ngrok.io/images/{{ $product->product_image }}">
+													</div>
+													<div class="product-text">
+														<div class="product-title-desc">
+															<h3>{{ $product->product_title }}</h3>
+															<p>{{ $product->product_description }}</p>
+														</div>
+														<div class="product-price-arrow">
+															<span>£{{ $product->product_price }}</span>
+															<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="{{ $product->brand->brand_tag_color }}"/>
+															</svg>
+														</div>
+													</div>
+												</a>
+											</div>
+										<?php
+											if ($count > 1 && $i == 1) :
+										?>
+											<div class="more-products">
+												<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="https://08abc8207af7.ngrok.io/images/down-arrow.svg"></a>
+											</div>
+										<?php
+											endif;
+										endif;
+									endforeach;
+									?>
+								</div>
+								
+							</div>
+						</div>
+					
+				@endforeach
+			</div>
+			
+			<div class="widget-footer">
+				<div class="email-list">
+					<a href = "mailto: abc@example.com"><img src="https://08abc8207af7.ngrok.io/images/email-icon.svg">Email me this list</a>
+				</div>
+				<div class="community-copyright">
+					<div class="community">
+						<label>Community Commerce</label>
+						<span>Find out more</span>
+					</div>
+					<div class="copyright">
+						<label>Powered by</label>
+						<span>Ohana</span>
+					</div>
+				</div>
+			</div>
+		   
 		</div>
   	</body>
 </html>
