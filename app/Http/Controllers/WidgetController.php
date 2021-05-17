@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
 use App\Store;
+use App\Iplist;
 use DB;
+
+
 
 class WidgetController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -18,16 +22,36 @@ class WidgetController extends Controller
      */
     public function index(Request $request)
     {
+        
         $domain_url = $request->domain_url;
+        $ip = $request->ip;
+
         if (!$domain_url) {
-            // exception handler
             return;
         }
 
+        $ipArr = DB::table('iplists')->where('store_url', $domain_url)->pluck('ip_address')->toArray();
+        if (!$ipArr || !in_array($ip, $ipArr)) {
+            $storeIpObj=array('store_url'=>$domain_url, 'ip_address'=>$ip,"created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+            DB::table('iplists')->insert($storeIpObj);
+
+            Store::where('url', $domain_url)
+            ->update([
+                'unique_visitor_count' => DB::raw('unique_visitor_count + 1')
+            ]);
+        }
+        
+
         Store::where('url', $domain_url)
             ->update([
-                'visitor_count' => DB::raw('visitor_count + 1')
+                'total_visitor_count' => DB::raw('total_visitor_count + 1')
             ]);
+
+        
+        
+        
+        
+               
 
         $user_email = $request->user_email;
         if ($user_email) {

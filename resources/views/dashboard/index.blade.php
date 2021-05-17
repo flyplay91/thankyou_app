@@ -14,14 +14,16 @@
 								<thead>
 									<tr>
 										<th>Store Url</th>
-										<th>Visitor Counts</th>
+										<th>Total Visitors</th>
+										<th>Unique Visitors</th>
 									</tr>
 								</thead>
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
 										<td>{{ $store->url }}</td>
-										<td>{{ $store->visitor_count }}</td>
+										<td>{{ $store->total_visitor_count }}</td>
+										<td>{{ $store->unique_visitor_count }}</td>
 									</tr>
 									@endforeach
 								</tbody>

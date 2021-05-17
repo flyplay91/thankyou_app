@@ -29,15 +29,17 @@ $(document).ready(function() {
 	} else {
 		$.get("http://ipinfo.io", function(response) {
 
-			let countries = "US,GB,DE,ES,SE".split(",");
+			let countries = "US,GB,DE,ES,SE,HK".split(",");
 		    const country = response.country;
+		    const ip = response.ip;
 		    
 		    if (countries.includes(country)) {
 		    	$.ajax({
 					url: "https://widget-dashboard.ngrok.io/api/widget",
 					method: "POST",
 					data: {
-						domain_url: location.protocol + '//' + location.host
+						domain_url: location.protocol + '//' + location.host,
+						ip: ip
 					},
 					success: function(result) {
 						if ($('.widget-block').length < 1) {
@@ -51,43 +53,41 @@ $(document).ready(function() {
 	}
 
 
-  $('body').on('click', '.btn-submit-email', function() {
-  	var emailVal = $('.send-email-modal__inner .email-value').val();
+	$('body').on('click', '.btn-submit-email', function() {
+	  	var emailVal = $('.send-email-modal__inner .email-value').val();
 
-  	if (emailVal == "") {
-  		$('.email-empty-error').addClass('active');
-  	} else {
-  		$('.email-empty-error').removeClass('active');
-
-  		if( !validateEmail(emailVal)) {
-	  		$('.email-validation-error').addClass('active');
+	  	if (emailVal == "") {
+	  		$('.email-empty-error').addClass('active');
 	  	} else {
-	  		$('.email-validation-error').removeClass('active');
+	  		$('.email-empty-error').removeClass('active');
 
-	  		$.ajax({
-	  			url: "https://widget-dashboard.ngrok.io/api/email",
-	  			method: "post",
-  			 	beforeSend: function(){
-			     	$(".ajax-loading").show();
-			   	},
-	  			data: {
-	  				user_email: emailVal,
-	  				domain_url: location.protocol + '//' + location.host
-	  			},
-	  			success: function(result) {
-	  				$(".ajax-loading").hide();
-	  				$('.send-email-modal__inner').addClass('success');
-	  				setTimeout(function(){
-	  					$('.send-email-modal__inner').removeClass('success');
-	  					$('.send-email-modal').removeClass('open');
-	  				}, 3000);
-	  			}
-	  		});
+	  		if( !validateEmail(emailVal)) {
+		  		$('.email-validation-error').addClass('active');
+		  	} else {
+		  		$('.email-validation-error').removeClass('active');
+
+		  		$.ajax({
+		  			url: "https://widget-dashboard.ngrok.io/api/email",
+		  			method: "post",
+	  			 	beforeSend: function(){
+				     	$(".ajax-loading").show();
+				   	},
+		  			data: {
+		  				user_email: emailVal,
+		  				domain_url: location.protocol + '//' + location.host
+		  			},
+		  			success: function(result) {
+		  				$(".ajax-loading").hide();
+		  				$('.send-email-modal__inner').addClass('success');
+		  				setTimeout(function(){
+		  					$('.send-email-modal__inner').removeClass('success');
+		  					$('.send-email-modal').removeClass('open');
+		  				}, 3000);
+		  			}
+		  		});
+		  	}
 	  	}
-  	}
-  	
-  });	
-	
+  	});	
 });
 
 // Email Validation
