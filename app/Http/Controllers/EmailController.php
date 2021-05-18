@@ -23,9 +23,17 @@ class EmailController extends Controller
         }
 
         $user_email = $request->user_email;
-        Store::where('url', $domain_url)
+        $store_id = DB::table('stores')->where('url', $domain_url)->pluck('id')->first();
+
+        $storeObj = array('store_id' => $store_id, 'user_email' => $user_email, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now());
+        DB::table('email')->insert($storeObj);
+        
+        // Get Total Email Count
+        $email_count = DB::table('email')->where('store_id', $store_id)->count();
+        
+        Store::where('id', $store_id)
             ->update([
-                'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
+                'email_count' => $email_count
             ]);
 
         $store = Store::firstWhere('url', $domain_url);
@@ -33,8 +41,7 @@ class EmailController extends Controller
 
         try {
 	        $data = ['store' => $store, 'domain_url' => $domain_url];
-            // var_dump($data);exit;
-			Mail::to($user_email)->send(new Email($data));
+            Mail::to($user_email)->send(new Email($data));
 
 			return response()->json([
 			    'failed' => '0'

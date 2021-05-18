@@ -31,6 +31,8 @@ Route::resource('products','ProductController')->middleware('auth');
 Route::resource('/visitor-counts','StoreVisitorCountController')->middleware('auth');
 Route::resource('/visitor-times','StoreVisitorTimeController')->middleware('auth');
 Route::resource('/click-counts','StoreClickCountController')->middleware('auth');
+Route::resource('/email-counts','StoreEmailCountController')->middleware('auth');
+
 
 
 

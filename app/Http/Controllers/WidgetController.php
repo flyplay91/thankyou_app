@@ -109,15 +109,9 @@ class WidgetController extends Controller
             ->update([
                 'daily_click_count' => $daily_click_count
             ]);
-        
 
-        $user_email = $request->user_email;
-        if ($user_email) {
-            Store::where('url', $domain_url)
-                ->update([
-                    'user_email' => DB::raw("CONCAT(user_email,IF(user_email = '', '', ','),'".$user_email."')")
-                ]);
-        }
+        
+        
 
         $store = Store::firstWhere('url', $domain_url);
 

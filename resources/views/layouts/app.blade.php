@@ -75,6 +75,12 @@
                     <span>Store Click Counts</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/email-counts">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Store Email Counts</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">
