@@ -13,16 +13,16 @@
 								<thead>
 									<tr>
 										<th>Store Url</th>
-										<th>Avarage Store Time</th>
-										<th>Avarage Product Time</th>
+										<th>Total Click Count</th>
+										<th>Click Count per Day</th>
 									</tr>
 								</thead>
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
 										<td>{{ $store->url }}</td>
-										<td>{{ gmdate("H:i:s", $store->avarage_store_time) }}</td>
-										<td>{{ gmdate("H:i:s", $store->avarage_product_time) }}</td>
+										<td>{{ $store->total_click_count }}</td>
+										<td>{{ $store->daily_click_count }}</td>
 									</tr>
 									@endforeach
 								</tbody>

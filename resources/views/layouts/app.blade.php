@@ -69,6 +69,12 @@
                     <span>Store Visitor Times</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/click-counts">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Store Click Counts</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">

@@ -15,8 +15,9 @@ class CreateStoretimesTable extends Migration
     {
         Schema::create('storetimes', function (Blueprint $table) {
             $table->id();
-            $table->intiger('store_time');
-            $table->intiger('product_time');
+            $table->string('store_id');
+            $table->string('store_time');
+            $table->string('product_time');
             $table->timestamps();
         });
     }

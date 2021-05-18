@@ -18,6 +18,8 @@ class CreateStoresTable extends Migration
             $table->string('url');
             $table->float('total_visitor_count');
             $table->float('unique_visitor_count');
+            $table->string('total_click_count');
+            $table->string('daily_click_count');
             $table->string('user_email');
             $table->timestamps();
         });
