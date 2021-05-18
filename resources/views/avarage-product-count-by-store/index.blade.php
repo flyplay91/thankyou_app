@@ -8,19 +8,19 @@
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
-							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email Counts</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Visitor Counts</div>
 							<table class="dashboard-table">
 								<thead>
 									<tr>
 										<th>Store Url</th>
-										<th>Email Counts</th>
+										<th>Avarage Product Click Count</th>
 									</tr>
 								</thead>
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
 										<td>{{ $store->url }}</td>
-										<td>{{ $store->email_count }}</td>
+										<td>{{ $store->avarage_product_count * 100 }}%</td>
 									</tr>
 									@endforeach
 								</tbody>

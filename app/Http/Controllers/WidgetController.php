@@ -57,13 +57,28 @@ class WidgetController extends Controller
                 ]);
             }    
         }
+
+        
         
         if ($domain_url) {
             // Update Total Visitor Count
             Store::where('url', $domain_url)
                 ->update([
-                    'total_visitor_count' => DB::raw('total_visitor_count + 1')
-                ]);    
+                    'total_visitor_count' => DB::raw('total_visitor_count + 1'),
+                    'total_product_count' => DB::raw('total_product_count + 1')
+                ]);
+
+            $total_visitor_count = DB::table('stores')->where('url', $domain_url)->pluck('total_visitor_count')->first();
+            $total_product_count = DB::table('stores')->where('url', $domain_url)->pluck('total_product_count')->first();
+            $avarage_product_count = number_format($total_product_count / $total_visitor_count,2);
+
+var_dump($total_product_count);
+
+            Store::where('url', $domain_url)
+                ->update([
+                    'avarage_product_count' => $avarage_product_count,
+
+                ]); 
         }
         
 
@@ -110,7 +125,7 @@ class WidgetController extends Controller
                 'daily_click_count' => $daily_click_count
             ]);
 
-        
+
         
 
         $store = Store::firstWhere('url', $domain_url);

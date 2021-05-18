@@ -81,6 +81,18 @@
                     <span>Store Email Counts</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/avarage-product-count-by-store">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Avarage Product Counts(by store)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/avarage-product-count-by-brand">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Avarage Product Counts(by brand)</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">
