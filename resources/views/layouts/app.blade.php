@@ -57,6 +57,18 @@
                     <span>Products</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/visitor-counts">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Store Visitor Counts</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/visitor-times">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Store Visitor Times</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">

@@ -8,6 +8,7 @@ use App\Product;
 use App\Brand;
 use App\Store;
 use App\Iplist;
+use App\Storetime;
 use DB;
 
 
@@ -26,33 +27,72 @@ class WidgetController extends Controller
         $domain_url = $request->domain_url;
         $ip = $request->ip;
 
-        if (!$domain_url) {
-            return;
+
+        $store_time = $request->store_time;
+        // var_dump($store_time);
+        $product_time = $request->product_time / 1000;
+        // $product_time = date("H:i:s", $product_time);
+        
+        
+
+        // if (!$domain_url) {
+        //     return;
+        // }
+
+        // Get Store Url from Domain ID
+        if ($domain_url) {
+            $store_id = DB::table('stores')->where('url', $domain_url)->pluck('id')->first();    
         }
+        
+        if ($domain_url && $ip) {
+            // Get Ip Address for unique visitors
+            $ipArr = DB::table('iplists')->where('store_url', $domain_url)->pluck('ip_address')->toArray();
+            if (!$ipArr || !in_array($ip, $ipArr)) {
+                $storeIpObj = array('store_url'=>$domain_url, 'ip_address'=>$ip,"created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+                DB::table('iplists')->insert($storeIpObj);
 
-        $ipArr = DB::table('iplists')->where('store_url', $domain_url)->pluck('ip_address')->toArray();
-        if (!$ipArr || !in_array($ip, $ipArr)) {
-            $storeIpObj=array('store_url'=>$domain_url, 'ip_address'=>$ip,"created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
-            DB::table('iplists')->insert($storeIpObj);
-
+                Store::where('url', $domain_url)
+                ->update([
+                    'unique_visitor_count' => DB::raw('unique_visitor_count + 1')
+                ]);
+            }    
+        }
+        
+        if ($domain_url) {
+            // Update Total Visitor Count
             Store::where('url', $domain_url)
-            ->update([
-                'unique_visitor_count' => DB::raw('unique_visitor_count + 1')
-            ]);
+                ->update([
+                    'total_visitor_count' => DB::raw('total_visitor_count + 1')
+                ]);    
         }
         
-
-        Store::where('url', $domain_url)
+var_dump($product_time);
+        // Get avarage visit time
+        if ($store_time) {
+            $visitTimeObj = array('store_id' => $store_id, 'store_time' => $store_time, 'product_time' => 0,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+            DB::table('storetimes')->insert($visitTimeObj);
+        }
+        $store_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
+        $total_store_times = DB::table('storetimes')->where('store_id', $store_id)->sum('store_time');
+        $avarage_store_time = number_format(intval($total_store_times) / $store_time_count, 2);    
+        
+        if ($product_time) {
+            $visitTimeObj = array('store_id' => $store_id, 'store_time' => 0, 'product_time' => $product_time,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+            DB::table('storetimes')->insert($visitTimeObj);
+        }
+        
+        $product_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
+        $total_product_times = DB::table('storetimes')->where('store_id', $store_id)->sum('product_time');
+        $avarage_product_time = number_format(intval($total_product_times) / $product_time_count, 2);
+        
+        
+        Store::where('id', $store_id)
             ->update([
-                'total_visitor_count' => DB::raw('total_visitor_count + 1')
+                'avarage_store_time' => $avarage_store_time,
+                'avarage_product_time' => $avarage_product_time
             ]);
-
         
         
-        
-        
-               
-
         $user_email = $request->user_email;
         if ($user_email) {
             Store::where('url', $domain_url)

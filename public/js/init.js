@@ -32,14 +32,48 @@ $(document).ready(function() {
 			let countries = "US,GB,DE,ES,SE,HK".split(",");
 		    const country = response.country;
 		    const ip = response.ip;
+
+		    var start_time = new Date();
+		    var end_product = 55;
 		    
 		    if (countries.includes(country)) {
+
+		    	$(window).on('beforeunload unload', function() {
+			  		debugger;
+			      	var end_time = new Date();
+			      	$.ajax({ 
+				        url: "https://widget-dashboard.ngrok.io/api/widget",
+				        method: "POST",
+				        data: {
+				        	store_time: end_time - start_time,
+				        },
+				        async: false
+			      	})
+
+			      	return "Test"
+			   	});
+
+			   	$('body').on('click', '.product-item', function() {
+			   		var end_time = new Date();
+			      	$.ajax({ 
+				        url: "https://widget-dashboard.ngrok.io/api/widget",
+				        method: "POST",
+				        data: {
+				        	domain_url: location.protocol + '//' + location.host,
+				        	product_time: end_time - start_time,
+				        },
+				        async: false
+			      	});
+			   	});
+
 		    	$.ajax({
 					url: "https://widget-dashboard.ngrok.io/api/widget",
 					method: "POST",
 					data: {
 						domain_url: location.protocol + '//' + location.host,
 						ip: ip
+						// store_time: end_store - start_store,
+						// product_time: end_product - start_store
 					},
 					success: function(result) {
 						if ($('.widget-block').length < 1) {

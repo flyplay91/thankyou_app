@@ -16,7 +16,12 @@ class Store extends Model
         return $this->hasMany('App\Product');
     }
 
+    public function storeTimes()
+    {
+        return $this->hasMany('App\Storetime');
+    }
+
     protected $fillable = [
-        'url'
+        'url', 'total_visitor_count', 'unique_visitor_count', 'avarage_store_time', 'avarage_product_time'
     ];
 }
