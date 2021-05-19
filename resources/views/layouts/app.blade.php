@@ -53,43 +53,43 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/products">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fab fa-fw fa-product-hunt"></i>
                     <span>Products</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/visitor-counts">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-calculator"></i>
                     <span>Store Visitor Counts</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/visitor-times">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="far fa-fw fa-clock"></i>
                     <span>Store Visitor Times</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/click-counts">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-calculator"></i>
                     <span>Store Click Counts</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/email-counts">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-envelope-square"></i>
                     <span>Store Email Counts</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/avarage-product-count-by-store">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-calculator"></i>
                     <span>Avarage Product Counts(by store)</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/avarage-product-count-by-brand">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-calculator"></i>
                     <span>Avarage Product Counts(by brand)</span>
                 </a>
             </li>

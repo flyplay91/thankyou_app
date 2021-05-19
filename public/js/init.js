@@ -38,20 +38,20 @@ $(document).ready(function() {
 		    
 		    if (countries.includes(country)) {
 
-		    	$(window).on('beforeunload unload', function() {
-			  		debugger;
-			      	var end_time = new Date();
-			      	$.ajax({ 
-				        url: "https://widget-dashboard.ngrok.io/api/widget",
-				        method: "POST",
-				        data: {
-				        	store_time: end_time - start_time,
-				        },
-				        async: false
-			      	})
+		    	// $(window).on('beforeunload unload', function() {
+			  		// debugger;
+			    //   	var end_time = new Date();
+			    //   	$.ajax({ 
+				   //      url: "https://widget-dashboard.ngrok.io/api/widget",
+				   //      method: "POST",
+				   //      data: {
+				   //      	store_time: end_time - start_time,
+				   //      },
+				   //      async: false
+			    //   	})
 
-			      	return "Test"
-			   	});
+			    //   	return "Test"
+			   	// });
 
 			   	$('body').on('click', '.product-item', function() {
 			   		var end_time = new Date();
