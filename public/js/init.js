@@ -55,12 +55,15 @@ $(document).ready(function() {
 
 			   	$('body').on('click', '.product-item', function() {
 			   		var end_time = new Date();
+			   		var product_title = $(this).find('.product-title-desc h3').text();
+
 			      	$.ajax({ 
 				        url: "https://widget-dashboard.ngrok.io/api/widget",
 				        method: "POST",
 				        data: {
 				        	domain_url: location.protocol + '//' + location.host,
 				        	product_time: end_time - start_time,
+				        	product_title: product_title
 				        },
 				        async: false
 			      	});

@@ -8,20 +8,26 @@
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
-							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Product Click Count By Store</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Product Click Count By Brand</div>
 							<table class="dashboard-table">
 								<thead>
 									<tr>
-										<th>Store Url</th>
+										<th>Brand Title</th>
 										<th>Avarage Product Click Count</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($stores as $store)
+									<?php
+										$brand_title = [];
+									?>
+									@foreach($brands as $brand)
+									@if(!in_array($brand->brand_title, $brand_title))
+									<?php $brand_title[] =$brand->brand_title; ?>
 									<tr>
-										<td>{{ $store->url }}</td>
-										<td>{{ $store->avarage_product_count * 100 }}%</td>
+										<td>{{ $brand->brand_title }}</td>
+										<td>{{ $brand->avarage_product_count * 100 }}%</td>
 									</tr>
+									@endif
 									@endforeach
 								</tbody>
 							</table>

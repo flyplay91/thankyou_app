@@ -17,6 +17,6 @@ class Brand extends Model
     }
 
     protected $fillable = [
-        'store_id', 'brand_image', 'brand_title', 'brand_tag', 'brand_description', 'brand_tag_color'
+        'store_id', 'brand_image', 'brand_title', 'brand_tag', 'brand_description', 'brand_tag_color', 'avarage_product_count'
     ];
 }

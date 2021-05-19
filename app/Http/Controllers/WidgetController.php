@@ -72,13 +72,24 @@ class WidgetController extends Controller
             $total_product_count = DB::table('stores')->where('url', $domain_url)->pluck('total_product_count')->first();
             $avarage_product_count = number_format($total_product_count / $total_visitor_count,2);
 
-var_dump($total_product_count);
 
             Store::where('url', $domain_url)
                 ->update([
                     'avarage_product_count' => $avarage_product_count,
 
                 ]); 
+        }
+
+        // Get Avarage Product Click Count by Total Visitors by Brand
+        $product_title = $request->product_title;
+        if (isset($product_title)) {
+            $brand_id_by_product_title = DB::table('products')->where('product_title', $product_title)->pluck('brand_id')->first();    
+
+            Brand::where('id', $brand_id_by_product_title)
+                ->update([
+                    'avarage_product_count' => $avarage_product_count,
+
+                ]);
         }
         
 
@@ -89,7 +100,13 @@ var_dump($total_product_count);
         }
         $store_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
         $total_store_times = DB::table('storetimes')->where('store_id', $store_id)->sum('store_time');
-        $avarage_store_time = intval($total_store_times / $store_time_count);    
+        if ($store_time_count > 0 && $total_store_times > 0) {
+            $avarage_store_time = intval($total_store_times / $store_time_count);    
+        } else {
+            $avarage_store_time = 0;
+        }
+        
+
         
         if ($product_time) {
             $visitTimeObj = array('store_id' => $store_id, 'store_time' => 0, 'product_time' => $product_time,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
@@ -98,7 +115,11 @@ var_dump($total_product_count);
         
         $product_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
         $total_product_times = DB::table('storetimes')->where('store_id', $store_id)->sum('product_time');
-        $avarage_product_time = intval($total_product_times / $product_time_count);
+        if ($product_time_count > 0 && $total_product_times > 0) {
+            $avarage_product_time = intval($total_product_times / $product_time_count);
+        } else {
+            $avarage_product_time = 0;
+        }
         
         Store::where('id', $store_id)
             ->update([
@@ -126,7 +147,10 @@ var_dump($total_product_count);
             ]);
 
 
+
         
+        
+
 
         $store = Store::firstWhere('url', $domain_url);
 

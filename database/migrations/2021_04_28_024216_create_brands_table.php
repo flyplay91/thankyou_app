@@ -20,6 +20,8 @@ class CreateBrandsTable extends Migration
             $table->string('brand_title');
             $table->string('brand_tag');
             $table->string('brand_description');
+            $table->string('brand_tag_color');
+            $table->string('avarage_product_count');
             $table->timestamps();
         });
     }
