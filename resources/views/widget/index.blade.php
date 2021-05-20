@@ -21,15 +21,21 @@
 			<div class="send-email-modal">
 			  	<div class="send-email-modal__inner">
 			  		<div class="send-email-before-success">
-				  		<h3>Please enter your email.<span class="btn-close">X</span></h3>
-				  		<input type="text" placeholder="example@email.com" class="email-value">
+				  		<h3>Send straight to my inbox<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<p>Put your feet up, we’ll hand deliver these recommendations from the brands we think you’ll love straight to your inbox.</p>
+				  		<input type="text" placeholder="Your email" class="email-value">
 				  		<label class="email-validation-error">Invalid email address.</label>
 				  		<label class="email-empty-error">Please type your email.</label>
-			  			<a href="javascript:void(0)" class="btn-submit-email">Submit</a>
+			  			<a href="javascript:void(0)" class="btn-submit-email">Send it to me!</a>
 			  		</div>
 			  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
 			  		<div class="send-email-after-success">
-			  			<h3>Email sent successfully.<span class="btn-close">X</span></h3>
+			  			<h3>Send straight to my inbox<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<p>Put your feet up, we’ll hand deliver these recommendations from the brands we think you’ll love straight to your inbox.</p>
+				  		<input type="text" class="success-email-value">
+				  		<div class="horizontal-line"></div>
+			  			<a href="javascript:void(0)" class="btn-close">Done! Close this window</a>
+			  			<a href="javascript:void(0)" class="btn-email-list">Email a friend who might enjoy this list</a>
 			  		</div>
 			  	</div>
 			</div>

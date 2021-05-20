@@ -13,5 +13,9 @@ $(document).ready(function() {
 	$('body').on('click', '.send-email-modal__inner .btn-close', function() {
 		$('.send-email-modal').removeClass('open');
 	});
+
+	$('body').on('input', '.email-value', function() {
+	    $('.btn-submit-email').css({'border-color': 'black', 'color': 'black'});
+	});
 });
 

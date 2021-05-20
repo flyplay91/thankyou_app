@@ -116,15 +116,21 @@ $(document).ready(function() {
 		  			success: function(result) {
 		  				$(".ajax-loading").hide();
 		  				$('.send-email-modal__inner').addClass('success');
-		  				setTimeout(function(){
-		  					$('.send-email-modal__inner').removeClass('success');
-		  					$('.send-email-modal').removeClass('open');
-		  				}, 3000);
+		  				$('.success-email-value').val(result.email);
+		  				$('.send-email-before-success .email-value').val('');
 		  			}
 		  		});
 		  	}
 	  	}
   	});	
+
+  	$('body').on('click', '.send-email-modal__inner .btn-close', function() {
+  		$('.send-email-modal').removeClass('open');
+  	});
+
+  	$('body').on('click', '.send-email-after-success a.btn-close', function() {
+  		$('.send-email-modal__inner').removeClass('success');
+  	});
 });
 
 // Email Validation
