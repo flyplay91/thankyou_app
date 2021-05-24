@@ -1,10 +1,16 @@
 
 $(document).ready(function() {
 	$('body').on('click', '.more-products > a', function() {
-		$(this).toggleClass('open');
-		$(this).closest('.product-items').find('.product-item:not(:first)').toggleClass('active');
 		$(this).closest('.more-products').hide();
+		$(this).closest('.product-items').find('.product-item:not(:first)').addClass('active');
+		$(this).closest('.product-items').find('.product-item.active:last-child').after('<div class="less-products"><a href="javascript: void(0)">2 more products from Freestar<img src="https://widget-dashboard.ngrok.io/images/down-arrow.svg"></a></div>');
 	});
+
+	$('body').on('click', '.less-products > a', function() {
+		$(this).closest('.product-items').find('.product-item.active').removeClass('active');
+		$(this).closest('.product-items').find('.more-products').show();
+		$(this).closest('.less-products').remove();
+	})
 
 	$('body').on('click', '.btn-send-email', function() {
 		$(this).siblings('.send-email-modal').toggleClass('open');
