@@ -16,6 +16,12 @@ $(document).ready(function() {
 
 	$('body').on('input', '.email-value', function() {
 	    $('.btn-submit-email').css({'border-color': 'black', 'color': 'black'});
+	    $('.btn-submit-email svg path').css('fill', 'black');
+	});
+
+	$('body').on('input', '.friend-email-value', function() {
+	    $('.btn-submit-friend-email').css({'border-color': 'black', 'color': 'black'});
+	    $('.btn-submit-friend-email svg path').css('fill', 'black');
 	});
 });
 

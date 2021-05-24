@@ -26,7 +26,12 @@
 				  		<input type="text" placeholder="Your email" class="email-value">
 				  		<label class="email-validation-error">Invalid email address.</label>
 				  		<label class="email-empty-error">Please type your email.</label>
-			  			<a href="javascript:void(0)" class="btn-submit-email">Send it to me!</a>
+			  			<a href="javascript:void(0)" class="btn-submit-email">
+			  				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+								<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+							</svg>
+			  				Send it to me!
+			  			</a>
 			  		</div>
 			  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
 			  		<div class="send-email-after-success">
@@ -34,14 +39,55 @@
 				  		<p>Put your feet up, we’ll hand deliver these recommendations from the brands we think you’ll love straight to your inbox.</p>
 				  		<input type="text" class="success-email-value">
 				  		<div class="horizontal-line"></div>
-			  			<a href="javascript:void(0)" class="btn-close">Done! Close this window</a>
-			  			<a href="javascript:void(0)" class="btn-email-list">Email a friend who might enjoy this list</a>
+			  			<a href="javascript:void(0)" class="btn-close">
+		  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+								<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+							</svg>
+			  				Done! Close this window
+			  			</a>
+			  			<a href="javascript:void(0)" class="btn-email-list">
+			  				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+								<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+							</svg>
+			  				Email a friend who might enjoy this list
+			  			</a>
+			  		</div>
+			  	</div>
+			</div>
+
+			<!-- Friend Modal -->			
+			<div class="send-friend-email-modal">
+			  	<div class="send-friend-email-modal__inner">
+			  		<div class="send-friend-email-before-success">
+				  		<h3>Spread the love<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<p>Send this lovely list to a friend you think will love the brands and products in it. Aren’t you an awesome friend!</p>
+				  		<input type="text" placeholder="Your friend's email" class="friend-email-value">
+				  		<label class="friend-email-validation-error">Invalid email address.</label>
+				  		<label class="friend-email-empty-error">Please type your email.</label>
+			  			<a href="javascript:void(0)" class="btn-submit-friend-email">
+			  				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+								<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+							</svg>
+			  				Send it to my friend!
+			  			</a>
+			  		</div>
+			  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
+			  		<div class="send-friend-email-after-success">
+			  			<h3>Spread the love<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<p>Send this lovely list to a friend you think will love the brands and products in it. Aren’t you an awesome friend!</p>
+				  		<input type="text" class="success-friend-email-value">
+				  		<div class="horizontal-line"></div>
+			  			<a href="javascript:void(0)" class="btn-friend-close">
+		  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+								<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+							</svg>
+			  				Done! Close this window
+			  			</a>
 			  		</div>
 			  	</div>
 			</div>
 		</h2>
 
-		
 		<p class="widget-text">We’ve hand picked these purpose driven brands just for you</p>	
 	</div>
 

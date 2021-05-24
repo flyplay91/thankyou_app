@@ -34,7 +34,8 @@ body {
   	align-items: center;
 }
 
-.send-email-modal {
+.send-email-modal,
+.send-friend-email-modal {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -51,7 +52,8 @@ body {
 	display: flex;
 }
 
-.send-email-modal__inner {
+.send-email-modal__inner,
+.send-friend-email-modal__inner {
 	background-color: white;
   	border-radius: 8px;
   	padding: 20px;
@@ -68,19 +70,23 @@ body {
 	display: none;
 }
 
-.send-email-modal__inner .send-email-after-success {
+.send-email-modal__inner .send-email-after-success,
+.send-friend-email-modal__inner .send-friend-email-after-success {
 	display: none;
 }
 
-.send-email-modal__inner.success .send-email-before-success {
+.send-email-modal__inner.success .send-email-before-success,
+.send-friend-email-modal__inner.success .send-friend-email-before-success {
 	display: none;
 }
 
-.send-email-modal__inner.success .send-email-after-success {
+.send-email-modal__inner.success .send-email-after-success,
+.send-friend-email-modal__inner.success .send-friend-email-after-success {
 	display: block;
 }
 
-.send-email-modal__inner h3 {
+.send-email-modal__inner h3,
+.send-friend-email-modal__inner h3 {
   	font-size: 20px;
   	padding-bottom: 15px;
   	display: flex;
@@ -89,7 +95,8 @@ body {
     border-bottom: solid 1px #F0F0F2;
 }
 
-.send-email-modal__inner p {
+.send-email-modal__inner p,
+.send-friend-email-modal__inner p {
 	font-size: 16px;
 	line-height: 24px;
 	padding-top: 15px;
@@ -97,14 +104,16 @@ body {
 	font-weight: 400;
 }
 
-.send-email-modal__inner h3 span {
+.send-email-modal__inner h3 span,
+.send-friend-email-modal__inner h3 span {
 	position: absolute;
   top: 0;
   right: 5px;
   cursor: pointer;
 }
 
-.send-email-modal__inner input {
+.send-email-modal__inner input,
+.send-friend-email-modal__inner input {
 	background-color: #F8F8F8;
 	border: 1px solid #AFAFAF;;
 	padding: 10px;
@@ -114,29 +123,35 @@ body {
 	font-weight: 400;
 }
 
-.send-email-modal__inner input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.send-email-modal__inner input::-webkit-input-placeholder,
+.send-friend-email-modal__inner::-webkit-input-placeholder  { /* Chrome/Opera/Safari */
   	color: #AFAFAF;
   	font-size: 16px;
   	font-weight: 400;
 }
-.send-email-modal__inner input::-moz-placeholder { /* Firefox 19+ */
+.send-email-modal__inner input::-moz-placeholder,
+.send-friend-email-modal__inner::-moz-placeholder { /* Firefox 19+ */
   	color: #AFAFAF;
   	font-size: 16px;
   	font-weight: 400;
 }
-.send-email-modal__inner input:-ms-input-placeholder { /* IE 10+ */
+.send-email-modal__inner input:-ms-input-placeholder,
+.send-friend-email-modal__inner:-ms-input-placeholder { /* IE 10+ */
   	color: #AFAFAF;
   	font-size: 16px;
   	font-weight: 400;
 }
-.send-email-modal__inner input:-moz-placeholder { /* Firefox 18- */
+.send-email-modal__inner input:-moz-placeholder,
+.send-friend-email-modal__inner:-moz-placeholder { /* Firefox 18- */
   	color: #AFAFAF;
   	font-size: 16px;
   	font-weight: 400;
 }
 
 .send-email-modal__inner .email-validation-error,
-.send-email-modal__inner .email-empty-error {
+.send-email-modal__inner .email-empty-error,
+.send-friend-email-modal__inner .friend-email-validation-error,
+.send-friend-email-modal__inner .friend-email-empty-error {
 	display: none;
   font-size: 12px;
   text-align: center;
@@ -145,11 +160,14 @@ body {
 }
 
 .send-email-modal__inner .email-validation-error.active,
-.send-email-modal__inner .email-empty-error.active {
+.send-email-modal__inner .email-empty-error.active,
+.send-friend-email-modal__inner .email-validation-error.active,
+.send-friend-email-modal__inner .email-empty-error.active {
 	display: block;
 }
 
-.btn-submit-email {
+.btn-submit-email,
+.btn-submit-friend-email {
 	display: block;
   text-align: center;
       padding: 8px;
@@ -159,9 +177,30 @@ body {
   color: #DDDDDD;
     border: 1px solid #DDDDDD;
     font-weight: 400;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.btn-submit-email:hover {
+.btn-submit-email svg,
+.btn-submit-friend-email svg {
+	width: 22px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+.btn-submit-email svg path,
+.btn-submit-friend-email svg path {
+    fill: #dddddd;
+}
+
+.btn-submit-email:hover svg path,
+.btn-submit-friend-email:hover svg path {
+	fill: white !important;
+}
+
+.btn-submit-email:hover,
+.btn-submit-friend-email:hover {
 	color: white !important;
 	border-color: black;
 	background-color: black;
@@ -190,15 +229,19 @@ body {
   margin-right: 5px;
 }
 
-.send-email-after-success .horizontal-line {
+.send-email-after-success .horizontal-line,
+.send-friend-email-after-success .horizontal-line {
 	background-color: #F0F0F2;
     margin-top: 24px;
     margin-bottom: 24px;
     height: 1px;
 }
 
-.send-email-after-success a.btn-close {
-	display: block;
+.send-email-after-success a.btn-close,
+.send-friend-email-after-success a.btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #6FCF97;
     border-radius: 4px;
     color: white;
@@ -209,8 +252,23 @@ body {
     margin-bottom: 20px;
 }
 
+.send-email-after-success a.btn-close svg,
+.send-email-after-success .btn-email-list svg,
+.send-friend-email-after-success a.btn-close svg,
+.send-friend-email-after-success .btn-email-list svg {
+	width: 22px;
+    margin-right: 5px;
+}
+
+.send-email-after-success a.btn-close svg path,
+.send-friend-email-after-success a.btn-close svg path {
+    fill: white;
+}
+
 .send-email-after-success .btn-email-list {
-	display: block;
+	display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 8px;
     font-size: 16px;
@@ -220,7 +278,21 @@ body {
     font-weight: 400;
 }
 
-.send-email-modal__inner .btn-close {
+.send-email-after-success .btn-email-list svg path {
+	fill: black;
+}
+
+.send-email-after-success .btn-email-list:hover {
+	background-color: black;
+    color: white;
+}
+
+.send-email-after-success .btn-email-list:hover svg path {
+	fill: white;
+}
+
+.send-email-modal__inner .btn-close,
+.send-friend-email-modal__inner .btn-close {
 	cursor: pointer;
 }
 
