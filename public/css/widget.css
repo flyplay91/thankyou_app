@@ -50,7 +50,8 @@ body {
 }
 
 .send-email-modal.open,
-.send-feedback-modal.open {
+.send-feedback-modal.open,
+.send-friend-email-modal.open {
 	display: flex;
 }
 
@@ -131,6 +132,18 @@ body {
 	font-weight: 400;
 }
 
+.send-friend-email-modal__inner textarea {
+	background-color: #F8F8F8;
+    border: 1px solid #AFAFAF;
+    width: -webkit-fill-available;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100px;
+    margin-top: 16px;
+}
+
 .send-email-modal__inner input::-webkit-input-placeholder,
 .send-friend-email-modal__inner::-webkit-input-placeholder  { /* Chrome/Opera/Safari */
   	color: #AFAFAF;
@@ -169,8 +182,8 @@ body {
 
 .send-email-modal__inner .email-validation-error.active,
 .send-email-modal__inner .email-empty-error.active,
-.send-friend-email-modal__inner .email-validation-error.active,
-.send-friend-email-modal__inner .email-empty-error.active {
+.send-friend-email-modal__inner .friend-email-validation-error.active,
+.send-friend-email-modal__inner .friend-email-empty-error.active {
 	display: block;
 }
 
@@ -303,7 +316,8 @@ body {
 
 .send-email-after-success a.btn-close,
 .send-friend-email-after-success a.btn-close,
-.send-feedback-after-success a.btn-close {
+.send-feedback-after-success a.btn-close,
+.send-friend-email-after-success a.btn-close {
     display: flex;
     align-items: center;
     justify-content: center;

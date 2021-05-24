@@ -153,6 +153,39 @@ $(document).ready(function() {
 		   	}
   		});
   	});
+
+  	$('body').on('click', '.btn-submit-friend-email', function() {
+  		var friendEmailVal = $('.send-friend-email-modal__inner .friend-email-value').val();
+
+	  	if (friendEmailVal == "") {
+	  		$('.friend-email-empty-error').addClass('active');
+	  	} else {
+	  		$('.friend-email-empty-error').removeClass('active');
+
+	  		if( !validateEmail(friendEmailVal)) {
+		  		$('.friend-email-validation-error').addClass('active');
+		  	} else {
+		  		$('.friend-email-validation-error').removeClass('active');
+
+		  		$.ajax({
+		  			url: "https://widget-dashboard.ngrok.io/api/friend-email",
+		  			method: "post",
+	  			 	beforeSend: function(){
+				     	$(".ajax-loading").show();
+				   	},
+		  			data: {
+		  				friend_email: friendEmailVal,
+		  				domain_url: location.protocol + '//' + location.host
+		  			},
+		  			success: function(result) {
+		  				$(".ajax-loading").hide();
+		  				$('.send-friend-email-modal__inner').addClass('success');
+		  				console.log(result);
+		  			}
+		  		});
+		  	}
+	  	}
+  	});	
 });
 
 // Email Validation

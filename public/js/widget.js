@@ -16,6 +16,12 @@ $(document).ready(function() {
 		$(this).siblings('.send-email-modal').toggleClass('open');
 	});
 
+	$('body').on('click', '.btn-email-list', function() {
+		$('.send-email-modal').removeClass('open');
+		$('.send-friend-email-modal').addClass('open');
+	});
+
+
 	$('body').on('click', '.email-list', function() {
 		$('.btn-send-email').trigger('click');
 	});
@@ -26,6 +32,10 @@ $(document).ready(function() {
 
 	$('body').on('click', '.send-feedback-modal__inner .btn-close', function() {
 		$('.send-feedback-modal').removeClass('open');
+	});
+
+	$('body').on('click', '.send-friend-email-modal__inner .btn-close', function() {
+		$('.send-friend-email-modal').removeClass('open');
 	});
 
 	$('body').on('click', '.community > a', function() {
