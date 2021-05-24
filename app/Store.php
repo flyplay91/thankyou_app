@@ -22,6 +22,6 @@ class Store extends Model
     }
 
     protected $fillable = [
-        'url', 'total_visitor_count', 'unique_visitor_count', 'avarage_store_time', 'avarage_product_time', 'total_click_count', 'dayly_click_count', 'email_count', 'total_product_count', 'avarage_product_count'
+        'url', 'total_visitor_count', 'unique_visitor_count', 'avarage_store_time', 'avarage_product_time', 'total_click_count', 'dayly_click_count', 'email_count', 'total_product_count', 'avarage_product_count', 'feedback_rating_1', 'feedback_rating_2', 'feedback_rating_3', 'feedback_rating_4', 'feedback_rating_5'
     ];
 }

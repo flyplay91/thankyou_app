@@ -23,6 +23,11 @@ class CreateStoresTable extends Migration
             $table->string('email_count');
             $table->string('$total_product_count');
             $table->string('avarage_product_count');
+            $table->string('feedback_rating_1');
+            $table->string('feedback_rating_2');
+            $table->string('feedback_rating_3');
+            $table->string('feedback_rating_4');
+            $table->string('feedback_rating_5');
             $table->timestamps();
         });
     }

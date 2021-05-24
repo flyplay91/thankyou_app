@@ -35,7 +35,8 @@ body {
 }
 
 .send-email-modal,
-.send-friend-email-modal {
+.send-friend-email-modal,
+.send-feedback-modal {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -48,12 +49,14 @@ body {
 	z-index: 111;
 }
 
-.send-email-modal.open {
+.send-email-modal.open,
+.send-feedback-modal.open {
 	display: flex;
 }
 
 .send-email-modal__inner,
-.send-friend-email-modal__inner {
+.send-friend-email-modal__inner,
+.send-feedback-modal__inner {
 	background-color: white;
   	border-radius: 8px;
   	padding: 20px;
@@ -71,22 +74,26 @@ body {
 }
 
 .send-email-modal__inner .send-email-after-success,
-.send-friend-email-modal__inner .send-friend-email-after-success {
+.send-friend-email-modal__inner .send-friend-email-after-success,
+.send-feedback-modal__inner .send-feedback-after-success {
 	display: none;
 }
 
 .send-email-modal__inner.success .send-email-before-success,
-.send-friend-email-modal__inner.success .send-friend-email-before-success {
+.send-friend-email-modal__inner.success .send-friend-email-before-success,
+.send-feedback-modal__inner.success .send-feedback-before-success {
 	display: none;
 }
 
 .send-email-modal__inner.success .send-email-after-success,
-.send-friend-email-modal__inner.success .send-friend-email-after-success {
+.send-friend-email-modal__inner.success .send-friend-email-after-success,
+.send-feedback-modal__inner.success .send-feedback-after-success {
 	display: block;
 }
 
 .send-email-modal__inner h3,
-.send-friend-email-modal__inner h3 {
+.send-friend-email-modal__inner h3,
+.send-feedback-modal__inner h3 {
   	font-size: 20px;
   	padding-bottom: 15px;
   	display: flex;
@@ -96,7 +103,8 @@ body {
 }
 
 .send-email-modal__inner p,
-.send-friend-email-modal__inner p {
+.send-friend-email-modal__inner p,
+.send-feedback-modal__inner p {
 	font-size: 16px;
 	line-height: 24px;
 	padding-top: 15px;
@@ -182,6 +190,62 @@ body {
     justify-content: center;
 }
 
+.send-feedback-modal .feedback-rating {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.send-feedback-modal .feedback-rating li {
+	cursor: pointer;
+}
+
+.send-feedback-modal .feedback-rating li svg {
+	width: 50px;
+}
+
+.send-feedback-modal .feedback-rating li.active svg path {
+	fill: black;
+}
+
+.feedback-content {
+	display: none;
+}
+
+.feedback-content.open {
+	display: block;
+}
+
+.btn-submit-feedback {
+	display: block;
+  text-align: center;
+      padding: 8px;
+    font-size: 16px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  color: black;
+    border: 1px solid black;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit-feedback:hover {
+	color: white;
+	background-color: black;
+}
+
+.send-feedback-modal textarea {
+    height: 95px;
+    border: 1px solid #AFAFAF;
+    border-radius: 4px;
+    padding: 12px;
+    width: -webkit-fill-available;
+    background-color: #F8F8F8;
+    margin-top: 30px;
+}
+
 .btn-submit-email svg,
 .btn-submit-friend-email svg {
 	width: 22px;
@@ -238,7 +302,8 @@ body {
 }
 
 .send-email-after-success a.btn-close,
-.send-friend-email-after-success a.btn-close {
+.send-friend-email-after-success a.btn-close,
+.send-feedback-after-success a.btn-close {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,7 +357,8 @@ body {
 }
 
 .send-email-modal__inner .btn-close,
-.send-friend-email-modal__inner .btn-close {
+.send-friend-email-modal__inner .btn-close,
+.send-feedback-modal__inner .btn-close {
 	cursor: pointer;
 }
 
@@ -473,15 +539,23 @@ body {
 
 .email-list a {
 	text-decoration: none;
-	color: black;
-	display: flex;
-	align-items: center;
-	font-size: 16px;
-	font-weight: bold;
+	background-color: #2D2D2D;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+    justify-content: center;
+    padding: 11px;
 }
 
-.email-list a img {
+.email-list a svg {
 	margin-right: 8px;
+}
+
+.email-list a svg path {
+	fill: white;
 }
 
 .community-copyright {
@@ -491,10 +565,13 @@ body {
   justify-content: space-between;
 }
 
-.community label {
-	display: block;
-	font-size: 16px;
-	color: #666666;
+.community a {
+    display: flex;
+    align-items: center;
+}
+
+.community a img {
+	margin-right: 5px;
 }
 
 .community span {

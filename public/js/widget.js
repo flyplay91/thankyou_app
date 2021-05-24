@@ -16,8 +16,20 @@ $(document).ready(function() {
 		$(this).siblings('.send-email-modal').toggleClass('open');
 	});
 
+	$('body').on('click', '.email-list', function() {
+		$('.btn-send-email').trigger('click');
+	});
+
 	$('body').on('click', '.send-email-modal__inner .btn-close', function() {
 		$('.send-email-modal').removeClass('open');
+	});
+
+	$('body').on('click', '.send-feedback-modal__inner .btn-close', function() {
+		$('.send-feedback-modal').removeClass('open');
+	});
+
+	$('body').on('click', '.community > a', function() {
+		$('.send-feedback-modal').addClass('open');
 	});
 
 	$('body').on('input', '.email-value', function() {
@@ -28,6 +40,12 @@ $(document).ready(function() {
 	$('body').on('input', '.friend-email-value', function() {
 	    $('.btn-submit-friend-email').css({'border-color': 'black', 'color': 'black'});
 	    $('.btn-submit-friend-email svg path').css('fill', 'black');
+	});
+
+	$('body').on('click', '.feedback-rating li', function() {
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
+		$('.feedback-content').addClass('open');
 	});
 });
 

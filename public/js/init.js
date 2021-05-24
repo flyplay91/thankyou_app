@@ -131,6 +131,28 @@ $(document).ready(function() {
   	$('body').on('click', '.send-email-after-success a.btn-close', function() {
   		$('.send-email-modal__inner').removeClass('success');
   	});
+
+  	$('body').on('click', '.btn-submit-feedback', function() {
+  		var feedback_raging_val = $('.feedback-rating li.active').data('value');
+  		var feedback_comment_val = $('.feedback-content textarea').val();
+
+  		$.ajax({
+  			url: "https://widget-dashboard.ngrok.io/api/feedback-rating",
+  			method: "post",
+  			beforeSend: function(){
+		     	$(".ajax-loading").show();
+		   	},
+		   	data: {
+		   		feedback_raging_val: feedback_raging_val,
+		   		feedback_comment_val, feedback_comment_val,
+		   		domain_url: location.protocol + '//' + location.host
+		   	},
+		   	success: function(result) {
+		   		$(".ajax-loading").hide();
+		   		$('.send-feedback-modal__inner').addClass('success');
+		   	}
+  		});
+  	});
 });
 
 // Email Validation

@@ -177,16 +177,82 @@
 	
 	<div class="widget-footer">
 		<div class="email-list">
-			<a href = "mailto: abc@example.com"><img src="https://widget-dashboard.ngrok.io/images/email-icon.svg">Email me this list</a>
+			<a href="javascript:void(0)">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+					<path d="M21.6 0H2.4C1.08 0 0.012 1.10408 0.012 2.45352L0 17.1747C0 18.5241 1.08 19.6282 2.4 19.6282H21.6C22.92 19.6282 24 18.5241 24 17.1747V2.45352C24 1.10408 22.92 0 21.6 0ZM21.6 4.90704L12 11.0408L2.4 4.90704V2.45352L12 8.58733L21.6 2.45352V4.90704Z" fill="black"/>
+				</svg>
+				Email me this list
+			</a>
 		</div>
 		<div class="community-copyright">
 			<div class="community">
-				<label>Community Commerce</label>
-				<span>Find out more</span>
+				<a href="javascript:void(0)">
+					<img src="https://widget-dashboard.ngrok.io/images/feedback-icon.svg">
+					<span>Give feedback</span>
+				</a>
+
+				<!-- Feedback Modal -->
+				<div class="send-feedback-modal">
+				  	<div class="send-feedback-modal__inner">
+				  		<div class="send-feedback-before-success">
+					  		<h3>Give feedback<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+					  		<p>How satisfied are you with theses recommendations?</p>
+					  		<ul class="feedback-rating">
+					  			<li data-value="rating-1">
+					  				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+										<path d="M30 33.75C24.175 33.75 19.225 37.4 17.225 42.5H42.775C40.775 37.4 35.825 33.75 30 33.75ZM19.55 30L22.2 27.35L24.85 30L27.5 27.35L24.85 24.7L27.5 22.05L24.85 19.4L22.2 22.05L19.55 19.4L16.9 22.05L19.55 24.7L16.9 27.35L19.55 30ZM29.975 5C16.175 5 5 16.175 5 30C5 43.825 16.175 55 29.975 55C43.775 55 55 43.825 55 30C55 16.175 43.8 5 29.975 5ZM30 50C18.95 50 10 41.05 10 30C10 18.95 18.95 10 30 10C41.05 10 50 18.95 50 30C50 41.05 41.05 50 30 50ZM40.45 19.4L37.8 22.05L35.15 19.4L32.5 22.05L35.15 24.7L32.5 27.35L35.15 30L37.8 27.35L40.45 30L43.1 27.35L40.45 24.7L43.1 22.05L40.45 19.4Z" fill="#666666"/>
+									</svg>
+					  			</li>
+					  			<li data-value="rating-2">
+					  				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+										<path d="M38.75 27.5C40.8211 27.5 42.5 25.8211 42.5 23.75C42.5 21.6789 40.8211 20 38.75 20C36.6789 20 35 21.6789 35 23.75C35 25.8211 36.6789 27.5 38.75 27.5Z" fill="#666666"/>
+										<path d="M21.25 27.5C23.3211 27.5 25 25.8211 25 23.75C25 21.6789 23.3211 20 21.25 20C19.1789 20 17.5 21.6789 17.5 23.75C17.5 25.8211 19.1789 27.5 21.25 27.5Z" fill="#666666"/>
+										<path d="M30 35C24.175 35 19.2 38.625 17.2 43.75H21.375C23.1 40.775 26.3 38.75 30 38.75C33.7 38.75 36.875 40.775 38.625 43.75H42.8C40.8 38.625 35.825 35 30 35V35ZM29.975 5C16.175 5 5 16.2 5 30C5 43.8 16.175 55 29.975 55C43.8 55 55 43.8 55 30C55 16.2 43.8 5 29.975 5ZM30 50C18.95 50 10 41.05 10 30C10 18.95 18.95 10 30 10C41.05 10 50 18.95 50 30C50 41.05 41.05 50 30 50Z" fill="#666666"/>
+									</svg>
+					  			</li>
+					  			<li data-value="rating-3">
+					  				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+										<path d="M22.5 35H37.5V38.75H22.5V35Z" fill="#666666"/>
+										<path d="M38.75 27.5C40.8211 27.5 42.5 25.8211 42.5 23.75C42.5 21.6789 40.8211 20 38.75 20C36.6789 20 35 21.6789 35 23.75C35 25.8211 36.6789 27.5 38.75 27.5Z" fill="#666666"/>
+										<path d="M21.25 27.5C23.3211 27.5 25 25.8211 25 23.75C25 21.6789 23.3211 20 21.25 20C19.1789 20 17.5 21.6789 17.5 23.75C17.5 25.8211 19.1789 27.5 21.25 27.5Z" fill="#666666"/>
+										<path d="M29.975 5C16.175 5 5 16.2 5 30C5 43.8 16.175 55 29.975 55C43.8 55 55 43.8 55 30C55 16.2 43.8 5 29.975 5ZM30 50C18.95 50 10 41.05 10 30C10 18.95 18.95 10 30 10C41.05 10 50 18.95 50 30C50 41.05 41.05 50 30 50Z" fill="#666666"/>
+									</svg>
+					  			</li>
+					  			<li data-value="rating-4">
+					  				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+										<path d="M38.75 27.5C40.8211 27.5 42.5 25.8211 42.5 23.75C42.5 21.6789 40.8211 20 38.75 20C36.6789 20 35 21.6789 35 23.75C35 25.8211 36.6789 27.5 38.75 27.5Z" fill="#666666"/>
+										<path d="M21.25 27.5C23.3211 27.5 25 25.8211 25 23.75C25 21.6789 23.3211 20 21.25 20C19.1789 20 17.5 21.6789 17.5 23.75C17.5 25.8211 19.1789 27.5 21.25 27.5Z" fill="#666666"/>
+										<path d="M30 40C26.3 40 23.125 37.975 21.375 35H17.2C19.2 40.125 24.175 43.75 30 43.75C35.825 43.75 40.8 40.125 42.8 35H38.625C36.875 37.975 33.7 40 30 40ZM29.975 5C16.175 5 5 16.2 5 30C5 43.8 16.175 55 29.975 55C43.8 55 55 43.8 55 30C55 16.2 43.8 5 29.975 5ZM30 50C18.95 50 10 41.05 10 30C10 18.95 18.95 10 30 10C41.05 10 50 18.95 50 30C50 41.05 41.05 50 30 50Z" fill="#666666"/>
+									</svg>
+					  			</li>
+					  			<li data-value="rating-5">
+					  				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+										<path d="M29.975 5C16.175 5 5 16.175 5 30C5 43.825 16.175 55 29.975 55C43.775 55 55 43.825 55 30C55 16.175 43.8 5 29.975 5ZM30 50C18.95 50 10 41.05 10 30C10 18.95 18.95 10 30 10C41.05 10 50 18.95 50 30C50 41.05 41.05 50 30 50ZM32.5 24.85L35.15 27.5L37.8 24.85L40.45 27.5L43.1 24.85L37.8 19.55L32.5 24.85ZM22.2 24.85L24.85 27.5L27.5 24.85L22.2 19.55L16.9 24.85L19.55 27.5L22.2 24.85ZM30 43.75C35.825 43.75 40.775 40.1 42.775 35H17.225C19.225 40.1 24.175 43.75 30 43.75Z" fill="#666666"/>
+									</svg>
+					  			</li>
+					  		</ul>
+					  		<div class="feedback-content">
+					  			<textarea placeholder="What did you like the most?"></textarea>
+
+					  			<a href="javascript:void(0)" class="btn-submit-feedback">
+					  				Send feedback
+					  			</a>
+					  		</div>
+				  		</div>
+				  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
+				  		<div class="send-feedback-after-success">
+				  			<h3>Give feedback<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+					  		<p>How satisfied are you with theses recommendations?</p>
+				  			<a href="javascript:void(0)" class="btn-close">
+			  					Done! Close this window
+				  			</a>
+				  		</div>
+				  	</div>
+				</div>
 			</div>
 			<div class="copyright">
 				<label>Powered by</label>
-				<span>Ohana</span>
+				<img src="https://widget-dashboard.ngrok.io/images/ohana-icon.svg">
 			</div>
 		</div>
 	</div>

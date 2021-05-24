@@ -34,6 +34,8 @@ Route::resource('/click-counts','StoreClickCountController')->middleware('auth')
 Route::resource('/email-counts','StoreEmailCountController')->middleware('auth');
 Route::resource('/avarage-product-count-by-store','AvarageProductCountByStoreCountController')->middleware('auth');
 Route::resource('/avarage-product-count-by-brand','AvarageProductCountByBrandCountController')->middleware('auth');
+Route::resource('/feedback','FeedbackController')->middleware('auth');
+
 
 Route::get('get-brands','GetBrandsController@index');
 

@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('widget', 'WidgetController@index');
-
 Route::post('email', 'EmailController@index');
+Route::post('feedback-rating', 'FeedbackRatingController@index');

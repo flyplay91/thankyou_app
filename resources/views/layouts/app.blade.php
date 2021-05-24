@@ -93,6 +93,12 @@
                     <span>Avarage Product Counts(by brand)</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/feedback">
+                    <i class="fas fa-fw fa-calculator"></i>
+                    <span>Feedback Rating</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">
