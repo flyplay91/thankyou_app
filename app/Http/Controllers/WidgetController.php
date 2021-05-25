@@ -70,27 +70,21 @@ class WidgetController extends Controller
 
             $total_visitor_count = DB::table('stores')->where('url', $domain_url)->pluck('total_visitor_count')->first();
             $total_product_count = DB::table('stores')->where('url', $domain_url)->pluck('total_product_count')->first();
-            $avarage_product_count = number_format($total_product_count / $total_visitor_count,2);
 
+            // Get Avarage Product Click Count by Total Visitors by Brand
+            $product_title = $request->product_title;
+            if (isset($product_title)) {
+                $brand_id_by_product_title = DB::table('products')->where(['product_title'=>$product_title, 'store_id'=>$store_id])->pluck('brand_id')->first();
 
-            Store::where('url', $domain_url)
+                Brand::where('id', $brand_id_by_product_title)
                 ->update([
-                    'avarage_product_count' => $avarage_product_count,
-
-                ]); 
-        }
-
-        // Get Avarage Product Click Count by Total Visitors by Brand
-        $product_title = $request->product_title;
-        if (isset($product_title)) {
-            $brand_id_by_product_title = DB::table('products')->where('product_title', $product_title)->pluck('brand_id')->first();    
-
-            Brand::where('id', $brand_id_by_product_title)
-                ->update([
-                    'avarage_product_count' => $avarage_product_count,
-
+                    'avarage_product_count' => DB::raw('avarage_product_count + 1')
                 ]);
+            }
+            
         }
+
+        
         
 
         // Get avarage visit time

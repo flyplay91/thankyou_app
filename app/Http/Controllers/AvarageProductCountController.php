@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Store;
+use App\Brand;
 
-class AvarageProductCountByStoreCountController extends Controller
+class AvarageProductCountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class AvarageProductCountByStoreCountController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
-        return view('avarage-product-count-by-store.index', compact('stores'));
+        $brands = Brand::all();
+        return view('avarage-product-count.index', compact('brands'));
     }
 
     /**

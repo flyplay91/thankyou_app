@@ -82,15 +82,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/avarage-product-count-by-store">
+                <a class="nav-link" href="/avarage-product-count">
                     <i class="fas fa-fw fa-calculator"></i>
-                    <span>Avarage Product Counts(by store)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/avarage-product-count-by-brand">
-                    <i class="fas fa-fw fa-calculator"></i>
-                    <span>Avarage Product Counts(by brand)</span>
+                    <span>Avarage Product Counts</span>
                 </a>
             </li>
             <li class="nav-item">
