@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Store Url</th>
 										<th>Brand Title</th>
 										<th>Product Click Count</th>
@@ -20,6 +21,7 @@
 								<tbody>
 									@foreach($brands as $brand)
 										<tr>
+											<td>{{ ++$i }}</td>
 											<td>{{ $brand->store->url }}</td>
 											<td>{{ $brand->brand_title }}</td>
 											<td>{{ $brand->avarage_product_count }}</td>

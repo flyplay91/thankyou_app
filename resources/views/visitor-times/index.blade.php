@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Store Url</th>
 										<th>Avarage Store Time</th>
 										<th>Avarage Product Time</th>
@@ -20,6 +21,7 @@
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
+										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ gmdate("H:i:s", $store->avarage_store_time) }}</td>
 										<td>{{ gmdate("H:i:s", $store->avarage_product_time) }}</td>

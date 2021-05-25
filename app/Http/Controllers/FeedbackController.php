@@ -14,8 +14,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
-        return view('feedback.index', compact('stores'));
+        $stores = Store::latest()->paginate(25);
+        return view('feedback.index', compact('stores'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

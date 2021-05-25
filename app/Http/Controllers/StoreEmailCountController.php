@@ -14,8 +14,9 @@ class StoreEmailCountController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
-        return view('email-counts.index', compact('stores'));
+        $stores = Store::latest()->paginate(25);
+        return view('email-counts.index', compact('stores'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

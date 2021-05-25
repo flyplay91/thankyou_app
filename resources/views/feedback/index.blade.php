@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Store Url</th>
 										<th>Rating 1</th>
 										<th>Rating 2</th>
@@ -23,6 +24,7 @@
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
+										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ $store->feedback_rating_1 }}</td>
 										<td>{{ $store->feedback_rating_2 }}</td>

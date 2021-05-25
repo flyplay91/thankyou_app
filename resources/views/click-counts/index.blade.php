@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<td>No</td>
 										<th>Store Url</th>
 										<th>Total Click Count</th>
 										<th>Click Count per Day</th>
@@ -20,6 +21,7 @@
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
+										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ $store->total_click_count }}</td>
 										<td>{{ $store->daily_click_count }}</td>

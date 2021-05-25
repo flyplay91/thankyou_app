@@ -15,8 +15,9 @@ class AvarageProductCountController extends Controller
      */
     public function index()
     {
-        $brands = Brand::all();
-        return view('avarage-product-count.index', compact('brands'));
+        $brands = Brand::latest()->paginate(25);
+        return view('avarage-product-count.index', compact('brands'))
+        	->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

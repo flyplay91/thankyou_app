@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Store Url</th>
 										<th>Email Counts</th>
 									</tr>
@@ -19,6 +20,7 @@
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
+										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ $store->email_count }}</td>
 									</tr>

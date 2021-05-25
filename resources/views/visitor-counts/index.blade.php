@@ -12,6 +12,7 @@
 							<table class="dashboard-table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Store Url</th>
 										<th>Total Visitors</th>
 										<th>Unique Visitors</th>
@@ -20,6 +21,7 @@
 								<tbody>
 									@foreach($stores as $store)
 									<tr>
+										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ $store->total_visitor_count }}</td>
 										<td>{{ $store->unique_visitor_count }}</td>
