@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('body').on('click', '.more-products > a', function() {
 		$(this).closest('.more-products').hide();
 		$(this).closest('.product-items').find('.product-item:not(:first)').addClass('active');
-		$(this).closest('.product-items').find('.product-item.active:last-child').after('<div class="less-products"><a href="javascript: void(0)">2 more products from Freestar<img src="https://widget-dashboard.ngrok.io/images/down-arrow.svg"></a></div>');
+		$(this).closest('.product-items').find('.product-item.active:last-child').after('<div class="less-products"><a href="javascript: void(0)">Show less<img src="https://widget-dashboard.ngrok.io/images/down-arrow.svg"></a></div>');
 	});
 
 	$('body').on('click', '.less-products > a', function() {

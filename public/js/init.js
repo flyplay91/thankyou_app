@@ -31,6 +31,7 @@ $(document).ready(function() {
 
 			let countries = "US,GB,DE,ES,SE,HK".split(",");
 		    const country = response.country;
+		    
 		    const ip = response.ip;
 
 		    var start_time = new Date();

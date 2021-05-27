@@ -22,7 +22,7 @@ class Email extends Mailable
     {
         $address = 'hello@joinohana.io';
         $subject = 'Founder Factory Widget';
-        $name = 'Founder Factory';
+        $name = 'Isabella at Ohana';
 
         return $this->view('emails.index')
                     ->from($address, $name)
