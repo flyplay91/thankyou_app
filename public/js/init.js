@@ -59,7 +59,7 @@ $(document).ready(function() {
 			   		var product_title = $(this).find('.product-title-desc h3').text();
 
 			      	$.ajax({ 
-				        url: "https://widget-dashboard.ngrok.io/api/widget",
+				        url: "https://widget-dashboard.ngrok.io/api/api-product-count",
 				        method: "POST",
 				        data: {
 				        	domain_url: location.protocol + '//' + location.host,
@@ -138,7 +138,7 @@ $(document).ready(function() {
   		var feedback_comment_val = $('.feedback-content textarea').val();
 
   		$.ajax({
-  			url: "https://widget-dashboard.ngrok.io/api/feedback-rating",
+  			url: "https://widget-dashboard.ngrok.io/api/api-feedback-rating",
   			method: "post",
   			beforeSend: function(){
 		     	$(".ajax-loading").show();

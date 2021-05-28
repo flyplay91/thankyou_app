@@ -86,7 +86,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/avarage-product-count">
+                <a class="nav-link" href="/product-count">
                     <i class="fas fa-fw fa-calculator"></i>
                     <span>Avarage Product Counts</span>
                 </a>
@@ -136,6 +136,7 @@
             </nav>
 
             <main class="py-4">
+                <?php if ((Route::currentRouteName() != 'dashboard.index') && (Route::currentRouteName() != 'stores.index') && (Route::currentRouteName() != 'brands.index') && (Route::currentRouteName() != 'products.index')): ?>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-4 col-md-4 mb-4">
@@ -156,6 +157,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 @yield('content')
             </main>
         </div>

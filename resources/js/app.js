@@ -72,26 +72,24 @@ $(document).ready(function() {
   	var from_date = $('#fromDate').val();
   	var to_date = $('#toDate').val();
   	
-  	if (page_handle == 'feedback') {
-  		var route_url = '/feedback';
-  	}
-
+  	
   	if (from_date == '' || to_date == '') {
   		alert('Please select date!');
   	} else {
-  		$.ajax({
-  			url: route_url,
-  			method: "GET",
-				data: {
-					fromDate: from_date,
-					toDate: to_date,
-					__token: $('meta[name=csrf-token]').attr("content")
-				},
-				success: function(results) {
-					console.log(results.feedback_arr);
+  		if (page_handle == 'feedback') {
+	  		var route_url = '/feedback';
 
-					var html = '';
-					var index = 1;
+	  		$.ajax({
+	  			url: route_url,
+	  			method: 'GET',
+					data: {
+						fromDate: from_date,
+						toDate: to_date,
+						__token: $('meta[name=csrf-token]').attr("content")
+					},
+					success: function(results) {
+						var html = '';
+						var index = 1;
 						$.each(results.feedback_arr, function( key, value ) {
 							html += '<tr>';
 								html += '<td>'+(index++)+'</td>';
@@ -103,12 +101,43 @@ $(document).ready(function() {
 							  html += '<td>'+value.rating_5+'</td>';
 						  html += '</tr>';
 						});
-					
-					$('.table-feedback tbody').empty();
-					$('.table-feedback tbody').append(html);
+						
+						$('.table-feedback tbody').empty();
+						$('.table-feedback tbody').append(html);
 
-				}
-  		});
+					}
+	  		});
+	  	} else if (page_handle == 'product-count') {
+	  		var route_url = '/product-count';
+
+	  		$.ajax({
+	  			url: route_url,
+	  			method: 'GET',
+	  			data: {
+	  				fromDate: from_date,
+						toDate: to_date,
+						__token: $('meta[name=csrf-token]').attr("content")
+	  			},
+	  			success: function(results) {
+	  				var html = '';
+	  				var index = 1;
+  					$.each(results.count_arr, function() {
+  							$.each(this, function(key, value) {
+  								html += '<tr>';
+  								html += '<td>'+(index++)+'</td>';
+  								html += '<td>'+key+'</td>';
+  								html += '<td>'+value.store_url+'</td>';
+  								html += '<td>'+value.click_count+'</td>';
+  								html += '</tr>';
+  							});
+  					});
+
+  					$('.table-product-count tbody').empty();
+  					$('.table-product-count tbody').append(html);
+	  			}
+	  		});
+	  	}
+  		
   	}
   });
 

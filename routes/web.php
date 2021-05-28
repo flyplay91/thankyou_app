@@ -32,7 +32,7 @@ Route::resource('/visitor-counts','StoreVisitorCountController')->middleware('au
 Route::resource('/visitor-times','StoreVisitorTimeController')->middleware('auth');
 Route::resource('/click-counts','StoreClickCountController')->middleware('auth');
 Route::resource('/email-counts','StoreEmailCountController')->middleware('auth');
-Route::resource('/avarage-product-count','AvarageProductCountController')->middleware('auth');
+Route::resource('/product-count','ProductCountController')->middleware('auth');
 Route::resource('/feedback','FeedbackController')->middleware('auth');
 
 

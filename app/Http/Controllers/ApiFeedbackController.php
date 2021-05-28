@@ -7,7 +7,7 @@ use App\Store;
 use App\Feedback;
 use DB;
 
-class FeedbackRatingController extends Controller
+class ApiFeedbackController extends Controller
 {
     public function index(Request $request)
     {
