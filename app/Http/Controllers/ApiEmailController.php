@@ -11,14 +11,13 @@ use App\Mail\Email;
 use Mail;
 use DB;
 
-class EmailController extends Controller
+class ApiEmailController extends Controller
 {
     public function index(Request $request)
     {
      
         $domain_url = $request->domain_url;
         if (!$domain_url) {
-            // exception handler
             return;
         }
 
@@ -37,24 +36,5 @@ class EmailController extends Controller
             ]);
 
         $store = Store::firstWhere('url', $domain_url);
-
-
-        try {
-	        $data = ['store' => $store, 'domain_url' => $domain_url];
-            Mail::to($user_email)->send(new Email($data));
-
-			return response()->json([
-			    'failed' => '0',
-                'email' => $user_email
-			]);
-		} catch (Exception $e) {
-		    echo 'Caught exception: '. $e->getMessage() ."\n";
-
-		    return response()->json([
-			    'failed' => '1',
-			    'error_message' => $e->getMessage(),
-			]);
-		}
-
     }
 }

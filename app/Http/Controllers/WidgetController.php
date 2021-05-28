@@ -27,21 +27,21 @@ class WidgetController extends Controller
         $domain_url = $request->domain_url;
         $ip = $request->ip;
 
-
         $store_time = $request->store_time;
-        // var_dump($store_time);
-        $product_time = $request->product_time / 1000;
+        
+        // $product_time = $request->product_time / 1000;
         // $product_time = date("H:i:s", $product_time);
         
         
-
-        // if (!$domain_url) {
-        //     return;
-        // }
-
         // Get Store Url from Domain ID
         if ($domain_url) {
-            $store_id = DB::table('stores')->where('url', $domain_url)->pluck('id')->first();    
+            $store_id = DB::table('stores')->where('url', $domain_url)->pluck('id')->first();
+
+            Store::where('url', $domain_url)
+                ->update([
+                    'total_visitor_count' => DB::raw('total_visitor_count + 1')
+                ]);
+
         }
         
         if ($domain_url && $ip) {
@@ -60,29 +60,29 @@ class WidgetController extends Controller
 
         
         
-        if ($domain_url) {
-            // Update Total Visitor Count
-            Store::where('url', $domain_url)
-                ->update([
-                    'total_visitor_count' => DB::raw('total_visitor_count + 1'),
-                    'total_product_count' => DB::raw('total_product_count + 1')
-                ]);
+        // if ($domain_url) {
+        //     // Update Total Visitor Count
+        //     Store::where('url', $domain_url)
+        //         ->update([
+        //             'total_visitor_count' => DB::raw('total_visitor_count + 1'),
+        //             'total_product_count' => DB::raw('total_product_count + 1')
+        //         ]);
 
-            $total_visitor_count = DB::table('stores')->where('url', $domain_url)->pluck('total_visitor_count')->first();
-            $total_product_count = DB::table('stores')->where('url', $domain_url)->pluck('total_product_count')->first();
+        //     $total_visitor_count = DB::table('stores')->where('url', $domain_url)->pluck('total_visitor_count')->first();
+        //     $total_product_count = DB::table('stores')->where('url', $domain_url)->pluck('total_product_count')->first();
 
-            // Get Avarage Product Click Count by Total Visitors by Brand
-            $product_title = $request->product_title;
-            if (isset($product_title)) {
-                $brand_id_by_product_title = DB::table('products')->where(['product_title'=>$product_title, 'store_id'=>$store_id])->pluck('brand_id')->first();
+        //     // Get Avarage Product Click Count by Total Visitors by Brand
+        //     $product_title = $request->product_title;
+        //     if (isset($product_title)) {
+        //         $brand_id_by_product_title = DB::table('products')->where(['product_title'=>$product_title, 'store_id'=>$store_id])->pluck('brand_id')->first();
 
-                Brand::where('id', $brand_id_by_product_title)
-                ->update([
-                    'avarage_product_count' => DB::raw('avarage_product_count + 1')
-                ]);
-            }
+        //         Brand::where('id', $brand_id_by_product_title)
+        //         ->update([
+        //             'avarage_product_count' => DB::raw('avarage_product_count + 1')
+        //         ]);
+        //     }
             
-        }
+        // }
 
         
         
@@ -102,43 +102,43 @@ class WidgetController extends Controller
         
 
         
-        if ($product_time) {
-            $visitTimeObj = array('store_id' => $store_id, 'store_time' => 0, 'product_time' => $product_time,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
-            DB::table('storetimes')->insert($visitTimeObj);
-        }
+        // if ($product_time) {
+        //     $visitTimeObj = array('store_id' => $store_id, 'store_time' => 0, 'product_time' => $product_time,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+        //     DB::table('storetimes')->insert($visitTimeObj);
+        // }
         
-        $product_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
-        $total_product_times = DB::table('storetimes')->where('store_id', $store_id)->sum('product_time');
-        if ($product_time_count > 0 && $total_product_times > 0) {
-            $avarage_product_time = intval($total_product_times / $product_time_count);
-        } else {
-            $avarage_product_time = 0;
-        }
+        // $product_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
+        // $total_product_times = DB::table('storetimes')->where('store_id', $store_id)->sum('product_time');
+        // if ($product_time_count > 0 && $total_product_times > 0) {
+        //     $avarage_product_time = intval($total_product_times / $product_time_count);
+        // } else {
+        //     $avarage_product_time = 0;
+        // }
         
-        Store::where('id', $store_id)
-            ->update([
-                'avarage_store_time' => $avarage_store_time,
-                'avarage_product_time' => $avarage_product_time
-            ]);
+        // Store::where('id', $store_id)
+        //     ->update([
+        //         'avarage_store_time' => $avarage_store_time,
+        //         'avarage_product_time' => $avarage_product_time
+        //     ]);
         
         
         // Get Total Product Click Count
-        Store::where('url', $domain_url)
-            ->update([
-                'total_click_count' => DB::raw('total_click_count + 1')
-            ]);
+        // Store::where('url', $domain_url)
+        //     ->update([
+        //         'total_click_count' => DB::raw('total_click_count + 1')
+        //     ]);
 
-        // Get Daily Product Click Count
-        $timestamp = strtotime('2021-05-16');
-        $today = strtotime('now');
-        $today_days = intval(($today - $timestamp)/86400);
-        $total_click_count = DB::table('stores')->where('url', $domain_url)->pluck('total_click_count')->first();    
-        $daily_click_count = (int)$total_click_count / $today_days;
+        // // Get Daily Product Click Count
+        // $timestamp = strtotime('2021-05-16');
+        // $today = strtotime('now');
+        // $today_days = intval(($today - $timestamp)/86400);
+        // $total_click_count = DB::table('stores')->where('url', $domain_url)->pluck('total_click_count')->first();    
+        // $daily_click_count = (int)$total_click_count / $today_days;
 
-        Store::where('id', $store_id)
-            ->update([
-                'daily_click_count' => $daily_click_count
-            ]);
+        // Store::where('id', $store_id)
+        //     ->update([
+        //         'daily_click_count' => $daily_click_count
+        //     ]);
 
 
 

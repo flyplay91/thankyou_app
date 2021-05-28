@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Store;
-use App\Brand;
-use App\ProductCount;
 use DB;
 
-class ProductCountController extends Controller
+
+
+class EmailCountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,48 +15,42 @@ class ProductCountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
+    {   
         $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
         $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
 
-        $brands = Brand::latest()->paginate(25);
+        $stores = Store::latest()->paginate(25);
         $storeAll = Store::all();
-        $brandAll = Brand::all();
-
+        
         if (!$request->fromDate) {
-            return view('product-count.index', compact('brands'))
-        	   ->with('i', (request()->input('page', 1) - 1) * 5);
+            return view('email-counts.index', compact('stores'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
         } else {
-            $filterProductCountQuery = "SELECT store_id, brand_id, COUNT(1) AS click_count FROM productcount WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "' GROUP BY store_id, brand_id, click_count";
-            $filterProductCountObjs = DB::select($filterProductCountQuery);
-            
-            $filterProductCountArr = [];
+            $filterEmailCountQuery = "SELECT store_id, COUNT(1) AS email_count FROM email WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "' GROUP BY store_id";
+            $filterEmailCountObjs = DB::select($filterEmailCountQuery);
 
-            foreach($filterProductCountObjs as $filterProductCountObj) {
-                $storeId = $filterProductCountObj->store_id;
-                if(!isset($filterProductCountArr[$storeId])) {
-                    $filterProductCountArr[$storeId] = [];
-                    
+            $filterEmailCountkArr = [];
+
+            foreach($filterEmailCountObjs as $filterEmailCountObj) {
+                $storeId = $filterEmailCountObj->store_id;
+                if(!isset($filterEmailCountkArr[$storeId])) {
+                    $filterEmailCountkArr[$storeId] = array(
+                        'store_url' => "",
+                        'email_count' => $filterEmailCountObj->email_count
+                    );
                 }
 
-                foreach($brandAll as $brand) {
-                    if ($brand->id == $filterProductCountObj->brand_id && $brand->store_id == $filterProductCountObj->store_id) {
-                        $filterProductCountArr[$storeId][$brand->brand_title] = array(
-                            'store_url' => "",
-                            'click_count' => 0
-                        );
-
-                        $store_url = DB::table('stores')->where('id', $filterProductCountObj->store_id)->pluck('url')->first();
-                        $filterProductCountArr[$storeId][$brand->brand_title]["store_url"] = $store_url;
-                        $filterProductCountArr[$storeId][$brand->brand_title]["click_count"] = $filterProductCountObj->click_count;
+                foreach($storeAll as $store) {
+                    if ($store->id == $filterEmailCountObj->store_id) {
+                        $filterEmailCountkArr[$storeId]["store_url"] = $store->url;
                     }
                 }
             }
-            
+
             try {
                 return response()->json([
                     'failed' => '0',
-                    'count_arr' => $filterProductCountArr
+                    'email_arr' => $filterEmailCountkArr
                 ]);
             } catch (Exception $e) {
                 echo 'Caught exception: '. $e->getMessage() ."\n";
@@ -67,7 +60,12 @@ class ProductCountController extends Controller
                     'error_message' => $e->getMessage(),
                 ]);
             }
-       }
+            
+        }
+
+        
+        
+        
     }
 
     /**

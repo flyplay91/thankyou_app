@@ -21,8 +21,7 @@ class CreateStoresTable extends Migration
             $table->string('total_click_count');
             $table->string('daily_click_count');
             $table->string('email_count');
-            $table->string('$total_product_count');
-            $table->string('avarage_product_count');
+            $table->string('total_product_click_count');
             $table->string('feedback_rating_1');
             $table->string('feedback_rating_2');
             $table->string('feedback_rating_3');

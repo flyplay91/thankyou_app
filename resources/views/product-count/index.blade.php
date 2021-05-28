@@ -24,7 +24,7 @@
 											<td>{{ ++$i }}</td>
 											<td>{{ $brand->store->url }}</td>
 											<td>{{ $brand->brand_title }}</td>
-											<td>{{ $brand->avarage_product_count }}</td>
+											<td>{{ $brand->total_product_click_count }}</td>
 										</tr>
 									@endforeach
 								</tbody>

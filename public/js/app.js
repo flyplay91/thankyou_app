@@ -19501,6 +19501,30 @@ $(document).ready(function () {
             $('.table-product-count tbody').append(html);
           }
         });
+      } else if (page_handle == 'email-count') {
+        var route_url = '/email-count';
+        $.ajax({
+          ur: route_url,
+          method: 'GET',
+          data: {
+            fromDate: from_date,
+            toDate: to_date,
+            __token: $('meta[name=csrf-token]').attr("content")
+          },
+          success: function success(results) {
+            var html = '';
+            var index = 1;
+            $.each(results.email_arr, function (key, value) {
+              html += '<tr>';
+              html += '<td>' + index++ + '</td>';
+              html += '<td>' + value.store_url + '</td>';
+              html += '<td>' + value.email_count + '</td>';
+              html += '</tr>';
+            });
+            $('.table-email-count tbody').empty();
+            $('.table-email-count tbody').append(html);
+          }
+        });
       }
     }
   });

@@ -80,15 +80,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/email-counts">
+                <a class="nav-link" href="/email-count">
                     <i class="fas fa-fw fa-envelope-square"></i>
-                    <span>Store Email Counts</span>
+                    <span>Email Click Counts</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/product-count">
                     <i class="fas fa-fw fa-calculator"></i>
-                    <span>Avarage Product Counts</span>
+                    <span>Product Click Counts</span>
                 </a>
             </li>
             <li class="nav-item">

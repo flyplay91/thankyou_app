@@ -41,19 +41,5 @@ class ApiFeedbackController extends Controller
                 'feedback_rating_5' => $feedback_count_5
             ]);
 
-        try {
-	        return response()->json([
-			    'failed' => '0',
-                'success_message' => '200'
-			]);
-		} catch (Exception $e) {
-		    echo 'Caught exception: '. $e->getMessage() ."\n";
-
-		    return response()->json([
-			    'failed' => '1',
-			    'error_message' => $e->getMessage(),
-			]);
-		}
-
     }
 }

@@ -55,7 +55,7 @@ $(document).ready(function() {
 			   	// });
 
 			   	$('body').on('click', '.product-item', function() {
-			   		var end_time = new Date();
+			   		// var end_time = new Date();
 			   		var product_title = $(this).find('.product-title-desc h3').text();
 
 			      	$.ajax({ 
@@ -63,7 +63,7 @@ $(document).ready(function() {
 				        method: "POST",
 				        data: {
 				        	domain_url: location.protocol + '//' + location.host,
-				        	product_time: end_time - start_time,
+				        	// product_time: end_time - start_time,
 				        	product_title: product_title
 				        },
 				        async: false
