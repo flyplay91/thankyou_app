@@ -12,6 +12,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css"/>
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Script -->
@@ -20,6 +22,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+    
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </head>
 
@@ -132,6 +136,26 @@
             </nav>
 
             <main class="py-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-4">
+                            <div class="form-group">
+                                <input placeholder="From Date" type="input" class="form-control" id="fromDate">
+                            </div>
+                        </div>
+                        <input type="hidden" id="page_handle" value="{{Route::currentRouteName()}}">
+                        <div class="col-xl-4 col-md-4 mb-4">
+                            <div class="form-group">
+                                <input placeholder="To Date" type="input" class="form-control" id="toDate">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-4">
+                            <div class="form-group">
+                                <a href="javascript:void(0)" class="btn btn-primary" id="btn-date-picker">Submit</a>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @yield('content')
             </main>
         </div>

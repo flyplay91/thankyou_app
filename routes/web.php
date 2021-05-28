@@ -37,5 +37,6 @@ Route::resource('/feedback','FeedbackController')->middleware('auth');
 
 
 Route::get('get-brands','GetBrandsController@index');
-
 Route::post('product-sortable','ProductController@drogupdate');
+
+

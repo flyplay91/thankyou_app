@@ -62,6 +62,56 @@ $(document).ready(function() {
   //   }
   // });
 
+  // From - To Date Picker
+  $('#fromDate').datepicker({});
+
+  $('#toDate').datepicker({});
+
+  $('body').on('click', '#btn-date-picker', function() {
+  	var page_handle = $('#page_handle').val().split('.')[0];
+  	var from_date = $('#fromDate').val();
+  	var to_date = $('#toDate').val();
+  	
+  	if (page_handle == 'feedback') {
+  		var route_url = '/feedback';
+  	}
+
+  	if (from_date == '' || to_date == '') {
+  		alert('Please select date!');
+  	} else {
+  		$.ajax({
+  			url: route_url,
+  			method: "GET",
+				data: {
+					fromDate: from_date,
+					toDate: to_date,
+					__token: $('meta[name=csrf-token]').attr("content")
+				},
+				success: function(results) {
+					console.log(results.feedback_arr);
+
+					var html = '';
+					var index = 1;
+						$.each(results.feedback_arr, function( key, value ) {
+							html += '<tr>';
+								html += '<td>'+(index++)+'</td>';
+							  html += '<td>'+value.store_url+'</td>';
+							  html += '<td>'+value.rating_1+'</td>';
+							  html += '<td>'+value.rating_2+'</td>';
+							  html += '<td>'+value.rating_3+'</td>';
+							  html += '<td>'+value.rating_4+'</td>';
+							  html += '<td>'+value.rating_5+'</td>';
+						  html += '</tr>';
+						});
+					
+					$('.table-feedback tbody').empty();
+					$('.table-feedback tbody').append(html);
+
+				}
+  		});
+  	}
+  });
+
 });
 
 // function sendOrderToServer() {
