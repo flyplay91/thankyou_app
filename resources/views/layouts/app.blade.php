@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/visitor-counts">
+                <a class="nav-link" href="/visitor-count">
                     <i class="fas fa-fw fa-calculator"></i>
                     <span>Store Visitor Counts</span>
                 </a>
@@ -71,12 +71,6 @@
                 <a class="nav-link" href="/visitor-times">
                     <i class="far fa-fw fa-clock"></i>
                     <span>Store Visitor Times</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/click-counts">
-                    <i class="fas fa-fw fa-calculator"></i>
-                    <span>Store Click Counts</span>
                 </a>
             </li>
             <li class="nav-item">

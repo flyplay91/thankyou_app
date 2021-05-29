@@ -25,40 +25,9 @@ class WidgetController extends Controller
     {
         
         $domain_url = $request->domain_url;
-        $ip = $request->ip;
-
-        $store_time = $request->store_time;
         
         // $product_time = $request->product_time / 1000;
         // $product_time = date("H:i:s", $product_time);
-        
-        
-        // Get Store Url from Domain ID
-        if ($domain_url) {
-            $store_id = DB::table('stores')->where('url', $domain_url)->pluck('id')->first();
-
-            Store::where('url', $domain_url)
-                ->update([
-                    'total_visitor_count' => DB::raw('total_visitor_count + 1')
-                ]);
-
-        }
-        
-        if ($domain_url && $ip) {
-            // Get Ip Address for unique visitors
-            $ipArr = DB::table('iplists')->where('store_url', $domain_url)->pluck('ip_address')->toArray();
-            if (!$ipArr || !in_array($ip, $ipArr)) {
-                $storeIpObj = array('store_url'=>$domain_url, 'ip_address'=>$ip,"created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
-                DB::table('iplists')->insert($storeIpObj);
-
-                Store::where('url', $domain_url)
-                ->update([
-                    'unique_visitor_count' => DB::raw('unique_visitor_count + 1')
-                ]);
-            }    
-        }
-
-        
         
         // if ($domain_url) {
         //     // Update Total Visitor Count
@@ -88,17 +57,17 @@ class WidgetController extends Controller
         
 
         // Get avarage visit time
-        if ($store_time) {
-            $visitTimeObj = array('store_id' => $store_id, 'store_time' => $store_time, 'product_time' => 0,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
-            DB::table('storetimes')->insert($visitTimeObj);
-        }
-        $store_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
-        $total_store_times = DB::table('storetimes')->where('store_id', $store_id)->sum('store_time');
-        if ($store_time_count > 0 && $total_store_times > 0) {
-            $avarage_store_time = intval($total_store_times / $store_time_count);    
-        } else {
-            $avarage_store_time = 0;
-        }
+        // if ($store_time) {
+        //     $visitTimeObj = array('store_id' => $store_id, 'store_time' => $store_time, 'product_time' => 0,  "created_at" =>  \Carbon\Carbon::now(), "updated_at" => \Carbon\Carbon::now());
+        //     DB::table('storetimes')->insert($visitTimeObj);
+        // }
+        // $store_time_count = DB::table('storetimes')->where('store_id', $store_id)->count();
+        // $total_store_times = DB::table('storetimes')->where('store_id', $store_id)->sum('store_time');
+        // if ($store_time_count > 0 && $total_store_times > 0) {
+        //     $avarage_store_time = intval($total_store_times / $store_time_count);    
+        // } else {
+        //     $avarage_store_time = 0;
+        // }
         
 
         

@@ -70,12 +70,24 @@ $(document).ready(function() {
 			      	});
 			   	});
 
+			   	$.ajax({
+					url: "https://widget-dashboard.ngrok.io/api/api-store-visitor-count",
+					method: "POST",
+					data: {
+						domain_url: location.protocol + '//' + location.host,
+						ip: ip
+						// store_time: end_store - start_store,
+						// product_time: end_product - start_store
+					},
+				 	async: false
+				});	
+
 		    	$.ajax({
 					url: "https://widget-dashboard.ngrok.io/api/widget",
 					method: "POST",
 					data: {
 						domain_url: location.protocol + '//' + location.host,
-						ip: ip
+						// ip: ip
 						// store_time: end_store - start_store,
 						// product_time: end_product - start_store
 					},
