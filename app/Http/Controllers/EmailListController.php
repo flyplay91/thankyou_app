@@ -16,10 +16,33 @@ class EmailListController extends Controller
      */
     public function index(Request $request)
     {
+        $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
+        $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
+
+        $stores = Store::all();
         $emails = Email::all();
         
-        return view('email-list.index', compact('emails'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        if (!$request->fromDate) {
+            return view('email-list.index', compact('emails'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } else {
+            $filterEmailListsQuery = "SELECT e.store_id, e.user_email, s.url FROM email AS e LEFT JOIN stores AS s ON e.store_id = s.id WHERE e.created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "'";
+            $filterEmailListsObjs = DB::select($filterEmailListsQuery);
+
+            try {
+                return response()->json([
+                    'failed' => '0',
+                    'email_list_arr' => $filterEmailListsObjs
+                ]);
+            } catch (Exception $e) {
+                echo 'Caught exception: '. $e->getMessage() ."\n";
+
+                return response()->json([
+                    'failed' => '1',
+                    'error_message' => $e->getMessage(),
+                ]);
+            }
+        }
     }
 
     /**

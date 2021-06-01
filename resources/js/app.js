@@ -190,6 +190,32 @@ $(document).ready(function() {
 	  				$('.table-store-count tbody').append(html);
 	  			}
 	  		});
+	  	} else if (page_handle == 'email-list') {
+	  		var route_url = '/email-list';
+
+	  		$.ajax({
+	  			url: route_url,
+	  			method: 'GET',
+	  			data: {
+	  				fromDate: from_date,
+						toDate: to_date,
+						__token: $('meta[name=csrf-token]').attr("content")
+	  			},
+	  			success: function(results) {
+	  				var html;
+	  				var index = 1;
+	  				$.each(results.email_list_arr, function(key, value) {
+	  					html += '<tr>';
+	  						html += '<td>'+(index++)+'</td>';
+	  						html += '<td>'+value.url+'</td>';
+	  						html += '<td>'+value.user_email+'</td>';
+  						html += '</td>';
+	  				});
+
+	  				$('.table-email-list tbody').empty();
+	  				$('.table-email-list tbody').append(html);
+	  			}
+	  		});
 	  	}
   		
   	}
