@@ -17,8 +17,7 @@ class StoreVisitorCountController extends Controller
     {
         $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
         $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
-        $storeAll = Store::all();
-        $stores = Store::latest()->paginate(25);
+        $stores = Store::all();
 
         if (!$request->fromDate) {
             return view('visitor-counts.index', compact('stores'))
@@ -39,7 +38,7 @@ class StoreVisitorCountController extends Controller
                     );
                 }
 
-                foreach($storeAll as $store) {
+                foreach($stores as $store) {
                     if ($store->id == $filterStoreCountObj->store_id) {
                         $filterStoreCountArr[$storeId]["store_url"] = $store->url;
                         $filterStoreCountArr[$storeId]["total_visitor"] = $filterStoreCountObj->total_visitor;

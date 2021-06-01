@@ -91,6 +91,12 @@
                     <span>Feedback Rating</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/email-list">
+                    <i class="fas fa-fw fa-calculator"></i>
+                    <span>Email List</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">

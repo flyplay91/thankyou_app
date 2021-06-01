@@ -20,9 +20,8 @@ class ProductCountController extends Controller
         $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
         $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
 
-        $brands = Brand::latest()->paginate(25);
-        $storeAll = Store::all();
-        $brandAll = Brand::all();
+        $stores = Store::all();
+        $brands = Brand::all();
 
         if (!$request->fromDate) {
             return view('product-count.index', compact('brands'))
@@ -40,7 +39,7 @@ class ProductCountController extends Controller
                     
                 }
 
-                foreach($brandAll as $brand) {
+                foreach($brands as $brand) {
                     if ($brand->id == $filterProductCountObj->brand_id && $brand->store_id == $filterProductCountObj->store_id) {
                         $filterProductCountArr[$storeId][$brand->brand_title] = array(
                             'store_url' => "",

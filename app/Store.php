@@ -21,6 +21,10 @@ class Store extends Model
         return $this->hasMany('App\Storetime');
     }
 
+    public function emails()
+    {
+        return $this->hasMany('App\Email');
+    }
     protected $fillable = [
         'url', 'total_visitor_count', 'unique_visitor_count', 'avarage_store_time', 'avarage_product_time', 'email_count', 'total_product_click_count', 'feedback_rating_1', 'feedback_rating_2', 'feedback_rating_3', 'feedback_rating_4', 'feedback_rating_5'
     ];

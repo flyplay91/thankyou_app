@@ -33,6 +33,8 @@ Route::resource('/visitor-times','StoreVisitorTimeController')->middleware('auth
 Route::resource('/email-count','EmailCountController')->middleware('auth');
 Route::resource('/product-count','ProductCountController')->middleware('auth');
 Route::resource('/feedback','FeedbackController')->middleware('auth');
+Route::resource('/email-list','EmailListController')->middleware('auth');
+
 
 
 Route::get('get-brands','GetBrandsController@index');

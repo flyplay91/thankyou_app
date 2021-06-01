@@ -19,9 +19,7 @@ class FeedbackController extends Controller
         $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
         $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
         
-        $stores = Store::latest()->paginate(25);
-        
-        $storeAll = Store::all();
+        $stores = Store::all();
 
         if (!$request->fromDate) {
             
@@ -47,7 +45,7 @@ class FeedbackController extends Controller
                     );
                 }
 
-                foreach($storeAll as $store) {
+                foreach($stores as $store) {
                     if ($store->id == $filterFeedBackObj->store_id) {
                         $filterFeedBackArr[$storeId]["store_url"] = $store->url;
                     }
