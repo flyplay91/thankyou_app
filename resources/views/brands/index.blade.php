@@ -53,6 +53,6 @@
         @endforeach
     </table>
 </div>  
-    {!! $brands->links() !!}
+    
       
 @endsection

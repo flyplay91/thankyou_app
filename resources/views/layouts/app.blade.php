@@ -136,6 +136,7 @@
             </nav>
 
             <main class="py-4">
+                @auth
                 <?php if ((Route::currentRouteName() != 'dashboard.index') && (Route::currentRouteName() != 'stores.index') && (Route::currentRouteName() != 'brands.index') && (Route::currentRouteName() != 'products.index')): ?>
                 <div class="container-fluid">
                     <div class="row">
@@ -158,6 +159,7 @@
                     </div>
                 </div>
                 <?php endif; ?>
+                @endauth
                 @yield('content')
             </main>
         </div>
