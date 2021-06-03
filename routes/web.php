@@ -34,6 +34,8 @@ Route::resource('/email-count','EmailCountController')->middleware('auth');
 Route::resource('/product-count','ProductCountController')->middleware('auth');
 Route::resource('/feedback','FeedbackController')->middleware('auth');
 Route::resource('/email-list','EmailListController')->middleware('auth');
+Route::resource('/tracking','TrackingController')->middleware('auth');
+
 
 
 

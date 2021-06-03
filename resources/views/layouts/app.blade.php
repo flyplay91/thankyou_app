@@ -97,6 +97,12 @@
                     <span>Email List</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tracking">
+                    <i class="fas fa-fw fa-calculator"></i>
+                    <span>Tracking</span>
+                </a>
+            </li>
         </ul>
         @endauth
         <div id="content-wrapper">

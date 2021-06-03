@@ -25,3 +25,4 @@ Route::post('email', 'ApiEmailController@index');
 Route::post('friend-email', 'FriendEmailController@index');
 Route::post('api-feedback-rating', 'ApiFeedbackController@index');
 Route::post('api-product-count', 'ApiProductCountController@index');
+Route::post('api-tracking', 'ApiTrackingController@index');
