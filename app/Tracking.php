@@ -14,6 +14,6 @@ class Tracking extends Model
     }
 
     protected $fillable = [
-        'store_id', 'target_url', 'source_url', 'product_title', 'product_price', 'product_qty'
+        'target_url', 'source_url', 'product_title', 'product_price', 'product_qty'
     ];
 }

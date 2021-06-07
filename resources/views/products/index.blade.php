@@ -23,7 +23,7 @@
                 <th>Store Url</th>
                 <th>Brand Title</th>
                 <th>Product Title</th>
-                <th>Product Link</th>
+                <th width="280px">Product Link</th>
                 <th>Product Description</th>
                 <th>Product Price</th>
                 <th>Product Image</th>

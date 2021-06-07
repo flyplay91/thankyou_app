@@ -9,12 +9,12 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tracking</div>
-							<table class="dashboard-table table-store-count">
+							<table class="dashboard-table table-tracking">
 								<thead>
 									<tr>
 										<th>No</th>
 										<th>From Url</th>
-										<th>To Visitors</th>
+										<th>To Url</th>
 										<th>Product Title</th>
 										<th>Product Price</th>
 										<th>Product Qty</th>
@@ -24,9 +24,9 @@
 									@foreach($trackings as $tracking)
 									<tr>
 										<td>{{ ++$i }}</td>
-										<td>{{ $tracking->target_url }}</td>
 										<td>{{ $tracking->source_url }}</td>
 										<td>{{ $tracking->product_title }}</td>
+										<td>{{ $tracking->target_url }}</td>
 										<td>{{ $tracking->product_price }}</td>
 										<td>{{ $tracking->product_qty }}</td>
 									</tr>

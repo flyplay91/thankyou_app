@@ -15,7 +15,6 @@ class CreateTrackingTable extends Migration
     {
         Schema::create('tracking', function (Blueprint $table) {
             $table->id();
-            $table->string('store_id');
             $table->string('target_url');
             $table->string('source_url');
             $table->string('product_title');

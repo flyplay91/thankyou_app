@@ -19574,6 +19574,33 @@ $(document).ready(function () {
             $('.table-email-list tbody').append(html);
           }
         });
+      } else if (page_handle == 'tracking') {
+        var route_url = '/tracking';
+        $.ajax({
+          url: route_url,
+          method: 'GET',
+          data: {
+            fromDate: from_date,
+            toDate: to_date,
+            __token: $('meta[name=csrf-token]').attr("content")
+          },
+          success: function success(results) {
+            var html;
+            var index = 1;
+            $.each(results.tracking_arr, function (key, value) {
+              html += '<tr>';
+              html += '<td>' + index++ + '</td>';
+              html += '<td>' + value.source_url + '</td>';
+              html += '<td>' + value.target_url + '</td>';
+              html += '<td>' + value.product_title + '</td>';
+              html += '<td>' + value.product_price + '</td>';
+              html += '<td>' + value.product_qty + '</td>';
+              html += '</tr>';
+            });
+            $('.table-tracking tbody').empty();
+            $('.table-tracking tbody').append(html);
+          }
+        });
       }
     }
   });

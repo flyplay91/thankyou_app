@@ -17,6 +17,7 @@ $(document).ready(function() {
 	    $.cookie('cookie_tracking', tracking_param, {path: '/'});	
     }
     
+
     
     // Get Product ID on Thank you page
     if ($('.product-table').length > 0) {
@@ -29,7 +30,7 @@ $(document).ready(function() {
 	        	var product_price = $(this).find('.product__price .order-summary__emphasis').text();
 	        	var source_url = $.cookie('cookie_source');
 	        	var target_url = window.location.origin;
-
+	        	console.log(source_url+'->'+target_url);
 
 	        	$.ajax({
 		  			url: 'https://widget-dashboard.ngrok.io/api/api-tracking',

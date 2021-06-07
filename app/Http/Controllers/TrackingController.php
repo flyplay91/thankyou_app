@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Store;
 use App\Tracking;
+use DB;
 
 class TrackingController extends Controller
 {
@@ -13,11 +14,35 @@ class TrackingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
+        $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
+
         $trackings = Tracking::all();
-        return view('tracking.index', compact('trackings'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        if (!$request->fromDate) {
+            return view('tracking.index', compact('trackings'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);    
+        } else {
+            $filterTrackingQuery = "SELECT target_url, source_url, product_title, product_price, product_qty FROM tracking WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "'";
+            $filterTrackingObjs = DB::select($filterTrackingQuery);
+            
+            try {
+                return response()->json([
+                    'failed' => '0',
+                    'tracking_arr' => $filterTrackingObjs
+                ]);
+            } catch (Exception $e) {
+                echo 'Caught exception: '. $e->getMessage() ."\n";
+
+                return response()->json([
+                    'failed' => '1',
+                    'error_message' => $e->getMessage(),
+                ]);
+            }
+        }
+        
     }
 
     /** 
