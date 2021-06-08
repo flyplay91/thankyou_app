@@ -117,7 +117,7 @@ $(document).ready(function() {
 		  		$('.email-validation-error').removeClass('active');
 
 		  		$.ajax({
-		  			url: "https://widget-dashboard.ngrok.io/api/email",
+		  			url: "https://widget-dashboard.ngrok.io/api/api-email",
 		  			method: "post",
 	  			 	beforeSend: function(){
 				     	$(".ajax-loading").show();
@@ -181,7 +181,7 @@ $(document).ready(function() {
 		  		$('.friend-email-validation-error').removeClass('active');
 
 		  		$.ajax({
-		  			url: "https://widget-dashboard.ngrok.io/api/friend-email",
+		  			url: "https://widget-dashboard.ngrok.io/api/api-friend-email",
 		  			method: "post",
 	  			 	beforeSend: function(){
 				     	$(".ajax-loading").show();

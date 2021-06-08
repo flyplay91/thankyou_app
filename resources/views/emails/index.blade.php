@@ -188,94 +188,9 @@
 				font-weight: bold;
 			}
 
-			.brand-product:first-child .brand-title-tag ul li {
-				background: #F5937B;
+			.brand-product .brand-title-tag ul li {
 				color: #FFFFFF;
 				letter-spacing: 1;	
-			}
-
-			.brand-product:first-child .product-item {
-				background-color: rgba(246, 145, 122, 0.15);
-			}
-
-			.brand-product:nth-child(2) .brand-title-tag ul li {
-				background: #FFE455;
-				color: #000000;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(2) .product-item {
-				background-color: #FFF7E4;
-			}
-
-			.brand-product:nth-child(3) .brand-title-tag ul li {
-				background: #005D68;
-				color: #FFFFFF;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(4) .brand-title-tag ul li {
-				background: #C75F0C;
-				color: #FFFFFF;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(5) .brand-title-tag ul li {
-				background: #FAA03D;
-				color: #FFFFFF;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(6) .brand-title-tag ul li {
-				background: #E5EBF5;
-				color: #000000;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(7) .brand-title-tag ul li {
-				background: #7E4823;
-				color: #FFFFFF;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(8) .brand-title-tag ul li {
-				background: #EDE8CF;
-				color: #000000;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(9) .brand-title-tag ul li {
-				background: #EFA9B4;
-				color: #FFFFFF;
-				letter-spacing: 1;	
-			}
-
-			.brand-product:nth-child(3) .product-item {
-				background-color: rgba(0, 77, 91, 0.15);;
-			}
-
-			.brand-product:nth-child(4) .product-item {
-				background: rgba(199, 95, 12, 0.15);
-			}
-
-			.brand-product:nth-child(5) .product-item {
-				background: rgba(250, 160, 61, 0.15);
-			}
-
-			.brand-product:nth-child(6) .product-item {
-				background: rgba(229, 235, 245, 0.15);
-			}
-
-			.brand-product:nth-child(7) .product-item {
-				background: rgba(126, 72, 35, 0.15);
-			}
-
-			.brand-product:nth-child(8) .product-item {
-				background: rgba(237, 232, 207, 0.15);
-			}
-
-			.brand-product:nth-child(9) .product-item {
-				background: rgba(239, 169, 180, 0.15);
 			}
 
 			.brand-text {
@@ -286,6 +201,11 @@
 			.product-item {
 			  margin: 16px 12px;
 			  display: none;
+			  border-radius: 10px;
+			}
+
+			.product-item.product-item--1 {
+				display: block;
 			}
 
 			.product-item > a:hover .product-img img {
@@ -297,22 +217,18 @@
 				display: block;
 			}
 
-			.product-items .product-item:first-child {
-				display: block;
-			}
-
 			.product-item > a {
-				display: grid;
-			  grid-template-columns: 1fr 1.65fr;
-			  grid-gap: 12px;
 			  color: black;
 			  text-decoration: none;
 			  border-radius: 10px;
+			  display:  flex;
+			  justify-content: space-between;
 			}
 
 			.product-img {
 				padding: 8px;
 				overflow: hidden;
+				width: 37%;
 			}
 
 			.product-img img {
@@ -321,10 +237,11 @@
 			}
 
 			.product-text {
+				width: 60%;
 				padding: 8px 8px 8px 0;
-			  display: flex;
-			  flex-direction: column;
-			  justify-content: space-between;
+			  	display: flex;
+			  	flex-direction: column;
+			  	justify-content: space-between;
 			}
 
 			.product-title-desc h3 {
@@ -464,6 +381,7 @@
 									{{ $brand->brand_description }}
 								</div>
 							</div>
+
 							<div class="product-infos">
 								<div class="product-items">
 									<?php 
@@ -475,16 +393,17 @@
 									}
 
 									$i = 0;
+
 								 	foreach ($store->products as $product) :
 								 		if ($product->brand_id == $brand->id) :
 								 			$i++;
 								 			?>
-											<div class="product-item" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
+											<div class="product-item product-item--<?php echo $i ?>" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
 												<a href="{{ $product->product_link }}" target="_blank">
 													<div class="product-img">
 														<img src="https://widget-dashboard.ngrok.io/images/{{ $product->product_image }}">
 													</div>
-													<div class="product-text">
+													<div class="product-text" style="display:flex;flex-direction:column;justify-content:space-between;">
 														<div class="product-title-desc">
 															<h3>{{ $product->product_title }}</h3>
 															<p>{{ $product->product_description }}</p>

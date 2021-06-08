@@ -19,10 +19,10 @@ class Email extends Mailable
     }
 
     public function build()
-    {
-        $address = 'hello@joinohana.io';
-        $subject = 'Founder Factory Widget';
-        $name = 'Isabella at Ohana';
+    {   
+        $address = "hello@joinohana.io";
+        $subject = "From Form, Here's the Brands We Think You'll Love";
+        $name = "Form " . str_replace("https://", " ", $this->data['domain_url']) . " Ohana";
 
         return $this->view('emails.index')
                     ->from($address, $name)

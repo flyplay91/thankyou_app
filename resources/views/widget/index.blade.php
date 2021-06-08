@@ -130,11 +130,12 @@
 							}
 
 							$i = 0;
+
 						 	foreach ($store->products as $product) :
 						 		if ($product->brand_id == $brand->id) :
 						 			$i++;
 						 			?>
-									<div class="product-item" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
+									<div class="product-item product-item--<?php echo $i ?>" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
 										<a href="{{ $product->product_link }}" target="_blank">
 											<div class="product-img">
 												<img src="https://widget-dashboard.ngrok.io/images/{{ $product->product_image }}">

@@ -243,11 +243,9 @@ $(document).ready(function() {
 
 	  				$('.table-tracking tbody').empty();
 	  				$('.table-tracking tbody').append(html);
-	  				
 	  			}
 	  		});
 	  	}
-  		
   	}
   });
 

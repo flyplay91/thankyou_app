@@ -11,7 +11,7 @@ use App\Mail\Email;
 use Mail;
 use DB;
 
-class FriendEmailController extends Controller
+class ApiFriendEmailController extends Controller
 {
     public function index(Request $request)
     {

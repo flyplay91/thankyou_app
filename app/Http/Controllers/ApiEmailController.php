@@ -36,5 +36,22 @@ class ApiEmailController extends Controller
             ]);
 
         $store = Store::firstWhere('url', $domain_url);
+
+        try {
+            $data = ['store' => $store, 'domain_url' => $domain_url];
+            Mail::to($user_email)->send(new Email($data));
+
+            return response()->json([
+                'failed' => '0',
+                'email' => $user_email
+            ]);
+        } catch (Exception $e) {
+            echo 'Caught exception: '. $e->getMessage() ."\n";
+
+            return response()->json([
+                'failed' => '1',
+                'error_message' => $e->getMessage(),
+            ]);
+        }
     }
 }
