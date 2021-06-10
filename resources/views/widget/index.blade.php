@@ -1,10 +1,10 @@
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://widget-dashboard.ngrok.io/css/widget.css">
+<link rel="stylesheet" href="{{ getenv('APP_URL') }}/css/widget.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://widget-dashboard.ngrok.io/js/widget.js"></script> -->
+<script src="{{ getenv('APP_URL') }}/js/widget.js"></script> -->
 
 
 <div class="widget-block">
@@ -13,7 +13,7 @@
 			Brands we love
 			<!-- Button trigger modal -->
 			<a href="javascript:void(0)" class="btn-send-email">
-				<img src="https://widget-dashboard.ngrok.io/images/email-icon.svg">
+				<img src="{{ getenv('APP_URL') }}/images/email-icon.svg">
 				Send To Email
 			</a>
 
@@ -21,7 +21,7 @@
 			<div class="send-email-modal">
 			  	<div class="send-email-modal__inner">
 			  		<div class="send-email-before-success">
-				  		<h3>Send straight to my inbox<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<h3>Send straight to my inbox<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 				  		<p>Put your feet up, we’ll hand deliver these recommendations from the brands we think you’ll love straight to your inbox.</p>
 				  		<input type="text" placeholder="Your email" class="email-value">
 				  		<label class="email-validation-error">Invalid email address.</label>
@@ -33,9 +33,9 @@
 			  				Send it to me!
 			  			</a>
 			  		</div>
-			  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
+			  		<img class="ajax-loading" src="{{ getenv('APP_URL') }}/images/loading.gif">
 			  		<div class="send-email-after-success">
-			  			<h3>Send straight to my inbox<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+			  			<h3>Send straight to my inbox<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 				  		<p>Put your feet up, we’ll hand deliver these recommendations from the brands we think you’ll love straight to your inbox.</p>
 				  		<input type="text" class="success-email-value">
 				  		<div class="horizontal-line"></div>
@@ -59,7 +59,7 @@
 			<div class="send-friend-email-modal">
 			  	<div class="send-friend-email-modal__inner">
 			  		<div class="send-friend-email-before-success">
-				  		<h3>Spread the love<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  		<h3>Spread the love<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 				  		<p>Send this lovely list to a friend you think will love the brands and products in it. Aren’t you an awesome friend!</p>
 				  		<input type="text" placeholder="Your friend's email" class="friend-email-value">
 				  		<textarea placeholder="Send your friend a message"></textarea>
@@ -72,9 +72,9 @@
 			  				Send it to my friend!
 			  			</a>
 			  		</div>
-			  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
+			  		<img class="ajax-loading" src="{{ getenv('APP_URL') }}/images/loading.gif">
 			  		<div class="send-friend-email-after-success">
-			  			<h3>Spread the love<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+			  			<h3>Spread the love<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 				  		<p>Email sent successfully!</p>
 				  		<div class="horizontal-line"></div>
 			  			<a href="javascript:void(0)" class="btn-close">
@@ -95,7 +95,7 @@
 					<div class="brand-infos">
 						<div class="brand-logo-title-tag">
 							<div class="brand-logo">
-								<img src="https://widget-dashboard.ngrok.io/images/{{ $brand->brand_image }}">
+								<img src="{{ getenv('APP_URL') }}/images/{{ $brand->brand_image }}">
 							</div>
 							<div class="brand-title-tag">
 								<h3>{{ $brand->brand_title }}</h3>
@@ -138,7 +138,7 @@
 									<div class="product-item product-item--<?php echo $i ?>" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
 										<a href="{{ $product->product_link }}" target="_blank">
 											<div class="product-img">
-												<img src="https://widget-dashboard.ngrok.io/images/{{ $product->product_image }}">
+												<img src="{{ getenv('APP_URL') }}/images/{{ $product->product_image }}">
 											</div>
 											<div class="product-text">
 												<div class="product-title-desc">
@@ -158,7 +158,7 @@
 									if ($count > 1 && $i == 1) :
 								?>
 									<div class="more-products">
-										<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="https://widget-dashboard.ngrok.io/images/down-arrow.svg"></a>
+										<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="{{ getenv('APP_URL') }}/images/down-arrow.svg"></a>
 									</div>
 								<?php
 									endif;
@@ -185,7 +185,7 @@
 		<div class="community-copyright">
 			<div class="community">
 				<a href="javascript:void(0)">
-					<img src="https://widget-dashboard.ngrok.io/images/feedback-icon.svg">
+					<img src="{{ getenv('APP_URL') }}/images/feedback-icon.svg">
 					<span>Give feedback</span>
 				</a>
 
@@ -193,7 +193,7 @@
 				<div class="send-feedback-modal">
 				  	<div class="send-feedback-modal__inner">
 				  		<div class="send-feedback-before-success">
-					  		<h3>Give feedback<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+					  		<h3>Give feedback<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 					  		<p>How satisfied are you with theses recommendations?</p>
 					  		<ul class="feedback-rating">
 					  			<li data-value="rating-1">
@@ -237,9 +237,9 @@
 					  			</a>
 					  		</div>
 				  		</div>
-				  		<img class="ajax-loading" src="https://widget-dashboard.ngrok.io/images/loading.gif">
+				  		<img class="ajax-loading" src="{{ getenv('APP_URL') }}/images/loading.gif">
 				  		<div class="send-feedback-after-success">
-				  			<h3>Give feedback<img class="btn-close" src="https://widget-dashboard.ngrok.io/images/btn-cancle.svg"></h3>
+				  			<h3>Give feedback<img class="btn-close" src="{{ getenv('APP_URL') }}/images/btn-cancle.svg"></h3>
 					  		<p>How satisfied are you with theses recommendations?</p>
 				  			<a href="javascript:void(0)" class="btn-close">
 			  					Done! Close this window
@@ -250,7 +250,7 @@
 			</div>
 			<div class="copyright">
 				<label>Powered by</label>
-				<img src="https://widget-dashboard.ngrok.io/images/ohana-icon.svg">
+				<img src="{{ getenv('APP_URL') }}/images/ohana-icon.svg">
 			</div>
 		</div>
 	</div>
