@@ -39,6 +39,7 @@
                     {{ $product->store->url }}
                 </td>
                 <td>
+
                     {{ $product->brand->brand_title }}
                 </td>
                 <td>{{ $product->product_title }}</td>
@@ -63,6 +64,6 @@
     </table>
 </div>
   
-    {!! $products->links() !!}
+    
       
 @endsection

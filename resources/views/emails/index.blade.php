@@ -30,13 +30,8 @@
 			}
 
 			.widget-title {
-				font-size: 20px;
-				font-weight: bold;
+				font-size: 24px;
 				margin-bottom: 5px;
-				padding-left: 16px;
-				display: flex;
-			  justify-content: space-between;
-			  align-items: center;
 			}
 
 			.send-email-modal {
@@ -149,7 +144,6 @@
 
 			.brand-infos {
 				padding: 0 24px 16px;
-				border-bottom: 1px solid #F0F0F2;
 			}
 
 			.brand-logo-title-tag {
@@ -198,37 +192,25 @@
 				font-size: 16px;
 			}
 
+			.product-items {
+				display: table;
+			}
+
 			.product-item {
-			  margin: 16px 12px;
-			  display: none;
-			  border-radius: 10px;
-			}
-
-			.product-item.product-item--1 {
-				display: block;
-			}
-
-			.product-item > a:hover .product-img img {
-			  transform: scale(1.2);
-			  transition: all 0.15s linear;
-			}
-
-			.product-item.active {
-				display: block;
+				width: calc(48% - 16px);
+			    margin: 16px 12px;
+			    float: left;
 			}
 
 			.product-item > a {
-			  color: black;
-			  text-decoration: none;
-			  border-radius: 10px;
-			  display:  flex;
-			  justify-content: space-between;
+			  	color: black;
+				display: table;
+				text-decoration: none;
 			}
 
 			.product-img {
 				padding: 8px;
 				overflow: hidden;
-				width: 37%;
 			}
 
 			.product-img img {
@@ -237,11 +219,13 @@
 			}
 
 			.product-text {
-				width: 60%;
 				padding: 8px 8px 8px 0;
-			  	display: flex;
-			  	flex-direction: column;
-			  	justify-content: space-between;
+			  	display: table;
+			}
+
+			.product-text a {
+				text-decoration: none;
+				color: black;
 			}
 
 			.product-title-desc h3 {
@@ -311,9 +295,6 @@
 
 			.community-copyright {
 				padding: 20px 16px 0;
-			  display: flex;
-			  align-items: center;
-			  justify-content: space-between;
 			}
 
 			.community label {
@@ -326,6 +307,18 @@
 				display: block;
 				font-size: 14px;
 				color: #666666;
+			}
+
+			.copyright a {
+				width: 92px;
+				margin: 0 auto;
+				text-align: center;
+				display: block;
+				text-decoration: none;
+			}
+
+			.copyright a img {
+				width: 100%;
 			}
 
 			.copyright label {
@@ -344,10 +337,9 @@
   	<body>
     	<div class="widget-block">
 		    <div class="widget-header">
-		        <h2 class="widget-title">
-		            Brands we love
-		        </h2>
-		        <p class="widget-text">We’ve hand picked these purpose driven brands just for you</p>
+		    	<label style="text-align: center; display: block; margin-bottom: 40px; font-size: 24px;">form</label>
+		        <h2 class="widget-title" style="color: black; text-align: center; font-weight: bold;">The brands we think you’ll love...</h2>
+		        <p class="widget-text" style="color: black; text-align: center;">Here’s the email you asked us to hand deliver to your inbox. Filled with products that we think you’ll enjoy.</p>
 		    </div>
 		   
 		    <div class="widget-body">
@@ -392,39 +384,29 @@
 										}
 									}
 
-									$i = 0;
-
 								 	foreach ($store->products as $product) :
 								 		if ($product->brand_id == $brand->id) :
-								 			$i++;
 								 			?>
-											<div class="product-item product-item--<?php echo $i ?>" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
+											<div class="product-item">
 												<a href="{{ $product->product_link }}" target="_blank">
 													<div class="product-img">
 														<img src="{{ getenv('APP_URL') }}/images/{{ $product->product_image }}">
 													</div>
-													<div class="product-text" style="display:flex;flex-direction:column;justify-content:space-between;">
+													<div class="product-text">
 														<div class="product-title-desc">
 															<h3>{{ $product->product_title }}</h3>
 															<p>{{ $product->product_description }}</p>
 														</div>
 														<div class="product-price-arrow">
 															<span>£{{ $product->product_price }}</span>
-															<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M-0.000127917 14.5697L1.43018 16L9.43018 8L1.43017 6.99382e-07L-0.000129066 1.4303L6.56957 8L-0.000127917 14.5697Z" fill="{{ $product->brand->brand_tag_color }}"/>
-															</svg>
+														</div>
+														<div class="product-learn-more">
+															<a href="{{ $product->product_link }}" target="_blank" style="display: block; background-color: <?php echo $brand->brand_tag_color ?>; color: white; border-radius: 4px;padding: 8px;text-align: center;font-weight: 500;font-size: 12px;text-transform: uppercase;margin-top: 10px;">Learn More</a>
 														</div>
 													</div>
 												</a>
 											</div>
 										<?php
-											if ($count > 1 && $i == 1) :
-										?>
-											<div class="more-products">
-												<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="{{ getenv('APP_URL') }}/images/down-arrow.svg"></a>
-											</div>
-										<?php
-											endif;
 										endif;
 									endforeach;
 									?>
@@ -437,17 +419,12 @@
 			</div>
 			
 			<div class="widget-footer">
-				<div class="email-list">
-					<a href = "mailto: abc@example.com"><img src="{{ getenv('APP_URL') }}/images/email-icon.svg">Email me this list</a>
-				</div>
 				<div class="community-copyright">
-					<div class="community">
-						<label>Community Commerce</label>
-						<span>Find out more</span>
-					</div>
 					<div class="copyright">
-						<label>Powered by</label>
-						<span>Ohana</span>
+						<a href="https://joinohana.io/?utm_source=email&utm_medium=awareness&utm_campaign=send_to_email" target="_blank">
+							<label>Powered by</label>
+							<img src="{{ getenv('APP_URL') }}/images/ohana.png">
+						</a>
 					</div>
 				</div>
 			</div>
