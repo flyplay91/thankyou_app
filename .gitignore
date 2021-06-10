@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/js/init.js
+/public/js/tracking.js
+/public/js/widget.js
 .htaccess
 /storage/*.key
 /vendor
