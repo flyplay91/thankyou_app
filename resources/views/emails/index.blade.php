@@ -357,7 +357,7 @@
 							<div class="brand-infos">
 								<div class="brand-logo-title-tag">
 									<div class="brand-logo">
-										<img src="https://widget-dashboard.ngrok.io/images/{{ $brand->brand_image }}">
+										<img src="{{ getenv('APP_URL') }}/images/{{ $brand->brand_image }}">
 									</div>
 									<div class="brand-title-tag">
 										<h3>{{ $brand->brand_title }}</h3>
@@ -401,7 +401,7 @@
 											<div class="product-item product-item--<?php echo $i ?>" style="background-color: {{hex2rgba($product->brand->brand_tag_color, 0.15)}}">
 												<a href="{{ $product->product_link }}" target="_blank">
 													<div class="product-img">
-														<img src="https://widget-dashboard.ngrok.io/images/{{ $product->product_image }}">
+														<img src="{{ getenv('APP_URL') }}/images/{{ $product->product_image }}">
 													</div>
 													<div class="product-text" style="display:flex;flex-direction:column;justify-content:space-between;">
 														<div class="product-title-desc">
@@ -421,7 +421,7 @@
 											if ($count > 1 && $i == 1) :
 										?>
 											<div class="more-products">
-												<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="https://widget-dashboard.ngrok.io/images/down-arrow.svg"></a>
+												<a href="javascript: void(0)">{{ $count - 1 }} more products from {{$product->brand->brand_title}}<img src="{{ getenv('APP_URL') }}/images/down-arrow.svg"></a>
 											</div>
 										<?php
 											endif;
@@ -438,7 +438,7 @@
 			
 			<div class="widget-footer">
 				<div class="email-list">
-					<a href = "mailto: abc@example.com"><img src="https://widget-dashboard.ngrok.io/images/email-icon.svg">Email me this list</a>
+					<a href = "mailto: abc@example.com"><img src="{{ getenv('APP_URL') }}/images/email-icon.svg">Email me this list</a>
 				</div>
 				<div class="community-copyright">
 					<div class="community">
