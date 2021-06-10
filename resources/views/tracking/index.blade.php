@@ -9,7 +9,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tracking</div>
-							<table class="dashboard-table table-tracking">
+							<table class="dashboard-table table-responsive table-tracking">
 								<thead>
 									<tr>
 										<th>No</th>

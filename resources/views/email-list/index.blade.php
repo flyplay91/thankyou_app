@@ -9,7 +9,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email List</div>
-							<table class="dashboard-table table-email-list">
+							<table class="dashboard-table table-responsive table-email-list">
 								<thead>
 									<tr>
 										<th>No</th>
