@@ -89,7 +89,9 @@
 	</div>
 
 	<div class="widget-body">
-		@foreach ($store->brands as $brand)
+		<?php var_dump($store);?>
+		@if (!empty($store))
+			@foreach ($store->brands as $brand)
 			
 				<div class="brand-product">
 					<div class="brand-infos">
@@ -170,7 +172,8 @@
 					</div>
 				</div>
 			
-		@endforeach
+			@endforeach
+		@endif
 	</div>
 	
 	<div class="widget-footer">
