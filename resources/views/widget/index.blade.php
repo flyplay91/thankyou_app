@@ -90,7 +90,6 @@
 
 	<div class="widget-body">
 
-	    <?php var_dump($store);?>
 	    @if (!empty($store))
 		    @foreach ($store->brands as $brand)
 

@@ -111,12 +111,8 @@ class WidgetController extends Controller
 
 
 
+        $store = Store::where('url', $domain_url)->first();
         
-        
-
-
-        $store = Store::firstWhere('url', $domain_url);
-
         return view('widget.index', compact('store', 'domain_url'));
     }
 
