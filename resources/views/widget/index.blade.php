@@ -173,13 +173,9 @@
 					</div>
 				</div>
 			
-<<<<<<< HEAD
-		    @endforeach
-	    @endif
-=======
 			@endforeach
 		@endif
->>>>>>> eac2b93c9f1a4dd671fc8b6c7e6d3a65dc922104
+
 	</div>
 	
 	<div class="widget-footer">
