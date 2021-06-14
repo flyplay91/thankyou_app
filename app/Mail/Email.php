@@ -30,6 +30,8 @@ class Email extends Mailable
             $store_title == 'A Good Co';
         } else if ($store_url = 'https://squeeze-skincare.myshopify.com') {
             $store_title == 'Squeeze Skincare';
+        } else if ($store_url = 'https://raye-skin.myshopify.com') {
+            $store_title = "Raye Skin";
         }
 
         $address = "hello@joinohana.io";
