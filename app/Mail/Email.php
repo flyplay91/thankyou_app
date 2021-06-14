@@ -21,19 +21,10 @@ class Email extends Mailable
     public function build()
     {   
         $store_url = $this->data['domain_url'];
+        $without_protocal_url = explode('://', $store_url)[1];
+        $without_shopify_url = explode('.myshopify.com', $without_protocal_url)[0];
+        $store_title = ucwords(str_replace("-", " ", $without_shopify_url));
         
-        if ($store_url == 'https://ocean-bottle-dev.myshopify.com') {
-            $store_title = 'Ocean Bottle';
-        } else if ($store_url == 'https://freestar-dev.myshopify.com') {
-            $store_title = 'Freestar';
-        } else if ($store_url = 'https://agood-dev.myshopify.com') {
-            $store_title == 'A Good Co';
-        } else if ($store_url = 'https://squeeze-skincare.myshopify.com') {
-            $store_title == 'Squeeze Skincare';
-        } else if ($store_url = 'https://raye-skin.myshopify.com') {
-            $store_title = "Raye Skin";
-        }
-
         $address = "hello@joinohana.io";
         $subject = "From  " . $store_title. ", Here's the Brands We Think You'll Love";
         $name = $store_title . " x Ohana";
