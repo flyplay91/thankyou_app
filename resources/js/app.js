@@ -216,6 +216,22 @@ $(document).ready(function() {
 	  				$('.table-email-list tbody').append(html);
 	  			}
 	  		});
+	  	// } else if (page_handle == 'visitor-times') {
+	  	// 	var route_url = '/visitor-times';
+
+	  	// 	$.ajax({
+	  	// 		url: route_url,
+	  	// 		method: 'GET',
+	  	// 		data: {
+	  	// 			fromDate: from_date,
+				// 		toDate: to_date,
+				// 		__token: $('meta[name=csrf-token]').attr("content")
+	  	// 		},
+	  	// 		success: function(results) {
+	  	// 			console.log(results);
+	  	// 		}
+	  	// 	});
+
 	  	} else if (page_handle == 'tracking') {
 	  		var route_url = '/tracking';
 

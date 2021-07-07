@@ -12,11 +12,19 @@ class StoreVisitorTimeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $stores = Store::latest()->paginate(25);
-        return view('visitor-times.index', compact('stores'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $fromDate = date('Y-m-d H:i:s', strtotime($request->fromDate));
+        $toDate = date('Y-m-d H:i:s', strtotime($request->toDate));
+        $stores = Store::all();
+        
+        if (!$request->fromDate) {        
+            return view('visitor-times.index', compact('stores'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } else {
+            // $filterStoreCountQuery = "SELECT store_id, SUM(total_visitor_count) AS total_visitor, SUM(unique_visitor_count) AS unique_visitor FROM storevisitorcount WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "' GROUP BY store_id";
+            // $filterStoreCountObjs = DB::select($filterStoreCountQuery);
+        }
     }
 
     /**

@@ -14,8 +14,8 @@
 									<tr>
 										<th>No</th>
 										<th>Store Url</th>
-										<th>Avarage Store Time</th>
-										<th>Avarage Product Time</th>
+										<th>Avarage Store Time per Day</th>
+										<th>Avarage Product Time per Day</th>
 									</tr>
 								</thead>
 								<tbody>
