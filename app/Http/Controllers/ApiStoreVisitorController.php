@@ -50,6 +50,7 @@ class ApiStoreVisitorController extends Controller
             $period = (strtotime($endDay) - strtotime($firstDay)) / 86400 + 1;
 
             $totalStoreTimeQuery = "SELECT store_id, SUM(store_time) AS total_store_time, SUM(product_time) AS total_product_time FROM storetimes WHERE created_at BETWEEN '" .$firstDayTime. "' AND '".$endDayTime. "' GROUP BY store_id";
+            
             $totalStoreTime = DB::select($totalStoreTimeQuery)[0]->total_store_time;
             $avarageStoreTime = $totalStoreTime / $period / 1000;
             $totalProductTime = DB::select($totalStoreTimeQuery)[0]->total_product_time;

@@ -143,7 +143,7 @@
 
             <main class="py-4">
                 @auth
-                <?php if ((Route::currentRouteName() != 'dashboard.index') && (Route::currentRouteName() != 'stores.index') && (Route::currentRouteName() != 'brands.index') && (Route::currentRouteName() != 'products.index') && (Route::currentRouteName() != 'visitor-times.index')): ?>
+                <?php if ((Route::currentRouteName() != 'dashboard.index') && (Route::currentRouteName() != 'stores.index') && (Route::currentRouteName() != 'brands.index') && (Route::currentRouteName() != 'products.index')): ?>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-4 col-md-4 mb-4">

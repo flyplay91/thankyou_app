@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Store;
+use DB;
 
 class StoreVisitorTimeController extends Controller
 {
@@ -22,8 +23,46 @@ class StoreVisitorTimeController extends Controller
             return view('visitor-times.index', compact('stores'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } else {
-            // $filterStoreCountQuery = "SELECT store_id, SUM(total_visitor_count) AS total_visitor, SUM(unique_visitor_count) AS unique_visitor FROM storevisitorcount WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "' GROUP BY store_id";
-            // $filterStoreCountObjs = DB::select($filterStoreCountQuery);
+            $period = (strtotime($toDate) - strtotime($fromDate)) / 86400 + 1;
+            $totalStoreTimeQuery = "SELECT store_id, SUM(store_time) AS total_store_time, SUM(product_time) AS total_product_time FROM storetimes WHERE created_at BETWEEN '" .$fromDate. "' AND '".$toDate. "' GROUP BY store_id";
+
+            $totalStoreTimeObjs = DB::select($totalStoreTimeQuery);
+            
+            $filterStoreTimeArr = [];
+
+            foreach($totalStoreTimeObjs as $filterStoreTimeObj) {
+                $storeId = $filterStoreTimeObj->store_id;
+                if(!isset($filterStoreTimeArr[$storeId])) {
+                    $filterStoreTimeArr[$storeId] = array(
+                        'store_url' => "",
+                        'store_time' => 0,
+                        'product_time' => 0
+                    );
+                }
+
+                foreach($stores as $store) {
+                    if ($store->id == $filterStoreTimeObj->store_id) {
+                        $filterStoreTimeArr[$storeId]["store_url"] = $store->url;
+                        $filterStoreTimeArr[$storeId]["store_time"] = gmdate("H:i:s", $filterStoreTimeObj->total_store_time / $period / 1000);
+                        $filterStoreTimeArr[$storeId]["product_time"] = gmdate("H:i:s", $filterStoreTimeObj->total_product_time / $period / 1000);
+                    }
+                }
+
+            }
+
+            try {
+                return response()->json([
+                    'failed' => '0',
+                    'store_time_arr' => $filterStoreTimeArr
+                ]);
+            } catch (Exception $e) {
+                echo 'Caught exception: '. $e->getMessage() ."\n";
+
+                return response()->json([
+                    'failed' => '1',
+                    'error_message' => $e->getMessage(),
+                ]);
+            }
         }
     }
 

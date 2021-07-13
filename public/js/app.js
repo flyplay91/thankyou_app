@@ -19574,6 +19574,30 @@ $(document).ready(function () {
             $('.table-email-list tbody').append(html);
           }
         });
+      } else if (page_handle == 'visitor-times') {
+        var route_url = '/visitor-times';
+        $.ajax({
+          url: route_url,
+          method: 'GET',
+          data: {
+            fromDate: from_date,
+            toDate: to_date,
+            __token: $('meta[name=csrf-token]').attr("content")
+          },
+          success: function success(results) {
+            var html;
+            var index = 1;
+            $.each(results.store_time_arr, function (key, value) {
+              html += '<tr>';
+              html += '<td>' + index++ + '</td>';
+              html += '<td>' + value.store_url + '</td>';
+              html += '<td>' + value.store_time + '</td>';
+              html += '</tr>';
+            });
+            $('.table-store-time tbody').empty();
+            $('.table-store-time tbody').append(html);
+          }
+        });
       } else if (page_handle == 'tracking') {
         var route_url = '/tracking';
         $.ajax({

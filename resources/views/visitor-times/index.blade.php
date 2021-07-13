@@ -9,13 +9,13 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Visitor Times</div>
-							<table class="dashboard-table table-responsive">
+							<table class="dashboard-table table-responsive table-store-time">
 								<thead>
 									<tr>
 										<th>No</th>
 										<th>Store Url</th>
 										<th>Avarage Store Time per Day</th>
-										<th>Avarage Product Time per Day</th>
+										<!-- <th>Avarage Product Time per Day</th> -->
 									</tr>
 								</thead>
 								<tbody>
@@ -24,7 +24,7 @@
 										<td>{{ ++$i }}</td>
 										<td>{{ $store->url }}</td>
 										<td>{{ gmdate("H:i:s", $store->avarage_store_time) }}</td>
-										<td>{{ gmdate("H:i:s", $store->avarage_product_time) }}</td>
+										<!-- <td>{{ gmdate("H:i:s", $store->avarage_product_time) }}</td> -->
 									</tr>
 									@endforeach
 								</tbody>
